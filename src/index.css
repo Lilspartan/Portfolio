@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+p {
+	color: white;
+}
+
+* {
+	overflow-x: hidden;
+	font-family: 'Oxygen', sans-serif;
+}
+
+.icon-button.github:hover {
+	
+}
