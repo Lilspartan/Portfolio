@@ -6,7 +6,7 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           <meta charset="utf-8" />
-          <link rel="icon" href="%PUBLIC_URL%/logo192.png" />
+          <link rel="icon" href="/logo.png" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="theme-color" content="#171C27" />
           <meta
