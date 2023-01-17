@@ -10,9 +10,10 @@ type Props = {
 	color?: "accent" | "danger" | "success" | "warning" | "info" | "light";
 	click?: MouseEventHandler;
   glow?: boolean;
+  delay?: string;
 }
 
-export const Button = ({ glow=false, link, type="outline", children, target, className, color="accent", click=()=>{ console.log("clicked") } }:Props) => {
+export const Button = ({ delay="0", glow=false, link, type="outline", children, target, className, color="accent", click=()=>{ console.log("clicked") } }:Props) => {
 	const buttonClasses = classnames([
 		"cursor-pointer",
 		"mt-2",
@@ -49,7 +50,7 @@ export const Button = ({ glow=false, link, type="outline", children, target, cla
 			)
 		case "outline":
 			return (
-				<a onClick = {click} href={link} target={`${target ? `_${target}` : "_self"}`}
+				<a data-m-delay = {delay} onClick = {click} href={link} target={`${target ? `_${target}` : "_self"}`}
 					className = {classnames([
 						buttonClasses,
 						"bg-background",

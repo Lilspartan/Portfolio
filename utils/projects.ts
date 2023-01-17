@@ -37,7 +37,7 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
     {
         name: "War Tools",
         description: "An unofficial companion for Warhammer 40k",
-        logo: "https://wartools.xyz/images/header.jpg",
+        logo: "/images/projects/wartools/logo.png",
         logoSize: "w-1/4",
         size: "full",
         link: "wartools",
@@ -59,6 +59,10 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                 {
                     url: "/images/projects/wartools/screenshot3.png",
                     alt: "A screenshot of the roster list"
+                },
+                {
+                    url: "https://wartools.xyz/images/header.jpg",
+                    alt: "The War Tools logo"
                 }
             ],
             technologies: [
@@ -115,6 +119,10 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                 {
                     url: "/images/projects/pitwall/screenshot2.png",
                     alt: "A screenshot of what the Pit Wall looks like during a race"
+                },
+                {
+                    url: "https://i.gabirmotors.com/assets/other/pit_wall.png",
+                    alt: "The Pit Wall logo"
                 }
             ],
             technologies: [
@@ -199,6 +207,10 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                 {
                     url: "/images/projects/gabirmotors/screenshot3.png",
                     alt: "The PA League calendar for Season 13"
+                },
+                {
+                    url: "https://i.gabirmotors.com/assets/teams/GM/main.png",
+                    alt: "The Gabir Motors logo"
                 }
             ],
             technologies: [
@@ -301,7 +313,7 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
             {
                 name: "Games",
                 description: "recreating games to relearn vanilla JS",
-                logo: "/logo.png",
+                logo: "/images/projects/games/logo.png",
                 logoSize: "w-44",
                 size: "full",
                 link: "games",

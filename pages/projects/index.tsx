@@ -43,7 +43,7 @@ const Landing = () => {
                                     <div className = "w-full lg:w-1/3" data-m = "bounce-down" data-m-delay = {animationGap * (index + i) + animationGap} data-m-duration = {animationGap * 2}>
                                         <Card>
                                             <div className = {`flex flex-col gap-8 justify-between`}>
-                                                <img src = {p.logo} alt={p.name + " logo"} className = {p.logoSize + " mx-auto my-auto rounded-lg"} />
+                                                <img src = {p.logo} alt={p.name + " logo"} className = {"w-40 mx-auto my-auto rounded-lg"} />
                                                 <div className = "flex flex-col justify-center">
                                                     <h1 className = "text-4xl font-extrabold">{ p.name }</h1>
                                                     <span className = "text-lg my-8">{ p.description }</span>

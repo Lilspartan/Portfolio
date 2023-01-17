@@ -236,3 +236,11 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+.glow-on-hover-text:hover {
+  @apply text-glow;
+}
+
+.glow-on-hover:hover {
+  @apply glow;
+}
