@@ -67,10 +67,10 @@ const WarTools = () => {
 												)) }
 											</div>
 
-											<div id = "heading" className = "flex flex-row">
-												<h1 className = "font-bold text-5xl text-left my-4 w-1/2">{ project.name }</h1>
+											<div id = "heading" className = "flex flex-col lg:flex-row">
+												<h1 className = "font-bold text-5xl text-left my-4 w-full lg:w-1/2">{ project.name }</h1>
 
-												<div className = "flex flex-row justify-center w-1/2 my-auto gap-4">
+												<div className = "flex flex-col lg:flex-row justify-center w-full lg:w-1/2 my-auto lg:gap-4">
 													{ project.links.site !== null && <Button type = "block" target = "blank" link = {project.links.site}>Visit Site</Button> }
 													{ project.links.github !== null && <Button target = "blank" link = {project.links.github}>View on Github</Button> }
 												</div>
