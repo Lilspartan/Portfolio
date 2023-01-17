@@ -21,8 +21,8 @@ const Landing = () => {
                         return (
                             <div data-m = "bounce-down" data-m-delay = {animationGap * index} data-m-duration = {animationGap * 2}>
                                 <Card>
-                                    <div className = {`flex flex-row gap-8 justify-between`}>
-                                        <img src = {project.logo} alt={project.name + " logo"} className = {"h-20 " + project.logoSize + " my-auto rounded-lg"} />
+                                    <div className = {`flex flex-col lg:flex-row gap-8 justify-between`}>
+                                        <img src = {project.logo} alt={project.name + " logo"} className = {"lg:h-20 h-full my-auto rounded-lg"} />
                                         <div className = "flex flex-col justify-center">
                                             <h1 className = "text-5xl font-extrabold">{ project.name }</h1>
                                             <span className = "text-xl my-8">{ project.description }</span>
@@ -38,9 +38,9 @@ const Landing = () => {
                         )
                     } else {
                         return (
-                            <div className = "flex flex-row">
+                            <div className = "flex flex-col lg:flex-row">
                                 {project.projects.map((p, i) => (
-                                    <div className = "w-1/3" data-m = "bounce-down" data-m-delay = {animationGap * (index + i) + animationGap} data-m-duration = {animationGap * 2}>
+                                    <div className = "w-full lg:w-1/3" data-m = "bounce-down" data-m-delay = {animationGap * (index + i) + animationGap} data-m-duration = {animationGap * 2}>
                                         <Card>
                                             <div className = {`flex flex-col gap-8 justify-between`}>
                                                 <img src = {p.logo} alt={p.name + " logo"} className = {p.logoSize + " mx-auto my-auto rounded-lg"} />
