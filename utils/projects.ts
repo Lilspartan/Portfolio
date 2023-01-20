@@ -328,6 +328,10 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                             url: "/images/projects/games/screenshot1.png",
                             alt: "Tetris"
                         },
+                        {
+                            url: "/images/projects/games/logo.png",
+                            alt: "Games logo"
+                        }
                     ],
                     technologies: [
                         {

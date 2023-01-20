@@ -52,9 +52,9 @@ const WarTools = () => {
 				h-full 
 				min-h-screen
 			">
-				<div className="grid place-items-center text-center text-white">
+				<div className="grid place-items-center text-center min-h-screen text-white">
 					{project !== null ? (
-						<div>
+						<div className = "p-8">
 							<Card>
 								{
 									project.infoPage !== null ? (
@@ -104,11 +104,32 @@ const WarTools = () => {
 												</div>
 											</div>
 										</div>
-									) : "No info for this project yet"
+									) : (
+										<div className = "flex flex-col gap-2">
+											<span>
+												There's no further information for that project yet
+											</span>
+											<Button link = {project.links.site}>View Project</Button>
+											<Button link = "/projects">Back to Projects</Button>
+										</div>
+									)
 								}
 							</Card>
 						</div>
-					) : ""}
+					) : (
+						<div>
+							<Card>
+								<div className = "flex flex-col gap-8">
+									<span>
+										Couldn't find the project you're looking for, are you sure you're in the right place?
+									</span>
+									<Button link = "/projects">Back to Projects</Button>
+								</div>
+
+								
+							</Card>
+						</div>
+					)}
 				</div>
 			</div>
 		</>

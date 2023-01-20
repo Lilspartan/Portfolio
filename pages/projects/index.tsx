@@ -7,7 +7,7 @@ import { TbBrandNextjs } from 'react-icons/tb';
 
 import { projects } from '../../utils/projects';
 
-const animationGap = 0.4;
+const animationGap = 0.2;
 
 const Landing = () => {
 	return (
