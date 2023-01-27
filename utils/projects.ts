@@ -362,5 +362,51 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                 },
             }
         ]
-    }
+    },
+    {
+        name: "Better StudentVue",
+        description: "A project defined by \"Why isn't this already a feature?\"",
+        logo: "/logo.png",
+        logoSize: "w-1/4",
+        size: "full",
+        link: "betterstudentvue",
+        links: {
+            site: "https://better-studenvue.gabekrahulik.dev",
+            github: null,
+            info: "/projects/betterstudentvue",
+        },
+        infoPage: {
+            images: [
+                {
+                    url: "/images/projects/betterstudentvue/screenshot1.png",
+                    alt: "A screenshot of the home page of Better StudentVue"
+                },
+            ],
+            technologies: [
+                {
+                    name: "All",
+                    tech: [
+                        {
+                            name: "Next.js",
+                            link: "https://nextjs.org",
+                            description: null
+                        },
+                        {
+                            name: "Tailwind CSS",
+                            link: "https://tailwindcss.com/",
+                            description: null,
+                        },
+                        {
+                            name: "Typescript",
+                            link: "https://www.typescriptlang.org/",
+                            description: null,
+                        }
+                    ]
+                }
+            ],
+            description: [
+                "All I wanted to do was see how doing an assignment would affect my grade, but imagine my surprise when my school's gradebook didn't have that feature! The horror... What was I going to do, well I definitely wasn't going to do my finance homework, the best use of my time would be to make my own version of the gradebook that gives me the features I've always wanted.",
+            ]
+        }
+    },
 ]

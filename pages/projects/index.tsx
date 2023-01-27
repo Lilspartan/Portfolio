@@ -15,7 +15,7 @@ const Landing = () => {
 			bg-background
 			h-full text-center
 		">
-			<div className = "flex flex-col text-white">
+			<div className = "flex flex-col text-white py-2">
                 {projects.map((project, index) => {
                     if (project.size === "full") {
                         return (
@@ -27,7 +27,7 @@ const Landing = () => {
                                             <h1 className = "text-5xl font-extrabold">{ project.name }</h1>
                                             <span className = "text-xl my-8">{ project.description }</span>
                                         </div>
-                                        <div className = "flex flex-col justify-center">
+                                        <div className = "flex flex-col justify-center lg:w-1/6">
                                             { project.links.site !== null && <Button type = "block" target = "blank" link = {project.links.site}>Visit Site</Button> }
                                             { project.links.github !== null && <Button target = "blank" link = {project.links.github}>View on Github</Button> }
                                             { project.links.info !== null && <Button link = {project.links.info}>More Info</Button> }
@@ -38,10 +38,10 @@ const Landing = () => {
                         )
                     } else {
                         return (
-                            <div className = "flex flex-col lg:flex-row">
+                            <div className = "flex flex-col lg:flex-row mb-8">
                                 {project.projects.map((p, i) => (
                                     <div className = "w-full lg:w-1/3" data-m = "bounce-down" data-m-delay = {animationGap * (index + i) + animationGap} data-m-duration = {animationGap * 2}>
-                                        <Card>
+                                        <Card full>
                                             <div className = {`flex flex-col gap-8 justify-between`}>
                                                 <img src = {p.logo} alt={p.name + " logo"} className = {"w-40 mx-auto my-auto rounded-lg"} />
                                                 <div className = "flex flex-col justify-center">

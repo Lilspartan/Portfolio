@@ -2,6 +2,7 @@ import React from 'react'
 
 type Props = {
     children: any;
+	full?: boolean;
 }
 
 type LinkProps = {
@@ -11,20 +12,20 @@ type LinkProps = {
 
 export const Card = (props: Props) => {
     return (
-			<span className="my-auto slide-top-small">
-        <div className="
-					bg-primary 
-					p-8 
-					rounded-lg 
-					shadow-2xl 
-					m-4 
-					mt-8
-					transition 
-					duration-300
-					">
-            { props.children }
-        </div>
-			</span>
+		<div className={`my-auto slide-top-small ${props.full && "h-full"}`}>
+			<div className={`
+						bg-primary 
+						p-8 
+						rounded-lg 
+						shadow-2xl 
+						m-4 
+						transition 
+						duration-300
+						${props.full && "h-full"}
+						`}>
+				{ props.children }
+			</div>
+		</div>
     )
 }
 
