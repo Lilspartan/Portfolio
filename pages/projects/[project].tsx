@@ -42,8 +42,8 @@ const WarTools = () => {
 
 			{ lightBoxImage !== null && (
 				<div className = "fixed w-screen h-screen grid place-items-center z-50 pointer-events-none">
-					<img src={lightBoxImage.url} alt={lightBoxImage.alt} className = "opacity-100 w-2/3 pointer-events-auto" />
-					<span className = "fixed bottom-0 mx-auto text-white mb-4 text-lg">{ lightBoxImage.alt }</span>
+					<img data-m = "bounce-down" data-m-duration = "0.75" src={lightBoxImage.url} alt={lightBoxImage.alt} className = "opacity-100 w-2/3 pointer-events-auto" />
+					<span data-m = "bounce-up" data-m-duration = "0.75" data-m-delay = "0.2" className = "fixed bottom-0 mx-auto text-white mb-4 text-lg">{ lightBoxImage.alt }</span>
 				</div>
 			)}
 
