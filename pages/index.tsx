@@ -1,9 +1,34 @@
 import { Button, ButtonContainer, Card } from '../components';
 
-import { AiFillGithub, AiOutlineTwitter } from 'react-icons/ai';
+import { AiFillGithub, AiOutlineTwitter, AiFillLinkedin } from 'react-icons/ai';
 import { DiReact } from 'react-icons/di'
 import { SiTailwindcss, SiGmail, SiKofi } from 'react-icons/si'
 import { TbBrandNextjs } from 'react-icons/tb';
+
+import { useState, useEffect } from "react";
+
+const contacts = [
+	{
+		name: "github",
+		text: "Github",
+	},
+	{
+		name: "email",
+		text: "Email Me",
+	},
+	{
+		name: "kofi",
+		text: "Ko-Fi",
+	},
+	{
+		name: "linkedin",
+		text: "LinkedIn",
+	},
+	{
+		name: "twitter",
+		text: "Twitter",
+	}
+]
 
 const Landing = () => {
 	function calculateAge(date: number) {
@@ -30,10 +55,11 @@ const Landing = () => {
 						</div>
 
 						<div className="text-white flex flex-row justify-center">
-							<a data-m-delay="0.75" data-m="bounce-left" data-m-duration = "0.75" href="https://github.com/Lilspartan" target="_new"><AiFillGithub className="transition duration-300 mx-2 mt-8 text-4xl hover:text-github" /></a>
-							<a data-m-delay="0.75" data-m="bounce-right" data-m-duration = "0.75" href="mailto:gabe@gabekrahulik.dev" target="_new"><SiGmail className="transition duration-300 mx-2 mt-8 text-4xl hover:text-gmail" /></a>
-							<a data-m-delay="0.75" data-m="bounce-left" data-m-duration = "0.75" href="https://ko-fi.com/gabekrahulik" target="_new"><SiKofi className="transition duration-300 ml-2 mt-8 text-4xl hover:text-kofi" /></a>
-							<a data-m-delay="0.75" data-m="bounce-right" data-m-duration = "0.75" href="https://twitter.com/gabekrahulik" target="_new"><AiOutlineTwitter className="transition duration-300 mx-2 mt-8 text-4xl hover:text-twitter" /></a>
+							<a title = "My Github Profile" data-m-delay="1.25" data-m="bounce-left" data-m-duration = "0.75" href="https://github.com/Lilspartan" target="_new"><AiFillGithub className="transition duration-300 mx-2 mt-8 text-4xl hover:text-github" /></a>
+							<a title = "Email me!" data-m-delay="1" data-m="bounce-left" data-m-duration = "0.75" href="mailto:gabe@gabekrahulik.dev" target="_new"><SiGmail className="transition duration-300 mx-2 mt-8 text-4xl hover:text-gmail" /></a>
+							<a title = "Donate on Ko-fi" data-m-delay="0.75" data-m="bounce-down" data-m-duration = "0.75" href="https://ko-fi.com/gabekrahulik" target="_new"><SiKofi className="transition duration-300 ml-2 mt-8 text-4xl hover:text-kofi" /></a>
+							<a title = "Check out my LinkedIn page" data-m-delay="1" data-m="bounce-right" data-m-duration = "0.75" href="https://www.linkedin.com/in/gabe-krahulik/" target="_new"><AiFillLinkedin className="transition duration-300 ml-2 mt-8 text-4xl hover:text-linkedin" /></a>
+							<a title = "Follow me on Twitter" data-m-delay="1.25" data-m="bounce-right" data-m-duration = "0.75" href="https://twitter.com/gabekrahulik" target="_new"><AiOutlineTwitter className="transition duration-300 mx-2 mt-8 text-4xl hover:text-twitter" /></a>
 						</div>
 					</Card>
 				</div>
