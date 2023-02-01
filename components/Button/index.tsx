@@ -29,10 +29,11 @@ export const Button = ({ delay="0", glow=false, link, type="outline", children, 
 		// "whitespace-nowrap",
 		"float-left",
 		// "clear-left"
-    "block",
-    "w-full",
-    glow ? "glow" : "",
-    "button"
+		"block",
+		"w-full",
+		glow ? "glow" : "",
+		"button",
+		"select-none"
 	])
 	
 	switch (type) {
