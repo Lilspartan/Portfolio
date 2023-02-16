@@ -371,7 +371,7 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
         size: "full",
         link: "betterstudentvue",
         links: {
-            site: "https://better-studenvue.gabekrahulik.dev",
+            site: "https://better-studentvue.gabekrahulik.dev",
             github: null,
             info: "/projects/betterstudentvue",
         },
