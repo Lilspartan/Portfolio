@@ -12,5 +12,6 @@ export {
   ButtonContainer,
   Card, 
   CardHeading,
-  IconButton
+  IconButton,
+  Footer
 }

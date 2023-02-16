@@ -1,8 +1,7 @@
-import { Button, ButtonContainer, Card, CardHeading, IconButton } from '../../components';
+import { Button, ButtonContainer, Card, CardHeading, IconButton, Footer } from '../../components';
 
-import { AiFillGithub, AiOutlineTwitter } from 'react-icons/ai';
-import { DiReact } from 'react-icons/di'
-import { SiTailwindcss } from 'react-icons/si'
+import { AiFillGithub, AiOutlineTwitter, AiFillLinkedin } from 'react-icons/ai';
+import { SiTailwindcss, SiGmail, SiKofi } from 'react-icons/si'
 import { TbBrandNextjs } from 'react-icons/tb';
 
 import { projects } from '../../utils/projects';
@@ -15,7 +14,7 @@ const Landing = () => {
 			bg-background
 			h-full text-center
 		">
-			<div className = "flex flex-col text-white py-2">
+			<div className = "flex flex-col text-white p-4">
                 {projects.map((project, index) => {
                     if (project.size === "full") {
                         return (

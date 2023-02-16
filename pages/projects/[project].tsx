@@ -49,7 +49,7 @@ const WarTools = () => {
 			">
 				<div className="grid place-items-center text-center min-h-screen text-white">
 					{project !== null ? (
-						<div className = "p-8">
+						<div className = "lg:p-8">
 							<Card>
 								{
 									project.infoPage !== null ? (
