@@ -1,9 +1,4 @@
-import { Button, ButtonContainer, Card } from '../../components';
-
-import { AiFillGithub, AiOutlineTwitter } from 'react-icons/ai';
-import { DiReact } from 'react-icons/di'
-import { SiTailwindcss, SiGmail } from 'react-icons/si'
-import { TbBrandNextjs } from 'react-icons/tb';
+import { Button, ButtonContainer, Card, IconButton } from '../../components';
 
 import { useRouter } from 'next/router';
 import { projects, Project, Image } from '../../utils/projects';
@@ -71,8 +66,8 @@ const WarTools = () => {
 												<h1 data-m = "bounce-left" className = "font-bold text-5xl text-left my-4 w-full lg:w-1/2">{ project.name }</h1>
 
 												<div data-m = "bounce-right" className = "flex flex-col lg:flex-row justify-center w-full lg:w-1/2 my-auto lg:gap-4">
-													{ project.links.site !== null && <Button type = "block" target = "blank" link = {project.links.site}>Visit Site</Button> }
-													{ project.links.github !== null && <Button target = "blank" link = {project.links.github}>View on Github</Button> }
+													{ project.links.site !== null && <IconButton target = "blank" link = {project.links.site}>Visit Site</IconButton> }
+													{ project.links.github !== null && <IconButton target = "blank" link = {project.links.github}>View on Github</IconButton> }
 												</div>
 											</div>
 

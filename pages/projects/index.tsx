@@ -1,4 +1,4 @@
-import { Button, ButtonContainer, Card, CardHeading } from '../../components';
+import { Button, ButtonContainer, Card, CardHeading, IconButton } from '../../components';
 
 import { AiFillGithub, AiOutlineTwitter } from 'react-icons/ai';
 import { DiReact } from 'react-icons/di'
@@ -28,8 +28,8 @@ const Landing = () => {
                                             <span className = "text-xl my-8">{ project.description }</span>
                                         </div>
                                         <div className = "flex flex-col justify-center lg:w-1/6">
-                                            { project.links.site !== null && <Button type = "block" target = "blank" link = {project.links.site}>Visit Site</Button> }
-                                            { project.links.github !== null && <Button target = "blank" link = {project.links.github}>View on Github</Button> }
+                                            { project.links.site !== null && <IconButton target = "blank" link = {project.links.site}>Visit Site</IconButton> }
+                                            { project.links.github !== null && <IconButton target = "blank" link = {project.links.github}>View on Github</IconButton> }
                                             { project.links.info !== null && <Button link = {project.links.info}>More Info</Button> }
                                         </div>
                                     </div>
@@ -50,11 +50,11 @@ const Landing = () => {
                                                 </div>
                                                 <div className = "flex flex-col justify-center">
                                                     <div className="flex flex-row justify-center gap-2">
-                                                        { p.links.site !== null && <Button type = "block" target = "blank" link = {p.links.site}>Visit Site</Button> }
+                                                        { p.links.site !== null && <Button type = "icon" target = "blank" link = {p.links.site}>Visit Site</Button> }
                                                         { p.links.info !== null && <Button link = {p.links.info}>More Info</Button> }
                                                     </div>
                                                     <div className="block">
-                                                        { p.links.github !== null && <Button target = "blank" link = {p.links.github}>View on Github</Button> }
+                                                        { p.links.github !== null && <Button type = "icon" target = "blank" link = {p.links.github}>View on Github</Button> }
                                                     </div>
                                                 </div>
                                             </div>

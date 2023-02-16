@@ -1,5 +1,5 @@
 // Global components
-import { Button, ButtonContainer } from './Button';
+import { Button, ButtonContainer, IconButton } from './Button';
 import Loading from './Loading';
 import SEO from './SEO';
 import Tooltip from './Tooltip';
@@ -12,4 +12,5 @@ export {
   ButtonContainer,
   Card, 
   CardHeading,
+  IconButton
 }
