@@ -312,7 +312,7 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
             },
             {
                 name: "Games",
-                description: "recreating games to relearn vanilla JS",
+                description: "Recreating games to relearn vanilla JS",
                 logo: "/images/projects/games/logo.png",
                 logoSize: "w-44",
                 size: "full",
