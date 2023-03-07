@@ -156,3 +156,11 @@
 .social.replit:hover:before { @apply text-replit; }
 .social.gmail:hover:before { @apply text-gmail; }
 .social.kofi:hover:before { @apply text-kofi; }
+
+.linkedin { @apply group-hover:text-linkedin; }
+.twitter { @apply group-hover:text-twitter; }
+.discord { @apply group-hover:text-discord; }
+.github { @apply group-hover:text-github; }
+.replit { @apply group-hover:text-replit; }
+.gmail { @apply group-hover:text-gmail; }
+.kofi { @apply group-hover:text-kofi; }
