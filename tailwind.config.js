@@ -16,6 +16,8 @@ module.exports = {
 				gmail: "#DB4437",
 				kofi: "#13C3FF",
 				linkedin: "#0077B5",
+				replit: "#F8640A",
+				discord: "#5865F2"
 			}
 		},
 	},

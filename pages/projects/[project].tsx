@@ -1,8 +1,36 @@
 import { Button, ButtonContainer, Card, IconButton } from '../../components';
 
 import { useRouter } from 'next/router';
-import { projects, Project, Image } from '../../utils/projects';
+import { projects, Project, Image, ShortTech, Links } from '../../utils/projects';
 import { useState, useEffect } from 'react';
+
+import { DiCss3, DiHtml5, DiMongodb } from 'react-icons/di';
+import { SiJavascript, SiTailwindcss, SiTypescript, SiElectron, SiSocketdotio, SiReact, SiNodedotjs, SiUikit } from 'react-icons/si';
+import { TbBrandNextjs } from 'react-icons/tb';
+
+const TechIcon = ({ tech, index }: { tech: ShortTech, index: number }) => {
+	const classes = "text-xl";
+	var Icon = <></>
+	
+	switch (tech) {
+		case "css": Icon = <DiCss3 className = { classes } />; break;
+		case "html": Icon = <DiHtml5 className = { classes } />; break;
+		case "react": Icon = <SiReact className = { classes } />; break; 
+		case "uikit": Icon = <SiUikit className = { classes } />; break;
+		case "mongo": Icon = <DiMongodb className = { classes } />; break;
+		case "js": Icon = <SiJavascript className = { classes } />; break;
+		case "ts": Icon = <SiTypescript className = { classes } />; break;
+		case "node": Icon = <SiNodedotjs className = { classes } />; break;
+		case "next": Icon = <TbBrandNextjs className = { classes } />; break;
+		case "electron": Icon = <SiElectron className = { classes } />; break; 
+		case "tailwind": Icon = <SiTailwindcss className = { classes } />; break;
+		case "socketio": Icon = <SiSocketdotio className = { classes } />; break; 
+	}
+
+	return (
+		<div className = "" data-m = "bounce-up" data-m-delay = {(index + 1) * 0.25} ><Button link = {Links[tech]}>{ Icon }</Button></div>
+	)
+}
 
 const WarTools = () => {
 	const [project, setProject] = useState<Project | null>(null);
@@ -79,15 +107,22 @@ const WarTools = () => {
 
 											<div>
 												<h2 className = "text-left text-xl font-bold" data-m = "bounce-down" data-m-duration = "0.5">What Did I Use?</h2>
-												<div className="my-2 text-left flex flex-row gap-8">
+												
+												<div className="my-2 text-left flex flex-col lg:flex-row gap-8 mb-8 lg:mb-0">
 													{ project.infoPage.technologies.map((section, i) => (
-														<div data-m = "bounce-up" data-m-duration = "0.5" data-m-delay = {0.1 * i}>
-															<h3 className = "font-semibold text-lg">{ section.name }</h3>
-															<ol className = "ml-2">
-																{ section.tech.map(tech => (
-																	<li><a className = "text-accent glow-on-hover-text" href={tech.link}>{ tech.name }</a></li>
-																)) }
-															</ol>
+														<div className = "flex flex-col">
+															{ project.infoPage.technologies.length > 1 && <h3 className = "font-semibold text-lg mt-2" data-m = "bounce-up" data-m-delay = {i * 0.5}>{ section.name }</h3> }
+															<div className = "flex flex-row gap-2 ml-2">
+																{section.short !== undefined ? (
+																	<>
+																		{ section.short.map((tech, i) => (
+																			<TechIcon tech = { tech } index = { i } />
+																		))}
+																	</>
+																) : (
+																	""
+																)}
+															</div>
 														</div>
 													)) }
 												</div>

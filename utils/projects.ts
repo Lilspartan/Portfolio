@@ -24,13 +24,24 @@ export interface Image {
 
 interface Section {
     name: string;
-    tech: Technology[];
+    short?: ShortTech[];
 }
 
-interface Technology {
-    name: string;
-    link: string | null;
-    description: string | null;
+export type ShortTech = "next" | "react" | "node" | "html" | "js" | "css" | "tailwind" | "ts" | "mongo" | "socketio" | "electron" | "uikit";
+
+export const Links: {[ key in ShortTech ]?: string} = {
+    "css": "https://www.w3.org/Style/CSS/Overview.en.html",
+    "electron": "https://www.electronjs.org/",
+    "html": "https://en.wikipedia.org/wiki/HTML5",
+    "js": "https://www.javascript.com/",
+    "mongo": "https://mongodb.com/",
+    "next": "https://nextjs.org/",
+    "node": "https://nodejs.org/",
+    "react": "https://reactjs.org/",
+    "socketio": "https://socket.io/",
+    "tailwind": "https://tailwindcss.com/",
+    "ts": "https://www.typescriptlang.org/",
+    "uikit": "https://getuikit.com/",
 }
 
 export const projects:(Project | {size: "half", projects: Project[]})[] = [
@@ -68,28 +79,9 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
             technologies: [
                 {
                     name: "All",
-                    tech: [
-                        {
-                            name: "Next.js",
-                            link: "https://nextjs.org",
-                            description: null
-                        },
-                        {
-                            name: "Tailwind CSS",
-                            link: "https://tailwindcss.com/",
-                            description: null,
-                        },
-                        {
-                            name: "Mongo DB",
-                            link: "https://mongodb.com/",
-                            description: null,
-                        },
-                        {
-                            name: "Typescript",
-                            link: "https://www.typescriptlang.org/",
-                            description: null,
-                        }
-                    ]
+                    short: [
+                        "next", "tailwind", "mongo", "ts"
+                    ],
                 }
             ],
             description: [
@@ -128,52 +120,14 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
             technologies: [
                 {
                     name: "Website",
-                    tech: [
-                        {
-                            name: "Next.js",
-                            link: "https://nextjs.org",
-                            description: null
-                        },
-                        {
-                            name: "Tailwind CSS",
-                            link: "https://tailwindcss.com/",
-                            description: null,
-                        },
-                        {
-                            name: "Typescript",
-                            link: "https://www.typescriptlang.org/",
-                            description: null,
-                        },
-                        {
-                            name: "Socket.IO",
-                            link: "https://socket.io/",
-                            description: null,
-                        },
-                    ]
+                    short: [
+                        "next", "tailwind", "ts", "socketio"
+                    ],
                 },
                 {
                     name: "Desktop Client",
-                    tech: [
-                        {
-                            name: "Electron",
-                            link: "https://www.electronjs.org/",
-                            description: null,
-                        },
-                        {
-                            name: "React",
-                            link: "https://reactjs.org",
-                            description: null,
-                        },
-                        {
-                            name: "node-irsdk-2021",
-                            link: "https://www.npmjs.com/package/node-irsdk-2021",
-                            description: null,
-                        },
-                        {
-                            name: "Socket.IO",
-                            link: "https://socket.io/",
-                            description: null,
-                        },
+                    short: [
+                        "electron", "react", "socketio"
                     ]
                 }
             ],
@@ -216,27 +170,8 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
             technologies: [
                 {
                     name: "All",
-                    tech: [
-                        {
-                            name: "React",
-                            link: "https://reactjs.org",
-                            description: null
-                        },
-                        {
-                            name: "UIkit",
-                            link: "https://getuikit.com/",
-                            description: null,
-                        },
-                        {
-                            name: "Mongo DB",
-                            link: "https://mongodb.com/",
-                            description: null,
-                        },
-                        {
-                            name: "Typescript",
-                            link: "https://www.typescriptlang.org/",
-                            description: null,
-                        }
+                    short: [
+                        "react", "uikit", "mongo", "ts"
                     ]
                 }
             ],
@@ -288,22 +223,8 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                     technologies: [
                         {
                             name: "All",
-                            tech: [
-                                {
-                                    name: "Next.js",
-                                    link: "https://nextjs.org",
-                                    description: null
-                                },
-                                {
-                                    name: "Tailwind CSS",
-                                    link: "https://tailwindcss.com/",
-                                    description: null,
-                                },
-                                {
-                                    name: "Typescript",
-                                    link: "https://www.typescriptlang.org/",
-                                    description: null,
-                                },
+                            short: [
+                                "next", "tailwind", "ts"
                             ]
                         }
                     ],
@@ -336,22 +257,8 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                     technologies: [
                         {
                             name: "All",
-                            tech: [
-                                {
-                                    name: "HTML",
-                                    link: "https://en.wikipedia.org/wiki/HTML5",
-                                    description: null
-                                },
-                                {
-                                    name: "CSS",
-                                    link: "https://www.w3.org/Style/CSS/Overview.en.html",
-                                    description: null,
-                                },
-                                {
-                                    name: "JS",
-                                    link: "https://www.javascript.com/",
-                                    description: null,
-                                },
+                            short: [
+                                "html", "css", "js"
                             ]
                         }
                     ],
@@ -385,22 +292,8 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
             technologies: [
                 {
                     name: "All",
-                    tech: [
-                        {
-                            name: "Next.js",
-                            link: "https://nextjs.org",
-                            description: null
-                        },
-                        {
-                            name: "Tailwind CSS",
-                            link: "https://tailwindcss.com/",
-                            description: null,
-                        },
-                        {
-                            name: "Typescript",
-                            link: "https://www.typescriptlang.org/",
-                            description: null,
-                        }
+                    short: [
+                        "next", "tailwind", "ts"
                     ]
                 }
             ],
