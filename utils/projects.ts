@@ -30,18 +30,18 @@ interface Section {
 export type ShortTech = "next" | "react" | "node" | "html" | "js" | "css" | "tailwind" | "ts" | "mongo" | "socketio" | "electron" | "uikit";
 
 export const Links: {[ key in ShortTech ]?: string} = {
-    "css": "https://www.w3.org/Style/CSS/Overview.en.html",
-    "electron": "https://www.electronjs.org/",
-    "html": "https://en.wikipedia.org/wiki/HTML5",
-    "js": "https://www.javascript.com/",
-    "mongo": "https://mongodb.com/",
-    "next": "https://nextjs.org/",
     "node": "https://nodejs.org/",
+    "next": "https://nextjs.org/",
+    "mongo": "https://mongodb.com/",
     "react": "https://reactjs.org/",
+    "uikit": "https://getuikit.com/",
     "socketio": "https://socket.io/",
+    "js": "https://www.javascript.com/",
     "tailwind": "https://tailwindcss.com/",
     "ts": "https://www.typescriptlang.org/",
-    "uikit": "https://getuikit.com/",
+    "electron": "https://www.electronjs.org/",
+    "html": "https://en.wikipedia.org/wiki/HTML5",
+    "css": "https://www.w3.org/Style/CSS/Overview.en.html",
 }
 
 export const projects:(Project | {size: "half", projects: Project[]})[] = [
@@ -195,7 +195,20 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                     github: "https://github.com/Lilspartan/Portfolio",
                     info: null
                 },
-                infoPage: null,
+                infoPage: {
+                    images: [
+                        
+                    ],
+                    technologies: [
+                        {
+                            name: "All",
+                            short: [
+                                "next", "tailwind", "ts"
+                            ]
+                        }
+                    ],
+                    description: null,
+                },
             },
             {
                 name: "Rogue Bananas",

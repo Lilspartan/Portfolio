@@ -22,7 +22,8 @@ const ContactIcon = ({ contact, index }) => {
 		"mx-3",
 		"transition",
 		"duration-300",
-		"mt-8",
+		"mt-12",
+		"lg:mt-8",
 		"text-4xl",
 		contact.name,
 		"group-hover:-translate-y-1",
@@ -75,7 +76,7 @@ const Landing = () => {
 							</div>
 						</div>
 
-						<div className="text-white flex flex-row justify-around gap-4 mx-8 mt-2">
+						<div className="text-white flex flex-row flex-wrap lg:flex-nowrap justify-center gap-1 lg:gap-4 mx-2 lg:mx-8">
 							{ contacts.map((contact, i) => (
 								<ContactIcon contact = { contact } index = { i } />
 							)) }
