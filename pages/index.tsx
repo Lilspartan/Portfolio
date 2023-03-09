@@ -8,13 +8,13 @@ import { useState } from 'react';
 import classNames from 'classnames';
 
 const contacts = [
-	{ name: "github", link: "https://github.com/Lilspartan" },
 	{ name: "gmail", link: "mailto:gabe@gabekrahulik.dev" },
-	{ name: "kofi", link: "https://ko-fi.com/gabekrahulik" },
 	{ name: "linkedin", link: "https://www.linkedin.com/in/gabe-krahulik/" },
+	{ name: "github", link: "https://github.com/Lilspartan" },
+	{ name: "kofi", link: "https://ko-fi.com/gabekrahulik" },
 	{ name: "twitter", link: "https://twitter.com/gabekrahulik" },
-	{ name: "replit", link: "https://replit.com/@GabeKrahulik" },
 	{ name: "discord", link: "https://discord.com/users/378319931005206530" },
+	{ name: "replit", link: "https://replit.com/@GabeKrahulik" },
 ]
 
 const ContactIcon = ({ contact, index }) => {

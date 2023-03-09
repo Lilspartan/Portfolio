@@ -32,10 +32,10 @@
 
 @keyframes glow {
   from {
-    box-shadow: 1px 0px 5px #6CD4FFaa;
+    box-shadow: 1px 0px 10px #6CD4FFaa;
   }
   to {
-    box-shadow: 1px 0px 15px #6CD4FFaa;
+    box-shadow: 1px 0px 20px #6CD4FFaa;
   }
 }
 

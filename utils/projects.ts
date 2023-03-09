@@ -316,3 +316,146 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
         }
     },
 ]
+
+interface Event {
+    startDate: string;
+    endDate: string;
+    name: string;
+    notes: string;
+    links: Link[];
+}
+
+type Link = {
+    text: string;
+    url: string;
+}
+
+interface CharityEvent extends Event {
+    raised: number;
+    role: Role;
+}
+
+type Role = "Volunteer" | "Organizer";
+
+export const charity: CharityEvent[] = [
+    {
+        name: "The PA League Gives Back 2023",
+        startDate: "2023-03-24",
+        endDate: "2023-03-26",
+        notes: "The PA League will once again take to Sebring International Raceway to drive for 12 hours while raising money for Child's Play",
+        raised: 0,
+        role: "Organizer",
+        links: [
+            {
+                text: "iRacing Events Calendar",
+                url: "https://www.iracing.com/special-events/#"
+            },
+            {
+                text: "Child's Play",
+                url: "https://www.childsplaycharity.org/"
+            },
+        ]
+    },
+    {
+        name: "Draw4Charity + World Builders",
+        startDate: "2023-02-19",
+        endDate: "2023-02-19",
+        notes: "I helped to organize and run the closing segment of the Draw4Charity winter 2023 charity stream.",
+        raised: 10500,
+        role: "Volunteer",
+        links: [
+            {
+                text: "Draw4Charity",
+                url: "https://draw4charity.org/"
+            },
+            {
+                text: "World Builders",
+                url: "https://worldbuilders.org/"
+            },
+            {
+                text: "Tiltify Campaign",
+                url: "https://tiltify.com/@draw4charity/draw4charity-february-2023"
+            }
+        ]
+    },
+    {
+        name: "Draw4Charity + Child's Play",
+        startDate: "2022-07-17",
+        endDate: "2022-07-17",
+        notes: "I helped to organize and run the closing segment of the Draw4Charity summer 2022 charity stream.",
+        raised: 16115.06,
+        role: "Volunteer",
+        links: [
+            {
+                text: "Draw4Charity",
+                url: "https://draw4charity.org/"
+            },
+            {
+                text: "Child's Play",
+                url: "https://www.childsplaycharity.org/"
+            },
+            {
+                text: "Tiltify Campaign",
+                url: "https://tiltify.com/@draw4charity/draw4charity-july-15th-17th-2022"
+            }
+        ]
+    },
+    {
+        name: "The PA League Gives Back 2022",
+        startDate: "2022-03-25",
+        endDate: "2022-03-27",
+        notes: "I organized and helped run a set of charity streams to benefit Child's Play's Gamers Give Back event for 2022",
+        raised: 4382.48,
+        role: "Organizer",
+        links: [
+            {
+                text: "Tiltify Campaign",
+                url: "https://tiltify.com/+pa-league/pa-league-gives-back"
+            },
+            {
+                text: "Event (Twitch VOD)",
+                url: "https://www.twitch.tv/videos/1437596675"
+            }
+        ]
+    },
+    {
+        name: "Draw4Charity + Child's Play",
+        startDate: "2021-07-17",
+        endDate: "2021-07-17",
+        notes: "I helped to organize and run the closing segment of the Draw4Charity summer 2022 charity stream.",
+        raised: 12500.69,
+        role: "Volunteer",
+        links: [
+            {
+                text: "Draw4Charity",
+                url: "https://draw4charity.org/"
+            },
+            {
+                text: "Child's Play",
+                url: "https://www.childsplaycharity.org/"
+            },
+            {
+                text: "Tiltify Campaign",
+                url: "https://tiltify.com/@draw4charity/draw4charity-july-15th-17th-2022"
+            }
+        ]
+    },
+    {
+        name: "PA League Gives Back 2021",
+        startDate: "2021-03-25",
+        endDate: "2021-03-27",
+        notes: "I organized and helped run a set of charity streams to benefit Child's Play's Gamers Give Back event for 2021",
+        raised: 2510,
+        role: "Organizer",
+        links: [
+            {
+                text: "Tiltify Campaign",
+                url: "https://tiltify.com/@cwgabriel/12-hours-of-sebring-for-the-kids"
+            },
+            {
+                text: "Event (Twitch VOD)",
+                url: "https://www.twitch.tv/videos/965530125"
+            }
+        ]
+    }
+]
