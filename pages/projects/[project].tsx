@@ -1,7 +1,7 @@
 import { Button, ButtonContainer, Card, IconButton } from '../../components';
 
 import { useRouter } from 'next/router';
-import { projects, Project, Image, ShortTech, Links } from '../../utils/projects';
+import { projects, Project, Image, ShortTech, Tools } from '../../utils/projects';
 import { useState, useEffect } from 'react';
 
 import { DiCss3, DiHtml5, DiMongodb } from 'react-icons/di';
@@ -28,7 +28,7 @@ const TechIcon = ({ tech, index }: { tech: ShortTech, index: number }) => {
 	}
 
 	return (
-		<div className = "" data-m = "bounce-up" data-m-delay = {(index + 1) * 0.25} ><Button link = {Links[tech]}>{ Icon }</Button></div>
+		<div className = "" data-m = "bounce-up" data-m-delay = {(index + 1) * 0.25} ><Button link = {Tools[tech].link}>{ Icon }</Button></div>
 	)
 }
 

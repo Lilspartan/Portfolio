@@ -29,19 +29,86 @@ interface Section {
 
 export type ShortTech = "next" | "react" | "node" | "html" | "js" | "css" | "tailwind" | "ts" | "mongo" | "socketio" | "electron" | "uikit";
 
-export const Links: {[ key in ShortTech ]?: string} = {
-    "node": "https://nodejs.org/",
-    "next": "https://nextjs.org/",
-    "mongo": "https://mongodb.com/",
-    "react": "https://reactjs.org/",
-    "uikit": "https://getuikit.com/",
-    "socketio": "https://socket.io/",
-    "js": "https://www.javascript.com/",
-    "tailwind": "https://tailwindcss.com/",
-    "ts": "https://www.typescriptlang.org/",
-    "electron": "https://www.electronjs.org/",
-    "html": "https://en.wikipedia.org/wiki/HTML5",
-    "css": "https://www.w3.org/Style/CSS/Overview.en.html",
+export interface Tool {
+    name: string;
+    description: string | null;
+    icon: string | null;
+    link: string;
+}
+
+export const Tools: {[ key in ShortTech ]?: Tool} = {
+    "node": {
+        name: "Node.JS",
+        description: null,
+        icon: null,
+        link: "https://nodejs.org/",
+    },
+    "next": {
+        name: "Next.JS",
+        description: null,
+        icon: null,
+        link: "https://nextjs.org/",
+    },
+    "mongo": {
+        name: "MongoDB",
+        description: null,
+        icon: null,
+        link: "https://mongodb.com/",
+    },
+    "react": {
+        name: "React",
+        description: null,
+        icon: null,
+        link: "https://reactjs.org/",
+    },
+    "uikit": {
+        name: "UIKit",
+        description: null,
+        icon: null,
+        link: "https://getuikit.com/",
+    },
+    "socketio": {
+        name: "Socket.IO",
+        description: null,
+        icon: null,
+        link: "https://socket.io/",
+    },
+    "js": {
+        name: "JavaScript",
+        description: null,
+        icon: null,
+        link: "https://www.javascript.com/",
+    },
+    "tailwind": {
+        name: "Tailwind CSS",
+        description: null,
+        icon: null,
+        link: "https://tailwindcss.com/",
+    },
+    "ts": {
+        name: "TypeScript",
+        description: null,
+        icon: null,
+        link: "https://www.typescriptlang.org/",
+    },
+    "electron": {
+        name: "Electron",
+        description: null,
+        icon: null,
+        link: "https://www.electronjs.org/",
+    },
+    "html": {
+        name: "HTML5",
+        description: null,
+        icon: null,
+        link: "https://en.wikipedia.org/wiki/HTML5",
+    },
+    "css": {
+        name: "CSS3",
+        description: null,
+        icon: null,
+        link: "https://www.w3.org/Style/CSS/Overview.en.html",
+    },
 }
 
 export const projects:(Project | {size: "half", projects: Project[]})[] = [
@@ -441,7 +508,7 @@ export const charity: CharityEvent[] = [
         ]
     },
     {
-        name: "PA League Gives Back 2021",
+        name: "The PA League Gives Back 2021",
         startDate: "2021-03-25",
         endDate: "2021-03-27",
         notes: "I organized and helped run a set of charity streams to benefit Child's Play's Gamers Give Back event for 2021",

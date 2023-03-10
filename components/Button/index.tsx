@@ -17,7 +17,6 @@ type Props = {
 export const Button = ({ delay="0", glow=false, link, type="outline", children, target, className, color="accent", click=()=>{ console.log("clicked") } }:Props) => {
 	const buttonClasses = classnames([
 		"cursor-pointer",
-		"mt-2",
 		"py-2",
 		"px-4",
 		"font-semibold",
@@ -105,7 +104,6 @@ export const Button = ({ delay="0", glow=false, link, type="outline", children, 
 export const IconButton = ({ icon = "external", delay="0", glow=false, link, type="outline", children, target, className, color="accent", click=()=>{ console.log("clicked") } }:Props) => {
 	const buttonClasses = classnames([
 		"cursor-pointer",
-		"mt-2",
 		"py-2",
 		"px-4",
 		"font-semibold",

@@ -15,10 +15,16 @@ const Landing = () => {
 			h-full text-center
 		">
 			<div className = "flex flex-col text-white p-4">
-                <div className = "flex flex-row justify-center mb-2">
-                    <div data-m = "bounce-down mx-2">
-                        <Button link = "/">Go Back</Button>
-                    </div>
+                <div data-m = "bounce-down" className = "" data-m-duration = {animationGap}>
+                    <Card full>
+                        <div className = "flex flex-row justify-between">
+                            <h1 className = "text-center text-4xl font-extrabold">My Projects</h1>
+
+                            <div className = "">
+                                <Button link = "/">Go Back</Button>
+                            </div>
+                        </div>
+                    </Card>
                 </div>
 
                 {projects.map((project, index) => {
@@ -32,7 +38,7 @@ const Landing = () => {
                                             <h1 className = "text-5xl font-extrabold">{ project.name }</h1>
                                             <span className = "text-xl my-8">{ project.description }</span>
                                         </div>
-                                        <div className = "flex flex-col justify-center lg:w-1/6">
+                                        <div className = "flex flex-col justify-center lg:w-1/6 gap-2">
                                             { project.links.site !== null && <IconButton target = "blank" link = {project.links.site}>Visit Site</IconButton> }
                                             { project.links.github !== null && <IconButton target = "blank" link = {project.links.github}>View on Github</IconButton> }
                                             { project.links.info !== null && <Button link = {project.links.info}>More Info</Button> }
@@ -60,7 +66,7 @@ const Landing = () => {
                                                         { p.links.site !== null && <Button type = "icon" target = "blank" link = {p.links.site}>Visit Site</Button> }
                                                         { p.links.info !== null && <Button link = {p.links.info}>More Info</Button> }
                                                     </div>
-                                                    <div className="block">
+                                                    <div className="block mt-2">
                                                         { p.links.github !== null && <Button type = "icon" target = "blank" link = {p.links.github}>View on Github</Button> }
                                                     </div>
                                                 </div>
@@ -73,9 +79,9 @@ const Landing = () => {
                     }
                 })}
 
-                <div data-m = "bounce-down" className = "">
+                <div data-m = "bounce-down" className = "mt-16">
                     <Card full>
-                        <h1 className = "text-center text-4xl font-extrabold">Charity Work</h1>
+                        <h1 className = "text-left text-4xl font-extrabold">Charity Work</h1>
                     </Card>
                 </div>
 
