@@ -407,8 +407,8 @@ type Role = "Volunteer" | "Organizer";
 export const charity: CharityEvent[] = [
     {
         name: "The PA League Gives Back 2023",
-        startDate: "2023-03-24",
-        endDate: "2023-03-26",
+        startDate: "2023-03-25",
+        endDate: "2023-03-25",
         notes: "The PA League will once again take to Sebring International Raceway to drive for 12 hours while raising money for Child's Play",
         raised: 0,
         role: "Organizer",
