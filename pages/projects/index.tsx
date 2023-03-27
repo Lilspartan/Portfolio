@@ -89,7 +89,7 @@ const Landing = () => {
                     {charity.map((event, i) => (
                         <div className = "w-full" data-m = "bounce-down" data-m-delay = "0.5">
                             <Card full>
-                                { new Date(event.startDate) > new Date() ? (
+                                { new Date(event.startDate) > new Date() || event.raised === 0 ? (
                                     <div className = {`flex flex-col justify-between h-full`}>
                                         <div>
                                             <div className = "flex flex-col justify-center py-2">

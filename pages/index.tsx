@@ -68,7 +68,7 @@ const Landing = () => {
 					<Card>
 						<span data-m="reveal-right" data-m-duration="1" data-m-delay="1" className="text-3xl text-white p-4 block text-center">My Name is <span className="text-accent opacity-90 font-bold">Gabe Krahulik</span></span>
 						{/* <img data-m="reveal-down" data-m-duration="0.5" data-m-delay="1.5" src = "/logo.png" className = "w-24 rounded-lg mx-auto mt-2" /> */}
-						<span data-m="reveal-right" data-m-duration="1.5" data-m-delay="1.5" className="text-2xl block text-white p-4 text-center"> a{age === "18" ? "n" : ""} <span className = "text-accent font-bold">{ age }</span> year old web developer from <span className = "text-accent font-bold">Seattle</span></span>
+						<span data-m="reveal-right" data-m-duration="1.5" data-m-delay="1.5" className="text-2xl block text-white p-4 text-center">a{age === "18" ? "n" : ""} <span className = "text-accent font-bold">{ age }</span> year old web developer from <span className = "text-accent font-bold">Seattle</span></span>
 
 						<div className="p-4 mt-2 flex flex-row justify-center" data-m="bounce-up" data-m-delay="2.5" data-m-duration="1">
 							<div className = "w-full lg:w-1/2">

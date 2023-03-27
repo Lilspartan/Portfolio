@@ -407,12 +407,16 @@ type Role = "Volunteer" | "Organizer";
 export const charity: CharityEvent[] = [
     {
         name: "The PA League Gives Back 2023",
-        startDate: "2023-03-25",
-        endDate: "2023-03-25",
+        startDate: "2023-03-26",
+        endDate: "2023-03-26",
         notes: "The PA League will once again take to Sebring International Raceway to drive for 12 hours while raising money for Child's Play",
-        raised: 0,
+        raised: 3384.15,
         role: "Organizer",
         links: [
+            {
+                text: "Tiltify Campaign",
+                url: "https://tiltify.com/+pa-league/pa-league-gives-back-2023"
+            },
             {
                 text: "iRacing Events Calendar",
                 url: "https://www.iracing.com/special-events/#"
