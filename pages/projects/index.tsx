@@ -1,8 +1,4 @@
-import { Button, ButtonContainer, Card, CardHeading, IconButton, Footer } from '../../components';
-
-import { AiFillGithub, AiOutlineTwitter, AiFillLinkedin } from 'react-icons/ai';
-import { SiTailwindcss, SiGmail, SiKofi } from 'react-icons/si'
-import { TbBrandNextjs } from 'react-icons/tb';
+import { Button, Card, IconButton } from '../../components';
 
 import { projects, charity } from '../../utils/projects';
 
