@@ -28,7 +28,7 @@ const TechIcon = ({ tech, index }: { tech: ShortTech, index: number }) => {
 	}
 
 	return (
-		<div className = "" data-m = "bounce-up" data-m-delay = {(index + 1) * 0.25} ><Button link = {Tools[tech].link}>{ Icon }</Button></div>
+		<div className = "" data-m = "bounce-up" data-m-delay = {(index + 1) * 0.25}><Button target = "blank" link = {Tools[tech].link}>{ Icon }</Button></div>
 	)
 }
 
