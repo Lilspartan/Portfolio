@@ -5,7 +5,7 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta charset="utf-8" />
+          <meta charSet="utf-8" />
           <link rel="icon" href="/logo.png" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="theme-color" content="#171C27" />
@@ -15,8 +15,6 @@ export default class MyDocument extends Document {
           />
           <meta name="author" content="Gabe Krahulik" />
           <mets name="keywords" content="web development,gabir motors,pa league,gabe krahulik,portfolio,full stack,back end, front end" />
-          <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-          <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
           <title>Gabe Krahulik | Web Developer</title>
           <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -168,7 +168,6 @@
   Animation styles from https://movement.samalander.dev/
 */
 
-@media not (prefers-reduced-motion) {
   html [data-m] {
     animation-fill-mode: forwards;
     animation-duration: 1.5s;
@@ -1736,4 +1735,3 @@
   }
   
   /*# sourceMappingURL=movement.css.map */
-}

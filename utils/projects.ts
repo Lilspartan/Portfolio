@@ -242,26 +242,22 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                 },
             },
             {
-                name: "Rogue Bananas",
-                description: "A crew of pirates and host of events",
-                logo: "https://roguebananas.net/images/logo_big.png",
-                logoSize: "w-48",
+                name: "Better StudentVue",
+                description: "A project defined by \"Why isn't this already a feature?\"",
+                logo: "/logo.png",
+                logoSize: "w-1/4",
                 size: "full",
-                link: "roguebananas",
+                link: "betterstudentvue",
                 links: {
-                    site: "https://roguebananas.net",
-                    github: "https://github.com/Lilspartan/rogue-bananas",
-                    info: "/projects/roguebananas"
+                    site: "https://better-studentvue.gabekrahulik.dev",
+                    github: null,
+                    info: "/projects/betterstudentvue",
                 },
                 infoPage: {
                     images: [
                         {
-                            url: "/images/projects/roguebananas/screenshot1.png",
-                            alt: "The Rogue Bananas landing page"
-                        },
-                        {
-                            url: "/images/projects/roguebananas/screenshot2.png",
-                            alt: "The Rogue Bananas events schedule"
+                            url: "/images/projects/betterstudentvue/screenshot1.png",
+                            alt: "A screenshot of the home page of Better StudentVue"
                         },
                     ],
                     technologies: [
@@ -272,8 +268,10 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                             ]
                         }
                     ],
-                    description: null,
-                },
+                    description: [
+                        "All I wanted to do was see how doing an assignment would affect my grade, but imagine my surprise when my school's gradebook didn't have that feature! The horror... What was I going to do, well I definitely wasn't going to do my finance homework, the best use of my time would be to make my own version of the gradebook that gives me the features I've always wanted.",
+                    ]
+                }
             },
             {
                 name: "Games",
@@ -313,38 +311,6 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                 },
             }
         ]
-    },
-    {
-        name: "Better StudentVue",
-        description: "A project defined by \"Why isn't this already a feature?\"",
-        logo: "/logo.png",
-        logoSize: "w-1/4",
-        size: "full",
-        link: "betterstudentvue",
-        links: {
-            site: "https://better-studentvue.gabekrahulik.dev",
-            github: null,
-            info: "/projects/betterstudentvue",
-        },
-        infoPage: {
-            images: [
-                {
-                    url: "/images/projects/betterstudentvue/screenshot1.png",
-                    alt: "A screenshot of the home page of Better StudentVue"
-                },
-            ],
-            technologies: [
-                {
-                    name: "All",
-                    short: [
-                        "next", "tailwind", "ts"
-                    ]
-                }
-            ],
-            description: [
-                "All I wanted to do was see how doing an assignment would affect my grade, but imagine my surprise when my school's gradebook didn't have that feature! The horror... What was I going to do, well I definitely wasn't going to do my finance homework, the best use of my time would be to make my own version of the gradebook that gives me the features I've always wanted.",
-            ]
-        }
     },
 ]
 
