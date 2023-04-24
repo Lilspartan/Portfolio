@@ -73,6 +73,12 @@ export const Tools: {[ key in ShortTech ]?: Tool} = {
         icon: null,
         link: "https://www.w3.org/Style/CSS/Overview.en.html",
     },
+    "framer-motion": {
+        name: "Framer Motion",
+        description: null,
+        icon: null,
+        link: "framer.com/motion"
+    }
 }
 
 export const projects:(Project | {size: "half", projects: Project[]})[] = [
@@ -311,6 +317,40 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                 },
             }
         ]
+    },
+    {
+        name: "Beta Gabir Motors Site",
+        description: "A new version of the Gabir Motors website",
+        logo: "https://beta.gabirmotors.com/beta_logo.png",
+        logoSize: "h-20",
+        size: "full",
+        link: "beta-gabir",
+        links: {
+            site: "https://beta.gabirmotors.com",
+            github: "https://github.com/LilSpartan/Gabir-Rebuild",
+            info: "/projects/beta-gabir"
+        },
+        infoPage: {
+            images: [
+                {
+                    url: "/images/projects/beta-gabir/screenshot-1.png",
+                    alt: "The new cover page for the Gabir Motors site"
+                }
+            ],
+            technologies: [
+                {
+                    name: "Website",
+                    short: [
+                        "next", "tailwind", "ts", "framer-motion"
+                    ],
+                }
+            ],
+            description: [
+                "The original Gabir Motors site was the first real project I built using react, and as such I've had to go through the process of updating it multiple times. I made the switch from javascript to typescript after about a year but it was a massive pain.",
+                "A couple years after I built the Gabir Motors site, I started using Next instead of react and I wanted to switch it over to next, but I hadn't touched it in so long that the thought of moving everything over seemed like a nightmare",
+                "so I decided to start from scratch"
+            ]
+        }
     },
 ]
 

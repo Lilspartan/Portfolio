@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 
 import { DiCss3, DiHtml5, DiMongodb } from 'react-icons/di';
 import { SiJavascript, SiTailwindcss, SiTypescript, SiElectron, SiSocketdotio, SiReact, SiNodedotjs, SiUikit } from 'react-icons/si';
-import { TbBrandNextjs } from 'react-icons/tb';
+import { TbBrandNextjs, TbBrandFramerMotion } from 'react-icons/tb';
 
 const TechIcon = ({ tech, index }: { tech: ShortTech, index: number }) => {
 	const classes = "text-xl";
@@ -25,6 +25,7 @@ const TechIcon = ({ tech, index }: { tech: ShortTech, index: number }) => {
 		case "electron": Icon = <SiElectron className = { classes } />; break; 
 		case "tailwind": Icon = <SiTailwindcss className = { classes } />; break;
 		case "socketio": Icon = <SiSocketdotio className = { classes } />; break; 
+		case "framer-motion": Icon = <TbBrandFramerMotion className = { classes} />; break;
 	}
 
 	return (

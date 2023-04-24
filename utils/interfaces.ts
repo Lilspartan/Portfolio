@@ -27,7 +27,7 @@ interface Section {
     short?: ShortTech[];
 }
 
-export type ShortTech = "next" | "react" | "node" | "html" | "js" | "css" | "tailwind" | "ts" | "mongo" | "socketio" | "electron" | "uikit";
+export type ShortTech = "next" | "react" | "node" | "html" | "js" | "css" | "tailwind" | "ts" | "mongo" | "socketio" | "electron" | "uikit" | "framer-motion";
 
 export interface Tool {
     name: string;
