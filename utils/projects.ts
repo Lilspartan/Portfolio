@@ -77,7 +77,7 @@ export const Tools: {[ key in ShortTech ]?: Tool} = {
         name: "Framer Motion",
         description: null,
         icon: null,
-        link: "framer.com/motion"
+        link: "https://framer.com/motion"
     }
 }
 
