@@ -5,6 +5,7 @@ export interface Project {
     logoSize: string;
     size: "full";
     link: string;
+    active: boolean;
     links: {
         site: string | null;
         github: string | null;

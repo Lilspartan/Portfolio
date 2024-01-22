@@ -35,6 +35,7 @@ const Landing = () => {
                                             <span className = "text-xl my-8">{ project.description }</span>
                                         </div>
                                         <div className = "flex flex-col justify-center lg:w-1/6 gap-2">
+                                            <span className = "italic opacity-70">{!project.active && "(No Longer Maintained)"}</span>
                                             { project.links.site !== null && <IconButton target = "blank" link = {project.links.site}>Visit Site</IconButton> }
                                             { project.links.github !== null && <IconButton target = "blank" link = {project.links.github}>View on Github</IconButton> }
                                             { project.links.info !== null && <Button link = {project.links.info}>More Info</Button> }

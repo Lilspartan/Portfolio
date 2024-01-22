@@ -89,6 +89,7 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
         logoSize: "w-1/4",
         size: "full",
         link: "wartools",
+        active: false,
         links: {
             site: "https://wartools.xyz",
             github: null,
@@ -130,10 +131,11 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
     {
         name: "The Pitwall",
         description: "Give your Twitch chat the tools they need to be your pit crew",
-        logo: "https://i.gabirmotors.com/assets/other/pit_wall.png",
+        logo: "https://gabirmotors.com/i/assets/other/pit_wall.png",
         logoSize: "h-20",
         size: "full",
         link: "pitwall",
+        active: false,
         links: {
             site: "https://pitwall.gabirmotors.com",
             github: "https://github.com/LilSpartan/GabirLiveStandings",
@@ -150,7 +152,7 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                     alt: "A screenshot of what the Pit Wall looks like during a race"
                 },
                 {
-                    url: "https://i.gabirmotors.com/assets/other/pit_wall.png",
+                    url: "https://gabirmotors.com/i/assets/other/pit_wall.png",
                     alt: "The Pit Wall logo"
                 }
             ],
@@ -176,10 +178,11 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
     {
         name: "Gabir Motors",
         description: "The world's premiere, pretend motorsports company",
-        logo: "https://i.gabirmotors.com/assets/teams/GM/main.png",
+        logo: "https://gabirmotors.com/i/assets/teams/GM/main.png",
         logoSize: "w-72",
         size: "full",
         link: "gabirmotors",
+        active: true,
         links: {
             site: "https://gabirmotors.com",
             github: "https://github.com/LilSpartan/GabirReactFrontend",
@@ -192,7 +195,7 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                     alt: "The Gabir Motors landing page"
                 },
                 {
-                    url: "https://i.gabirmotors.com/assets/teams/GM/main.png",
+                    url: "https://gabirmotors.com/i/assets/teams/GM/main.png",
                     alt: "The Gabir Motors logo"
                 }
             ],
@@ -219,6 +222,7 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                 logoSize: "w-44",
                 size: "full",
                 link: "portfolio",
+                active: true,
                 links: {
                     site: "https://gabekrahulik.dev",
                     github: "https://github.com/Lilspartan/Portfolio",
@@ -246,6 +250,7 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                 logoSize: "w-1/4",
                 size: "full",
                 link: "betterstudentvue",
+                active: false,
                 links: {
                     site: "https://better-studentvue.gabekrahulik.dev",
                     github: null,
@@ -278,6 +283,7 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                 logoSize: "w-44",
                 size: "full",
                 link: "games",
+                active: true,
                 links: {
                     site: "https://games.gabekrahulik.dev",
                     github: null,
