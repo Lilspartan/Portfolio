@@ -6,10 +6,12 @@ export interface Project {
     size: "full";
     link: string;
     active: boolean;
+    type?: "game" | "web";
     links: {
         site: string | null;
         github: string | null;
         info: string | null;
+        download?: string | null;
     },
     infoPage: {
         images: Image[];
@@ -28,7 +30,7 @@ interface Section {
     short?: ShortTech[];
 }
 
-export type ShortTech = "next" | "react" | "node" | "html" | "js" | "css" | "tailwind" | "ts" | "mongo" | "socketio" | "electron" | "uikit" | "framer-motion";
+export type ShortTech = "next" | "react" | "node" | "html" | "js" | "css" | "tailwind" | "ts" | "mongo" | "socketio" | "electron" | "uikit" | "framer-motion" | "C" | "CPP";
 
 export interface Tool {
     name: string;

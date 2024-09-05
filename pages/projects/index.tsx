@@ -52,7 +52,7 @@ const Landing = () => {
                                         <Card full>
                                             <div className = {`flex flex-col justify-between h-full`}>
                                                 <div>
-                                                    <img src = {p.logo} alt={p.name + " logo"} className = {"w-40 mx-auto my-auto rounded-lg"} />
+                                                    <img src = {p.logo} alt={p.name + " logo"} className = {"h-40 mx-auto my-auto rounded-lg"} />
                                                     <div className = "flex flex-col justify-center py-8">
                                                         <h1 className = "text-4xl font-extrabold">{ p.name }</h1>
                                                         <span className = "text-lg my-8">{ p.description }</span>
@@ -60,7 +60,8 @@ const Landing = () => {
                                                 </div>
                                                 <div className = "flex flex-col justify-center">
                                                     <div className="flex flex-row justify-center gap-2">
-                                                        { p.links.site !== null && <Button type = "icon" target = "blank" link = {p.links.site}>Visit Site</Button> }
+                                                        { p.links.site !== null && <Button type = "icon" target = "blank" link = {p.links.site}>{ (p.type && p.type === "game") ? "View Game" : "Visit Site" }</Button> }
+                                                        { p.links.download && p.links.download !== null && <Button link = {p.links.download}>Download</Button> }
                                                         { p.links.info !== null && <Button link = {p.links.info}>More Info</Button> }
                                                     </div>
                                                     <div className="block mt-2">

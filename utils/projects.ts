@@ -78,55 +78,157 @@ export const Tools: {[ key in ShortTech ]?: Tool} = {
         description: null,
         icon: null,
         link: "https://framer.com/motion"
-    }
+    },
+    "C": {
+        name: "C",
+        description: null,
+        icon: null,
+        link: "https://en.wikipedia.org/wiki/C_(programming_language)"
+    },
+    "CPP": {
+        name: "C++",
+        description: null,
+        icon: null,
+        link: "https://isocpp.org/"
+    },
 }
 
 export const projects:(Project | {size: "half", projects: Project[]})[] = [
     {
-        name: "War Tools",
-        description: "An unofficial companion for Warhammer 40k",
-        logo: "/images/projects/wartools/logo.png",
-        logoSize: "w-1/4",
-        size: "full",
-        link: "wartools",
-        active: false,
-        links: {
-            site: "https://wartools.xyz",
-            github: null,
-            info: "/projects/wartools",
-        },
-        infoPage: {
-            images: [
-                {
-                    url: "/images/projects/wartools/screenshot1.png",
-                    alt: "A screenshot of the roster viewer tool on War Tools"
+        size: "half",
+        projects: [
+            {
+                name: "Wheel Saint: Hellride",
+                description: "A Roguelike Race Through Purgatory",
+                logo: "/images/projects/wheel-saint-hellride/logo.png",
+                logoSize: "w-44",
+                size: "full",
+                type: "game",
+                link: "wheel-saint-hellride",
+                active: true,
+                links: {
+                    site: "https://store.steampowered.com/app/2745150/Wheel_Saint_Hellride/",
+                    github: null,
+                    info: "/projects/wheel-saint-hellride"
                 },
-                {
-                    url: "/images/projects/wartools/screenshot2.png",
-                    alt: "A screenshot of the dataslate tool on War Tools"
-                },
-                {
-                    url: "/images/projects/wartools/screenshot3.png",
-                    alt: "A screenshot of the roster list"
-                },
-                {
-                    url: "https://wartools.xyz/images/header.jpg",
-                    alt: "The War Tools logo"
-                }
-            ],
-            technologies: [
-                {
-                    name: "All",
-                    short: [
-                        "next", "tailwind", "mongo", "ts"
+                infoPage: {
+                    images: [
+                        {
+                            "url": "/images/projects/wheel-saint-hellride/logo.png",
+                            "alt": "The Wheel Saint: Hellride logo"
+                        },
+                        {
+                            url: "/images/projects/wheel-saint-hellride/splash_art.png",
+                            alt: "Steam splash art for Wheel Saint: Hellride"
+                        },
+                    ],
+                    technologies: [
+                        {
+                            name: "All",
+                            short: [
+                                "electron", "js", "html", "css"
+                            ]
+                        }
+                    ],
+                    description: [
+                        "Wheel Saint: Hellride is a rogue-like race through purgatory to rescue lost souls! Drive your car through neverending waves of demons, find lost souls and upgrade your ride!"
                     ],
                 }
-            ],
-            description: [
-                "War Tools was born out of a need for a companion app for Warhammer 40k, I realized that all the existing options either didn't have what I wanted or weren't designed to work on phone screens, so I decided to do it myself.",
-                "War Tools started as just a way to view army lists but quickly evolved into also supporting custom campaign kill teams and I added an account system to sync everything across multiple devices. It went from a summer project to something I'm actively working on to this day."
-            ]
-        }
+            },
+            {
+                name: "Quantum Flux",
+                description: "Race against the clock to prevent a nuclear disaster",
+                logo: "/images/projects/quantum-flux/logo.png",
+                logoSize: "w-44",
+                size: "full",
+                type: "game",
+                link: "quantum-flux",
+                active: true,
+                links: {
+                    site: null,
+                    github: null,
+                    info: "/projects/quantum-flux",
+                    download: "/downloads/quantum-flux/Quantum_Flux_Setup.exe"
+                },
+                infoPage: {
+                    images: [
+                        {
+                            url: "/images/projects/quantum-flux/logo.png",
+                            alt: "The Quantum Flux logo"
+                        },
+                        {
+                            url: "/images/projects/quantum-flux/Screenshot_01.png",
+                            alt: "A screenshot of Quantum Flux"
+                        },
+                        {
+                            url: "/images/projects/quantum-flux/Screenshot_02.png",
+                            alt: "A screenshot of Quantum Flux"
+                        },
+                        {
+                            url: "/images/projects/quantum-flux/Screenshot_03.png",
+                            alt: "A screenshot of Quantum Flux"
+                        },
+                        {
+                            url: "/images/projects/quantum-flux/Screenshot_04.png",
+                            alt: "A screenshot of Quantum Flux"
+                        },
+                        {
+                            url: "/images/projects/quantum-flux/Screenshot_05.png",
+                            alt: "A screenshot of Quantum Flux"
+                        },
+                    ],
+                    technologies: [
+                        {
+                            name: "All",
+                            short: [
+                                "CPP"
+                            ]
+                        }
+                    ],
+                    description: [
+                        "It's your first day on the job at a nuclear power plant, as disaster strikes it's up to you to save the world.",
+                        "Quantum Flux was a game I made in a team for my GAM150 class at DigiPen, I focused mostly on engine and gameplay systems, but also did some work on actual gameplay elements."
+                    ],
+                }
+            },
+            {
+                name: "Gabir Motors",
+                description: "The world's premiere, pretend motorsports company",
+                logo: "https://gabirmotors.com/i/assets/teams/GM/main.png",
+                logoSize: "w-72",
+                size: "full",
+                link: "gabirmotors",
+                active: true,
+                links: {
+                    site: "https://gabirmotors.com",
+                    github: "https://github.com/LilSpartan/GabirReactFrontend",
+                    info: "/projects/gabirmotors"
+                },
+                infoPage: {
+                    images: [
+                        {
+                            url: "/images/projects/beta-gabir/screenshot-1.png",
+                            alt: "The Gabir Motors landing page"
+                        },
+                        {
+                            url: "https://gabirmotors.com/i/assets/teams/GM/main.png",
+                            alt: "The Gabir Motors logo"
+                        }
+                    ],
+                    technologies: [
+                        {
+                            name: "Website",
+                            short: [
+                                "next", "tailwind", "ts", "framer-motion"
+                            ],
+                        }
+                    ],
+                    description: [
+                        "Gabir Motorsports is the world's premiere, pretend motorsports company. Sponsor of the Penny Arcade Racing League, the Gabir Motors website is home to tools for members of the league (like the calendar) and anybody who plays iRacing (the Spec mapping tool)."
+                    ]
+                }
+            },
+        ],
     },
     {
         name: "The Pitwall",
@@ -176,39 +278,48 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
         }
     },
     {
-        name: "Gabir Motors",
-        description: "The world's premiere, pretend motorsports company",
-        logo: "https://gabirmotors.com/i/assets/teams/GM/main.png",
-        logoSize: "w-72",
+        name: "War Tools",
+        description: "An unofficial companion for Warhammer 40k",
+        logo: "/images/projects/wartools/logo.png",
+        logoSize: "w-1/4",
         size: "full",
-        link: "gabirmotors",
-        active: true,
+        link: "wartools",
+        active: false,
         links: {
-            site: "https://gabirmotors.com",
-            github: "https://github.com/LilSpartan/GabirReactFrontend",
-            info: "/projects/gabirmotors"
+            site: "https://wartools.xyz",
+            github: null,
+            info: "/projects/wartools",
         },
         infoPage: {
             images: [
                 {
-                    url: "/images/projects/beta-gabir/screenshot-1.png",
-                    alt: "The Gabir Motors landing page"
+                    url: "/images/projects/wartools/screenshot1.png",
+                    alt: "A screenshot of the roster viewer tool on War Tools"
                 },
                 {
-                    url: "https://gabirmotors.com/i/assets/teams/GM/main.png",
-                    alt: "The Gabir Motors logo"
+                    url: "/images/projects/wartools/screenshot2.png",
+                    alt: "A screenshot of the dataslate tool on War Tools"
+                },
+                {
+                    url: "/images/projects/wartools/screenshot3.png",
+                    alt: "A screenshot of the roster list"
+                },
+                {
+                    url: "https://wartools.xyz/images/header.jpg",
+                    alt: "The War Tools logo"
                 }
             ],
             technologies: [
                 {
-                    name: "Website",
+                    name: "All",
                     short: [
-                        "next", "tailwind", "ts", "framer-motion"
+                        "next", "tailwind", "mongo", "ts"
                     ],
                 }
             ],
             description: [
-                "Gabir Motorsports is the world's premiere, pretend motorsports company. Sponsor of the Penny Arcade Racing League, the Gabir Motors website is home to tools for members of the league (like the calendar) and anybody who plays iRacing (the Spec mapping tool)."
+                "War Tools was born out of a need for a companion app for Warhammer 40k, I realized that all the existing options either didn't have what I wanted or weren't designed to work on phone screens, so I decided to do it myself.",
+                "War Tools started as just a way to view army lists but quickly evolved into also supporting custom campaign kill teams and I added an account system to sync everything across multiple devices. It went from a summer project to something I'm actively working on to this day."
             ]
         }
     },

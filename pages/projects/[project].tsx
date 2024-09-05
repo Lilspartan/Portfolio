@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 
 import { DiCss3, DiHtml5, DiMongodb } from 'react-icons/di';
 import { SiJavascript, SiTailwindcss, SiTypescript, SiElectron, SiSocketdotio, SiReact, SiNodedotjs, SiUikit } from 'react-icons/si';
-import { TbBrandNextjs, TbBrandFramerMotion } from 'react-icons/tb';
+import { TbBrandNextjs, TbBrandFramerMotion, TbBrandCpp } from 'react-icons/tb';
 
 const TechIcon = ({ tech, index }: { tech: ShortTech, index: number }) => {
 	const classes = "text-xl";
@@ -17,6 +17,7 @@ const TechIcon = ({ tech, index }: { tech: ShortTech, index: number }) => {
 		case "html": Icon = <DiHtml5 className = { classes } />; break;
 		case "react": Icon = <SiReact className = { classes } />; break; 
 		case "uikit": Icon = <SiUikit className = { classes } />; break;
+		case "CPP": Icon = <TbBrandCpp className = { classes } />; break;
 		case "mongo": Icon = <DiMongodb className = { classes } />; break;
 		case "js": Icon = <SiJavascript className = { classes } />; break;
 		case "ts": Icon = <SiTypescript className = { classes } />; break;
@@ -26,6 +27,7 @@ const TechIcon = ({ tech, index }: { tech: ShortTech, index: number }) => {
 		case "tailwind": Icon = <SiTailwindcss className = { classes } />; break;
 		case "socketio": Icon = <SiSocketdotio className = { classes } />; break; 
 		case "framer-motion": Icon = <TbBrandFramerMotion className = { classes} />; break;
+		case "C": Icon = <span>C</span>; break;
 	}
 
 	return (
@@ -99,6 +101,7 @@ const WarTools = () => {
 
 												<div data-m = "bounce-right" className = "flex flex-col lg:flex-row justify-center w-full lg:w-1/2 my-auto lg:gap-4">
 													{ project.links.site !== null && <IconButton target = "blank" link = {project.links.site}>Visit Site</IconButton> }
+													{ project.links.download && project.links.download !== null && <IconButton target = "blank" link = {project.links.download}>Download</IconButton> }
 													{ project.links.github !== null && <IconButton target = "blank" link = {project.links.github}>View on Github</IconButton> }
 												</div>
 											</div>
