@@ -29,12 +29,12 @@ const Landing = () => {
                             <div data-m = "bounce-down" data-m-delay = {animationGap * index} data-m-duration = {animationGap * 2}>
                                 <Card>
                                     <div className = {`flex flex-col lg:flex-row gap-8 justify-between`}>
-                                        <img src = {project.logo} alt={project.name + " logo"} className = {"w-1/4 max-h-40 object-contain my-auto rounded-lg object-left"} />
-                                        <div className = "flex flex-col justify-center w-1/2">
+                                        <img src = {project.logo} alt={project.name + " logo"} className = {"lg:w-1/4 max-h-40 object-contain my-auto rounded-lg lg:object-left"} />
+                                        <div className = "flex flex-col justify-center lg:w-1/2">
                                             <h1 className = "text-5xl font-extrabold">{ project.name }</h1>
                                             <span className = "text-xl my-8">{ project.description }</span>
                                         </div>
-                                        <div className = "flex flex-col justify-center lg:w-1/6 gap-2 w-1/4">
+                                        <div className = "flex flex-col justify-center gap-2 lg:w-1/4">
                                             <span className = "italic opacity-70">{!project.active && "(No Longer Maintained)"}</span>
                                             { 
                                                 project.new_links && project.new_links.map((link) => (

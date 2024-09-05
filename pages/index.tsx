@@ -43,7 +43,7 @@ const ContactIcon = ({ contact, index }) => {
 	}
 
 	return (
-		<a className = {`group social ${contact.name}`} data-m-delay={String((Math.abs(Math.ceil(index - (contacts.length / 2)))) * 0.25 + 0.75)} data-m={index < Math.floor(contacts.length / 2) ? "bounce-left" : index > Math.floor(contacts.length / 2) ? "bounce-right" : "bounce-down"} data-m-duration = "0.75" href={contact.link} target="_new">
+		<a aria-label = {`Link to my ${contact.name}`} className = {`group social ${contact.name}`} data-m-delay={String((Math.abs(Math.ceil(index - (contacts.length / 2)))) * 0.25 + 0.75)} data-m={index < Math.floor(contacts.length / 2) ? "bounce-left" : index > Math.floor(contacts.length / 2) ? "bounce-right" : "bounce-down"} data-m-duration = "0.75" href={contact.link} target="_new">
 			{ Icon }
 		</a>
 	)
@@ -83,7 +83,7 @@ const Landing = () => {
 						</div>
 					</Card>
 				</div>
-				<span data-m = "bounce-up" data-m-duration = "0.5" className="absolute bottom-0 m-6 w-auto text-white text-xl font-semibold">Made with <a href="https://nextjs.org/" target="_new"><TbBrandNextjs className="inline text-accent" /></a> and <a href="https://tailwindcss.com/" target="_new"><SiTailwindcss className="inline text-accent" /></a></span>
+				<span data-m = "bounce-up" data-m-duration = "0.5" className="absolute bottom-0 m-6 w-auto text-white text-xl font-semibold">Made with <a aria-label = "Next.js by Vercel" href="https://nextjs.org/" target="_new"><TbBrandNextjs className="inline text-accent" /></a> and <a aria-label = "Tailwind CSS" href="https://tailwindcss.com/" target="_new"><SiTailwindcss className="inline text-accent" /></a></span>
 			</div>
 		</div>
 	)

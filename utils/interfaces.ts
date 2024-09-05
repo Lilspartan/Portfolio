@@ -13,13 +13,12 @@ export interface Project {
         info: string | null;
         download?: string | null;
     },
-    new_links?:
-        {
-            text: string;
-            url: string;
-            external: boolean;
-            type: "block" | "group";
-        }[],
+    new_links?: {
+        text: string;
+        url: string;
+        external: boolean;
+        type: "block" | "group";
+    }[],
     infoPage: {
         images: Image[];
         technologies: Section[];

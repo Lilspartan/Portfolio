@@ -15,6 +15,7 @@ const TechIcon = ({ tech, index }: { tech: ShortTech, index: number }) => {
 	var Icon = <></>
 	
 	switch (tech) {
+		case "C": Icon = <span>C</span>; break;
 		case "css": Icon = <DiCss3 className = { classes } />; break;
 		case "html": Icon = <DiHtml5 className = { classes } />; break;
 		case "react": Icon = <SiReact className = { classes } />; break; 
@@ -29,7 +30,6 @@ const TechIcon = ({ tech, index }: { tech: ShortTech, index: number }) => {
 		case "tailwind": Icon = <SiTailwindcss className = { classes } />; break;
 		case "socketio": Icon = <SiSocketdotio className = { classes } />; break; 
 		case "framer-motion": Icon = <TbBrandFramerMotion className = { classes} />; break;
-		case "C": Icon = <span>C</span>; break;
 	}
 
 	return (
