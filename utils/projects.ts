@@ -106,11 +106,14 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                 type: "game",
                 link: "wheel-saint-hellride",
                 active: true,
-                links: {
-                    site: "https://store.steampowered.com/app/2745150/Wheel_Saint_Hellride/",
-                    github: null,
-                    info: "/projects/wheel-saint-hellride"
-                },
+                new_links: [
+                    {
+                        text: "Steam Page",
+                        url: "https://store.steampowered.com/app/2745150/Wheel_Saint_Hellride/",
+                        external: true,
+                        type: "block"
+                    },
+                ],
                 infoPage: {
                     images: [
                         {
@@ -144,12 +147,14 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                 type: "game",
                 link: "quantum-flux",
                 active: true,
-                links: {
-                    site: null,
-                    github: null,
-                    info: "/projects/quantum-flux",
-                    download: "/downloads/quantum-flux/Quantum_Flux_Setup.exe"
-                },
+                new_links: [
+                    {
+                        text: "Download",
+                        url: "/downloads/quantum-flux/Quantum_Flux_Setup.exe",
+                        external: false,
+                        type: "block"
+                    },
+                ],
                 infoPage: {
                     images: [
                         {
@@ -199,11 +204,20 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                 size: "full",
                 link: "gabirmotors",
                 active: true,
-                links: {
-                    site: "https://gabirmotors.com",
-                    github: "https://github.com/LilSpartan/GabirReactFrontend",
-                    info: "/projects/gabirmotors"
-                },
+                new_links: [
+                    {
+                        text: "Visit Site",
+                        url: "https://gabirmotors.com",
+                        external: true,
+                        type: "block"
+                    },
+                    {
+                        text: "View Source",
+                        url: "https://github.com/Lilspartan/Gabir-Rebuild",
+                        external: true,
+                        type: "group"
+                    }
+                ],
                 infoPage: {
                     images: [
                         {
@@ -238,11 +252,20 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
         size: "full",
         link: "pitwall",
         active: false,
-        links: {
-            site: "https://pitwall.gabirmotors.com",
-            github: "https://github.com/LilSpartan/GabirLiveStandings",
-            info: "/projects/pitwall"
-        },
+        new_links: [
+            {
+                text: "Visit Site",
+                url: "https://pitwall.gabirmotors.com",
+                external: true,
+                type: "block"
+            },
+            {
+                text: "View Source",
+                url: "https://github.com/Lilspartan/GabirLiveStandings",
+                external: true,
+                type: "group"
+            }
+        ],
         infoPage: {
             images: [
                 {
@@ -285,11 +308,6 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
         size: "full",
         link: "wartools",
         active: false,
-        links: {
-            site: "https://wartools.xyz",
-            github: null,
-            info: "/projects/wartools",
-        },
         infoPage: {
             images: [
                 {
@@ -334,11 +352,20 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                 size: "full",
                 link: "portfolio",
                 active: true,
-                links: {
-                    site: "https://gabekrahulik.dev",
-                    github: "https://github.com/Lilspartan/Portfolio",
-                    info: null
-                },
+                new_links: [
+                    {
+                        text: "Visit Site",
+                        url: "/",
+                        external: false,
+                        type: "block"
+                    },
+                    {
+                        text: "View Source",
+                        url: "https://github.com/Lilspartan/Portfolio",
+                        external: true,
+                        type: "group"
+                    }
+                ],
                 infoPage: {
                     images: [
                         
@@ -362,11 +389,14 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                 size: "full",
                 link: "betterstudentvue",
                 active: false,
-                links: {
-                    site: "https://better-studentvue.gabekrahulik.dev",
-                    github: null,
-                    info: "/projects/betterstudentvue",
-                },
+                new_links: [
+                    {
+                        text: "Visit Site",
+                        url: "https://better-studentvue.gabekrahulik.dev",
+                        external: true,
+                        type: "block"
+                    }
+                ],
                 infoPage: {
                     images: [
                         {
@@ -395,11 +425,14 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                 size: "full",
                 link: "games",
                 active: true,
-                links: {
-                    site: "https://games.gabekrahulik.dev",
-                    github: null,
-                    info: "/projects/games"
-                },
+                new_links: [
+                    {
+                        text: "Visit Site",
+                        url: "https://games.gabekrahulik.dev",
+                        external: true,
+                        type: "block"
+                    }
+                ],
                 infoPage: {
                     images: [
                         {

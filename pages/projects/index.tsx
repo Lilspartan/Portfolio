@@ -29,16 +29,31 @@ const Landing = () => {
                             <div data-m = "bounce-down" data-m-delay = {animationGap * index} data-m-duration = {animationGap * 2}>
                                 <Card>
                                     <div className = {`flex flex-col lg:flex-row gap-8 justify-between`}>
-                                        <img src = {project.logo} alt={project.name + " logo"} className = {"lg:h-20 h-full my-auto rounded-lg"} />
-                                        <div className = "flex flex-col justify-center">
+                                        <img src = {project.logo} alt={project.name + " logo"} className = {"w-1/4 max-h-40 object-contain my-auto rounded-lg object-left"} />
+                                        <div className = "flex flex-col justify-center w-1/2">
                                             <h1 className = "text-5xl font-extrabold">{ project.name }</h1>
                                             <span className = "text-xl my-8">{ project.description }</span>
                                         </div>
-                                        <div className = "flex flex-col justify-center lg:w-1/6 gap-2">
+                                        <div className = "flex flex-col justify-center lg:w-1/6 gap-2 w-1/4">
                                             <span className = "italic opacity-70">{!project.active && "(No Longer Maintained)"}</span>
-                                            { project.links.site !== null && <IconButton target = "blank" link = {project.links.site}>Visit Site</IconButton> }
-                                            { project.links.github !== null && <IconButton target = "blank" link = {project.links.github}>View on Github</IconButton> }
-                                            { project.links.info !== null && <Button link = {project.links.info}>More Info</Button> }
+                                            { 
+                                                project.new_links && project.new_links.map((link) => (
+                                                    <Button 
+                                                        type = { link.external ? "icon" : "outline" }
+                                                        link = { link.url }
+                                                        target = {link.external ? "blank" : "new"}
+                                                    >{link.text}</Button>
+                                                ))
+                                            }
+
+                                            {
+                                                project.infoPage.description !== null && (
+                                                    <Button 
+                                                        type = "outline"
+                                                        link = { `/projects/${project.link}` }
+                                                    >More Info</Button>
+                                                )
+                                            }
                                         </div>
                                     </div>
                                 </Card>
@@ -48,11 +63,12 @@ const Landing = () => {
                         return (
                             <div className = "flex flex-col lg:flex-row mb-8">
                                 {project.projects.map((p, i) => (
-                                    <div className = "w-full lg:w-1/3" data-m = "bounce-down" data-m-delay = {animationGap * (index + i) + animationGap} data-m-duration = {animationGap * 2}>
+                                    <div className = "w-full lg:w-1/3" data-m = "bounce-down" data-m-delay = {Number((animationGap * (index + i) + animationGap).toFixed(1))} data-m-duration = {animationGap * 2}>
                                         <Card full>
                                             <div className = {`flex flex-col justify-between h-full`}>
                                                 <div>
-                                                    <img src = {p.logo} alt={p.name + " logo"} className = {"h-40 mx-auto my-auto rounded-lg"} />
+                                                    <img src = {p.logo} alt={p.name + " logo"} className = {"mx-auto my-auto rounded-lg w-full h-40 object-contain"} />
+                                                    
                                                     <div className = "flex flex-col justify-center py-8">
                                                         <h1 className = "text-4xl font-extrabold">{ p.name }</h1>
                                                         <span className = "text-lg my-8">{ p.description }</span>
@@ -60,12 +76,43 @@ const Landing = () => {
                                                 </div>
                                                 <div className = "flex flex-col justify-center">
                                                     <div className="flex flex-row justify-center gap-2">
-                                                        { p.links.site !== null && <Button type = "icon" target = "blank" link = {p.links.site}>{ (p.type && p.type === "game") ? "View Game" : "Visit Site" }</Button> }
-                                                        { p.links.download && p.links.download !== null && <Button link = {p.links.download}>Download</Button> }
-                                                        { p.links.info !== null && <Button link = {p.links.info}>More Info</Button> }
+                                                        { 
+                                                            p.new_links && p.new_links.map((link) => {
+                                                                if (link.type === "group") {
+                                                                    return (
+                                                                        <Button 
+                                                                            type = { link.external ? "icon" : "outline" }
+                                                                            link = { link.url }
+                                                                            target = {link.external ? "blank" : "new"}
+                                                                        >{link.text}</Button>
+                                                                    )
+                                                                }
+                                                            })
+                                                        }
+
+                                                        {
+                                                            p.infoPage.description !== null && (
+                                                                <Button 
+                                                                    type = "outline"
+                                                                    link = { `/projects/${p.link}` }
+                                                                >More Info</Button>
+                                                            )
+                                                        }
                                                     </div>
                                                     <div className="block mt-2">
-                                                        { p.links.github !== null && <Button type = "icon" target = "blank" link = {p.links.github}>View on Github</Button> }
+                                                    { 
+                                                            p.new_links && p.new_links.map((link) => {
+                                                                if (link.type === "block") {
+                                                                    return (
+                                                                        <Button 
+                                                                            type = { link.external ? "icon" : "outline" }
+                                                                            link = {link.url}
+                                                                            target = {link.external ? "blank" : "new"}
+                                                                        >{link.text}</Button>
+                                                                    )
+                                                                }
+                                                            })
+                                                        }
                                                     </div>
                                                 </div>
                                             </div>

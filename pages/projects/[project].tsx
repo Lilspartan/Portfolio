@@ -1,7 +1,9 @@
 import { Button, ButtonContainer, Card, IconButton } from '../../components';
 
+import { Project, Image, ShortTech } from '../../utils/interfaces';
+
 import { useRouter } from 'next/router';
-import { projects, Project, Image, ShortTech, Tools } from '../../utils/projects';
+import { projects, Tools } from '../../utils/projects';
 import { useState, useEffect } from 'react';
 
 import { DiCss3, DiHtml5, DiMongodb } from 'react-icons/di';
@@ -100,9 +102,15 @@ const WarTools = () => {
 												</h1>
 
 												<div data-m = "bounce-right" className = "flex flex-col lg:flex-row justify-center w-full lg:w-1/2 my-auto lg:gap-4">
-													{ project.links.site !== null && <IconButton target = "blank" link = {project.links.site}>Visit Site</IconButton> }
-													{ project.links.download && project.links.download !== null && <IconButton target = "blank" link = {project.links.download}>Download</IconButton> }
-													{ project.links.github !== null && <IconButton target = "blank" link = {project.links.github}>View on Github</IconButton> }
+													{ 
+														project.new_links && project.new_links.map((link) => (
+															<Button 
+																type = { link.external ? "icon" : "outline" }
+																link = { link.url }
+																target = {link.external ? "blank" : "new"}
+															>{link.text}</Button>
+														))
+													}
 												</div>
 											</div>
 

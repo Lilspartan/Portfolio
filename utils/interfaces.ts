@@ -7,12 +7,19 @@ export interface Project {
     link: string;
     active: boolean;
     type?: "game" | "web";
-    links: {
+    links?: {
         site: string | null;
         github: string | null;
         info: string | null;
         download?: string | null;
     },
+    new_links?:
+        {
+            text: string;
+            url: string;
+            external: boolean;
+            type: "block" | "group";
+        }[],
     infoPage: {
         images: Image[];
         technologies: Section[];
