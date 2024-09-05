@@ -99,7 +99,7 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
         projects: [
             {
                 name: "Wheel Saint: Hellride",
-                description: "A Roguelike Race Through Purgatory",
+                description: "A roguelike race through purgatory",
                 logo: "/images/projects/wheel-saint-hellride/logo.png",
                 logoSize: "w-44",
                 size: "full",
