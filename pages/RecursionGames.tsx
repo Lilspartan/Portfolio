@@ -7,7 +7,7 @@ const RecursionGames = () => {
             flex-col
             justify-center
 		">
-			<img src = "/qr.png" className = "rounded-lg mx-auto" />
+			<img src = "/qr.png" className = "rounded-lg mx-auto w-1/3" />
 		</div>
 	)
 }
