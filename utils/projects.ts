@@ -245,6 +245,47 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
         ],
     },
     {
+        name: "War Tools",
+        description: "An unofficial companion for Warhammer 40k",
+        logo: "/images/projects/wartools/logo.png",
+        logoSize: "w-1/4",
+        size: "full",
+        link: "wartools",
+        active: true,
+        infoPage: {
+            images: [
+                {
+                    url: "/images/projects/wartools/screenshot1.png",
+                    alt: "A screenshot of the roster viewer tool on War Tools"
+                },
+                {
+                    url: "/images/projects/wartools/screenshot2.png",
+                    alt: "A screenshot of the dataslate tool on War Tools"
+                },
+                {
+                    url: "/images/projects/wartools/screenshot3.png",
+                    alt: "A screenshot of the roster list"
+                },
+                {
+                    url: "https://wartools.xyz/images/header.jpg",
+                    alt: "The War Tools logo"
+                }
+            ],
+            technologies: [
+                {
+                    name: "All",
+                    short: [
+                        "next", "tailwind", "mongo", "ts"
+                    ],
+                }
+            ],
+            description: [
+                "War Tools was born out of a need for a companion app for Warhammer 40k, I realized that all the existing options either didn't have what I wanted or weren't designed to work on phone screens, so I decided to do it myself.",
+                "War Tools started as just a way to view army lists but quickly evolved into also supporting custom campaign kill teams and I added an account system to sync everything across multiple devices. It went from a summer project to something I'm actively working on to this day."
+            ]
+        }
+    },
+    {
         name: "The Pitwall",
         description: "Give your Twitch chat the tools they need to be your pit crew",
         logo: "https://gabirmotors.com/i/assets/other/pit_wall.png",
@@ -297,47 +338,6 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
             ],
             description: [
                 "The Pit Wall started as a way for Twitch chat to watch the stats of a driver in real time, but after people had seen it I had a few requests to open it up to others, so I created the desktop client which made it super simple for anybody to pick up the Pit Wall and start using it."
-            ]
-        }
-    },
-    {
-        name: "War Tools",
-        description: "An unofficial companion for Warhammer 40k",
-        logo: "/images/projects/wartools/logo.png",
-        logoSize: "w-1/4",
-        size: "full",
-        link: "wartools",
-        active: false,
-        infoPage: {
-            images: [
-                {
-                    url: "/images/projects/wartools/screenshot1.png",
-                    alt: "A screenshot of the roster viewer tool on War Tools"
-                },
-                {
-                    url: "/images/projects/wartools/screenshot2.png",
-                    alt: "A screenshot of the dataslate tool on War Tools"
-                },
-                {
-                    url: "/images/projects/wartools/screenshot3.png",
-                    alt: "A screenshot of the roster list"
-                },
-                {
-                    url: "https://wartools.xyz/images/header.jpg",
-                    alt: "The War Tools logo"
-                }
-            ],
-            technologies: [
-                {
-                    name: "All",
-                    short: [
-                        "next", "tailwind", "mongo", "ts"
-                    ],
-                }
-            ],
-            description: [
-                "War Tools was born out of a need for a companion app for Warhammer 40k, I realized that all the existing options either didn't have what I wanted or weren't designed to work on phone screens, so I decided to do it myself.",
-                "War Tools started as just a way to view army lists but quickly evolved into also supporting custom campaign kill teams and I added an account system to sync everything across multiple devices. It went from a summer project to something I'm actively working on to this day."
             ]
         }
     },
