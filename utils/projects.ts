@@ -259,7 +259,7 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                 external: true,
                 type: "block"
             },
-        ]
+        ],
         infoPage: {
             images: [
                 {
