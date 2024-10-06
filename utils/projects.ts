@@ -252,6 +252,14 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
         size: "full",
         link: "wartools",
         active: true,
+        new_links: [
+            {
+                text: "Visit Site",
+                url: "https://wartools.xyz",
+                external: true,
+                type: "block"
+            },
+        ]
         infoPage: {
             images: [
                 {
