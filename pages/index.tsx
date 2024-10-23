@@ -1,7 +1,7 @@
 import { Button, Card } from '../components';
 
 import { AiFillGithub, AiOutlineTwitter, AiFillLinkedin } from 'react-icons/ai';
-import { SiTailwindcss, SiGmail, SiKofi, SiReplit, SiDiscord } from 'react-icons/si'
+import { SiTailwindcss, SiGmail, SiKofi, SiReplit, SiDiscord, SiBluesky } from 'react-icons/si';
 import { TbBrandNextjs } from 'react-icons/tb';
 import { useState } from 'react';
 
@@ -11,10 +11,10 @@ const contacts = [
 	{ name: "gmail", link: "mailto:gabe@gabekrahulik.dev" },
 	{ name: "linkedin", link: "https://www.linkedin.com/in/gabe-krahulik/" },
 	{ name: "github", link: "https://github.com/Lilspartan" },
+	{ name: "bluesky", link: "https://bsky.app/profile/gabekrahulik.bsky.social" },
 	{ name: "kofi", link: "https://ko-fi.com/gabekrahulik" },
-	{ name: "twitter", link: "https://twitter.com/gabekrahulik" },
 	{ name: "discord", link: "https://discord.com/users/378319931005206530" },
-	{ name: "replit", link: "https://replit.com/@GabeKrahulik" },
+	{ name: "twitter", link: "https://twitter.com/gabekrahulik" },
 ]
 
 const ContactIcon = ({ contact, index }) => {
@@ -36,6 +36,7 @@ const ContactIcon = ({ contact, index }) => {
 		case "twitter": Icon = <AiOutlineTwitter className = {classes} />; break;
 		case "linkedin": Icon = <AiFillLinkedin className = {classes} />; break;
 		case "github": Icon = <AiFillGithub className = {classes} />; break;
+		case "bluesky": Icon = <SiBluesky className = {classes} />; break;
 		case "discord": Icon = <SiDiscord className = {classes} />; break;
 		case "replit": Icon = <SiReplit className = {classes} />; break;
 		case "gmail": Icon = <SiGmail className = {classes} />; break;

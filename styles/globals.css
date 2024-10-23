@@ -142,6 +142,7 @@
 
 .social.linkedin:before { content: "Linkedin"; }
 .social.twitter:before { content: "Twitter"; }
+.social.bluesky:before { content: "Bluesky"; }
 .social.discord:before { content: "Discord"; }
 .social.github:before { content: "Github"; }
 .social.replit:before { content: "Replit"; }
@@ -150,6 +151,7 @@
 
 .social.linkedin:hover:before { @apply text-linkedin; }
 .social.twitter:hover:before { @apply text-twitter; }
+.social.bluesky:hover:before { @apply text-bluesky; }
 .social.discord:hover:before { @apply text-discord; }
 .social.github:hover:before { @apply text-github; }
 .social.replit:hover:before { @apply text-replit; }
@@ -158,6 +160,7 @@
 
 .linkedin { @apply group-hover:text-linkedin; }
 .twitter { @apply group-hover:text-twitter; }
+.bluesky { @apply group-hover:text-bluesky; }
 .discord { @apply group-hover:text-discord; }
 .github { @apply group-hover:text-github; }
 .replit { @apply group-hover:text-replit; }

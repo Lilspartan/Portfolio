@@ -17,7 +17,8 @@ module.exports = {
 				kofi: "#13C3FF",
 				linkedin: "#0077B5",
 				replit: "#F8640A",
-				discord: "#5865F2"
+				discord: "#5865F2",
+				bluesky: "#1185fe",
 			}
 		},
 	},
