@@ -258,7 +258,7 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                 url: "https://wartools.xyz",
                 external: true,
                 type: "block"
-            },
+            }
         ],
         infoPage: {
             images: [
@@ -397,14 +397,7 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                 size: "full",
                 link: "betterstudentvue",
                 active: false,
-                new_links: [
-                    {
-                        text: "Visit Site",
-                        url: "https://better-studentvue.gabekrahulik.dev",
-                        external: true,
-                        type: "block"
-                    }
-                ],
+                new_links: [],
                 infoPage: {
                     images: [
                         {
