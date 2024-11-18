@@ -13,14 +13,21 @@ export const config = {
     const reqBody = req.body;
     const traceString = reqBody.trace;
     
-    webhookClient.send({
-        content: 'New trace file uploaded',
-        files: [
-            new discord.AttachmentBuilder(Buffer.from(traceString, 'utf8'), { name: 'trace.txt' })
-        ]
-    });
+    try {
+        webhookClient.send({
+            content: 'New trace file uploaded',
+            files: [
+                new discord.AttachmentBuilder(Buffer.from(traceString, 'utf8'), { name: 'trace.txt' })
+            ]
+        });
+    } catch (e) {
+        console.error(e);
+        return res.status(500).json({
+            "message": "Error!"
+        });
+    }
 
-    res.status(200).json({
+    return res.status(200).json({
         "message": "Success!"
     })
 };
