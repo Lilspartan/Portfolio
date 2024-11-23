@@ -11,7 +11,7 @@ const contacts = [
 	{ name: "gmail", link: "mailto:gabe@gabekrahulik.dev" },
 	{ name: "linkedin", link: "https://www.linkedin.com/in/gabe-krahulik/" },
 	{ name: "github", link: "https://github.com/Lilspartan" },
-	{ name: "bluesky", link: "https://bsky.app/profile/gabekrahulik.bsky.social" },
+	{ name: "bluesky", link: "https://bsky.app/profile/gabekrahulik.dev" },
 	{ name: "kofi", link: "https://ko-fi.com/gabekrahulik" },
 	{ name: "discord", link: "https://discord.com/users/378319931005206530" },
 	{ name: "twitter", link: "https://twitter.com/gabekrahulik" },
