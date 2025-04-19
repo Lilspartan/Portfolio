@@ -24,6 +24,7 @@ export interface Project {
         technologies: Section[];
         description: string[] | null;
     } | null;
+    trailer?: string
 }
 
 export interface Image {

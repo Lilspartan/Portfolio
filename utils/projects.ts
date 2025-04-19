@@ -95,6 +95,60 @@ export const Tools: {[ key in ShortTech ]?: Tool} = {
 
 export const projects:(Project | {size: "half", projects: Project[]})[] = [
     {
+        name: "Forge Fiasco",
+        description: "A co-op party game centered around managing a blacksmith",
+        logo: "/images/projects/forge-fiasco/logo.png",
+        logoSize: "w-1/4",
+        size: "full",
+        link: "forge-fiasco",
+        trailer: "https://www.youtube.com/embed/DMdii-rpamE",
+        active: true,
+        new_links: [
+            {
+                text: "Download",
+                url: "/downloads/forge-fiasco/forgefiasco_setup.exe",
+                external: false,
+                type: "block"
+            },
+        ],
+        infoPage: {
+            images: [
+                {
+                    url: "/images/projects/forge-fiasco/logo.png",
+                    alt: "The Forge Fiasco logo"
+                },
+                {
+                    url: "/images/projects/forge-fiasco/screenshot_1.jpg",
+                    alt: "A screenshot of Forge Fiasco gamplay"
+                },
+                {
+                    url: "/images/projects/forge-fiasco/screenshot_2.jpg",
+                    alt: "A screenshot of the lobby menu of Forge Fiasco"
+                },
+                {
+                    url: "/images/projects/forge-fiasco/screenshot_3.jpg",
+                    alt: "A screenshot of Forge Fiasco gamplay"
+                },
+                {
+                    url: "/images/projects/forge-fiasco/Recursion Games Alt Dark.png",
+                    alt: "The Recursion Games team logo"
+                }
+            ],
+            technologies: [
+                {
+                    name: "All",
+                    short: [
+                        "CPP"
+                    ],
+                }
+            ],
+            description: [
+                "Forge Fiasco is a co-op party game centered around being a blacksmith and managing your own forge. The overall objective of the game is to survive the onslaught of customers while keeping your reputation high, since if your reputation falls below the threshold your forge will be closed. You can tackle the challenge alone or have 3 other friends join you on your journey as you battle against time and customer satisfaction. The main idea for this game is to be a fun and chaotic party game where casual and competitive gamers can unite to try and be the top forge managers.",
+                "Forge Fiasco was a game I worked on in a team of 5 for my GAM200/250 classes at DigiPen. Over the two semesters, we had to create a custom engine through to an MVP, then use that engine to create our game."
+            ]
+        }
+    },
+    {
         size: "half",
         projects: [
             {
@@ -147,6 +201,7 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                 type: "game",
                 link: "quantum-flux",
                 active: true,
+                trailer: "https://www.youtube.com/embed/-70nSf9X30Q",
                 new_links: [
                     {
                         text: "Download",

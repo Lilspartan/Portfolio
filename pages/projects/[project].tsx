@@ -88,6 +88,10 @@ const WarTools = () => {
 									project.infoPage !== null ? (
 										<div className = "text-white">
 											<div id = "images" className = "flex flex-row gap-8 overflow-x-scroll no-scrollbar">
+												{ project.trailer && (
+													<iframe className = "h-52 aspect-video" src={`${project.trailer}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+												)}
+
 												{ project.infoPage.images.map((image, i) => (
 													<img data-m = "bounce-down" data-m-delay = {0.1 * i} data-m-duration = "0.75" onClick = {() => {
 														setLightBoxImage(image);
@@ -121,7 +125,7 @@ const WarTools = () => {
 											</div>
 
 											<div>
-												<h2 className = "text-left text-xl font-bold" data-m = "bounce-down" data-m-duration = "0.5">What Did I Use?</h2>
+												<h2 className = "text-left text-xl font-bold" data-m = "bounce-down" data-m-duration = "0.5">Technologies Used</h2>
 												
 												<div className="my-2 text-left flex flex-col lg:flex-row gap-8 mb-8 lg:mb-0">
 													{ project.infoPage.technologies.map((section, i) => (
