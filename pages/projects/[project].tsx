@@ -82,12 +82,12 @@ const WarTools = () => {
 			">
 				<div className="grid place-items-center text-center min-h-screen text-white">
 					{project !== null ? (
-						<div className = "lg:p-8">
+						<div className = "lg:p-8 w-screen">
 							<Card>
 								{
 									project.infoPage !== null ? (
 										<div className = "text-white">
-											<div id = "images" className = "flex flex-row gap-8 overflow-x-scroll no-scrollbar">
+											<div id = "images" className = "flex flex-row gap-8 overflow-x-scroll pb-4">
 												{ project.trailer && (
 													<iframe className = "h-52 aspect-video" src={`${project.trailer}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 												)}
