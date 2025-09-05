@@ -104,12 +104,7 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
         trailer: "https://www.youtube.com/embed/DMdii-rpamE",
         active: true,
         new_links: [
-            {
-                text: "Download",
-                url: "/downloads/forge-fiasco/forgefiasco_setup.exe",
-                external: false,
-                type: "block"
-            },
+
         ],
         infoPage: {
             images: [
@@ -203,12 +198,7 @@ export const projects:(Project | {size: "half", projects: Project[]})[] = [
                 active: true,
                 trailer: "https://www.youtube.com/embed/-70nSf9X30Q",
                 new_links: [
-                    {
-                        text: "Download",
-                        url: "/downloads/quantum-flux/Quantum_Flux_Setup.exe",
-                        external: false,
-                        type: "block"
-                    },
+                    
                 ],
                 infoPage: {
                     images: [
