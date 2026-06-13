@@ -149,10 +149,12 @@ const Landing = () => {
                     <div className="flex flex-col gap-6">
                         <div>
                             <h3 className="text-sm font-bold text-white/40 mb-3 tracking-widest uppercase">Education</h3>
-                            <div className="flex flex-wrap gap-2">
-                                <span className="text-white/60 px-3 py-1 text-xs font-semibold tracking-wider uppercase">
-                                    BS in Computer Science | <a href="https://www.digipen.edu/" target = "_blank" className = "text-accent/80 hover:text-accent transition-all duration-200 underline">DigiPen Institute of Technology</a>, 2023 - 2027
-                                </span>
+                            <div className="border border-white/10 p-4">
+                                <p className="text-white font-semibold text-base">BS in Computer Science</p>
+                                <a href="https://www.digipen.edu/" target="_blank" className="text-accent/80 hover:text-accent transition-all duration-200 text-sm mt-0.5 block">
+                                    DigiPen Institute of Technology
+                                </a>
+                                <p className="text-white/40 text-xs mt-1 tracking-wider">2023 – 2027</p>
                             </div>
                         </div>
                         <div>

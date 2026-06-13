@@ -158,8 +158,8 @@ export const projects: Project[] = [
         ],
         detail: {
             images: [
-                { url: "/images/projects/wheel-saint-hellride/logo.png", alt: "The Wheel Saint: Hellride logo" },
                 { url: "/images/projects/wheel-saint-hellride/splash_art.png", alt: "Steam splash art for Wheel Saint: Hellride" },
+                { url: "/images/projects/wheel-saint-hellride/logo.png", alt: "The Wheel Saint: Hellride logo" },
             ],
             tech: [{ name: "All", short: ["electron", "js", "html", "css"] }],
             paragraphs: [
@@ -203,10 +203,10 @@ export const projects: Project[] = [
         ],
         detail: {
             images: [
+                { url: "/images/projects/wartools/logo.png", alt: "The War Tools logo" },
                 { url: "/images/projects/wartools/screenshot1.png", alt: "A screenshot of the roster viewer tool on War Tools" },
                 { url: "/images/projects/wartools/screenshot2.png", alt: "A screenshot of the dataslate tool on War Tools" },
                 { url: "/images/projects/wartools/screenshot3.png", alt: "A screenshot of the roster list" },
-                { url: "/images/projects/wartools/logo.png", alt: "The War Tools logo" },
             ],
             tech: [{ name: "All", short: ["next", "tailwind", "mongo", "ts"] }],
             paragraphs: [
@@ -289,8 +289,8 @@ export const projects: Project[] = [
         ],
         detail: {
             images: [
-                { url: "/images/projects/pitwall/screenshot1.png", alt: "A screenshot of the Pit Wall desktop app" },
                 { url: "/images/projects/pitwall/screenshot2.png", alt: "A screenshot of what the Pit Wall looks like during a race" },
+                { url: "/images/projects/pitwall/screenshot1.png", alt: "A screenshot of the Pit Wall desktop app" },
                 { url: "https://gabirmotors.com/i/assets/other/pit_wall.png", alt: "The Pit Wall logo" },
             ],
             tech: [
