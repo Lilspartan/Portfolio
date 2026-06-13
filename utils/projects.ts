@@ -199,14 +199,14 @@ export const projects: Project[] = [
         featured: false,
         tech: ["next", "tailwind", "mongo", "ts"],
         links: [
-            { text: "Visit Site", url: "https://wartools.xyz", external: true },
+            // { text: "Visit Site", url: "https://wartools.xyz", external: true },
         ],
         detail: {
             images: [
                 { url: "/images/projects/wartools/screenshot1.png", alt: "A screenshot of the roster viewer tool on War Tools" },
                 { url: "/images/projects/wartools/screenshot2.png", alt: "A screenshot of the dataslate tool on War Tools" },
                 { url: "/images/projects/wartools/screenshot3.png", alt: "A screenshot of the roster list" },
-                { url: "https://wartools.xyz/images/header.jpg", alt: "The War Tools logo" },
+                { url: "/images/projects/wartools/logo.png", alt: "The War Tools logo" },
             ],
             tech: [{ name: "All", short: ["next", "tailwind", "mongo", "ts"] }],
             paragraphs: [

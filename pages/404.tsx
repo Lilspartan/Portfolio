@@ -1,15 +1,7 @@
-import { Button, Card } from '../components';
+import { Button } from '../components';
 import { AiFillGithub, AiOutlineTwitter, AiFillLinkedin } from 'react-icons/ai';
-import { SiTailwindcss, SiGmail, SiKofi, SiReplit, SiDiscord, SiBluesky,
-         SiJavascript, SiTypescript, SiElectron, SiSocketdotio, SiReact, SiNodedotjs, SiUikit } from 'react-icons/si';
-import { TbBrandNextjs, TbBrandCpp, TbBrandFramerMotion } from 'react-icons/tb';
-import { DiCss3, DiHtml5, DiMongodb } from 'react-icons/di';
-import { useState } from 'react';
+import { SiGmail, SiKofi, SiReplit, SiDiscord, SiBluesky } from 'react-icons/si';
 import classNames from 'classnames';
-import { projects, charity } from '../utils/projects';
-import { ShortTech } from '../utils/interfaces';
-
-const OPEN_TO_WORK = false;
 
 const contacts = [
     { name: "gmail",    link: "mailto:gabe@gabekrahulik.dev" },
@@ -20,42 +12,6 @@ const contacts = [
     { name: "discord",  link: "https://discord.com/users/378319931005206530" },
     { name: "twitter",  link: "https://twitter.com/gabekrahulik" },
 ];
-
-const technologies = [
-    "Next.js", "TypeScript", "React", "Tailwind CSS",
-    "Node.js", "MongoDB", "JavaScript", "C++", "Electron", "Socket.IO",
-];
-
-const disciplines = [
-    "Full-Stack Development",
-    "Systems Programming",
-    "Real-Time Networking",
-    "Game Engine Development",
-    "Software Architecture",
-    "Cross-Platform Apps",
-];
-
-const SmallTechIcon = ({ tech }: { tech: ShortTech }) => {
-    const cls = "text-base text-white/70";
-    switch (tech) {
-        case "C":             return <span className = {cls}>C</span>;
-        case "css":           return <DiCss3 className = {cls} />;
-        case "html":          return <DiHtml5 className = {cls} />;
-        case "react":         return <SiReact className = {cls} />;
-        case "uikit":         return <SiUikit className = {cls} />;
-        case "CPP":           return <TbBrandCpp className = {cls} />;
-        case "mongo":         return <DiMongodb className = {cls} />;
-        case "js":            return <SiJavascript className = {cls} />;
-        case "ts":            return <SiTypescript className = {cls} />;
-        case "node":          return <SiNodedotjs className = {cls} />;
-        case "next":          return <TbBrandNextjs className = {cls} />;
-        case "electron":      return <SiElectron className = {cls} />;
-        case "tailwind":      return <SiTailwindcss className = {cls} />;
-        case "socketio":      return <SiSocketdotio className = {cls} />;
-        case "framer-motion": return <TbBrandFramerMotion className = {cls} />;
-        default:              return null;
-    }
-};
 
 const ContactIcon = ({ contact, index }: { contact: typeof contacts[0]; index: number }) => {
     const classes = classNames([
@@ -96,14 +52,17 @@ const NotFound = () => {
 
             <section id="hero" className = "relative grid place-items-center text-center px-4 pt-16 mt-32">
                 <div data-m="drop" data-m-delay="0.5">
-                    <span data-m="reveal-right" data-m-duration="1" data-m-delay="1" className = "text-3xl text-white p-4 block text-center">
+                    <span className = "text-3xl text-white p-4 block text-center">
                         <h1 className = "gradient-name font-bold text-6xl">404</h1>
                         <h2 className = "text-4xl">That page does not exist</h2>
                     </span>
+                    <div className="w-auto h-auto">
+                        <Button link="/#projects" type="outline" glow>View my Projects</Button>
+                    </div>
                 </div>
             </section>
 
-            <section id="contact" className = "py-24 px-4 text-center">
+            <section data-m="drop" id="contact" className = "py-24 px-4 text-center">
                 <h2 className = "text-3xl font-extrabold text-white mb-2">Get in Touch</h2>
                 <p className = "text-white/40 mb-4">Open to new opportunities and collaborations.</p>
                 <div className = "text-white flex flex-row flex-wrap justify-center gap-1 lg:gap-4">
