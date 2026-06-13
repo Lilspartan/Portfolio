@@ -17,11 +17,9 @@ export const Card = (props: Props) => {
 						bg-primary
 						p-8
 						shadow-2xl
-						m-4
 						transition
 						duration-300
 						border border-transparent
-						hover:-translate-y-1
 						hover:shadow-[0_0_25px_rgba(192,132,252,0.2)]
 						hover:border-accent/30
 						${props.full && "h-full"}
