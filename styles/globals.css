@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 html {
   background:
@@ -19,8 +19,17 @@ html {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  /* font-family: 'Oxygen', sans-serif; */
-  /* letter-spacing: 0.01ch; */
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+@keyframes nav-in {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+.nav-animate {
+  animation: nav-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes gradient-shift {
@@ -125,28 +134,20 @@ html {
 }
 
 .button.icon:before {
-	content: "\f08e";
-	font-family: FontAwesome;
-	font-size: 15px;
-	position: absolute;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	right: 5px;
-	top: 0;
-	opacity: 0;
-	height: 100%;
-	width: 40px;
-	transition: all 0.1s linear 0s;
-}
-  
-.button.icon:hover {
-	text-indent: -20px;
+  content: "↗";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%) translateX(4px);
+  opacity: 0;
+  font-size: 13px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
 }
 
 .button.icon:hover:before {
-	opacity: 1;
-	text-indent: 0px;
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
 }
 
 .social {
