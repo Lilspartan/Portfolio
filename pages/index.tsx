@@ -151,7 +151,7 @@ const Landing = () => {
                             <h3 className="text-sm font-bold text-white/40 mb-3 tracking-widest uppercase">Education</h3>
                             <div className="flex flex-wrap gap-2">
                                 <span className="text-white/60 px-3 py-1 text-xs font-semibold tracking-wider uppercase">
-                                    BS in Computer Science | <a href="https://www.digipen.edu/" target = "_blank" className = "text-accent/80 hover:text-accent transition-all duration-200 underline">DigiPen Institute of Technology</a>, 2022 - 2027
+                                    BS in Computer Science | <a href="https://www.digipen.edu/" target = "_blank" className = "text-accent/80 hover:text-accent transition-all duration-200 underline">DigiPen Institute of Technology</a>, 2023 - 2027
                                 </span>
                             </div>
                         </div>
