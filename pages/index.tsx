@@ -124,7 +124,7 @@ const Landing = () => {
                                 <Button link="/#projects" type="outline" glow>View my Projects</Button>
                             </div>
                             <div className="w-full lg:w-1/4">
-                                <Button link="/Resume.pdf" type="outline" target="blank">Resume</Button>
+                                <Button link="/resume.pdf" type="outline" target="blank">Resume</Button>
                             </div>
                         </div>
                         <div className="text-white flex flex-row flex-wrap lg:flex-nowrap justify-center gap-1 lg:gap-4 mx-2 lg:mx-8">
