@@ -21,9 +21,25 @@ const contacts = [
     { name: "twitter",  link: "https://twitter.com/gabekrahulik" },
 ];
 
+const experience = [
+    {
+        role: "Teaching Assistant — GAM200",
+        link: "https://www.digipen.edu",
+        subtitle: "Sophomore Game Project, DigiPen Institute of Technology",
+        dates: "Fall 2025 – Spring 2026",
+    },
+    {
+        role: "Teaching Assistant — CS260",
+        link: "https://www.digipen.edu",
+        subtitle: "Computer Networks I, DigiPen Institute of Technology",
+        dates: "Summer 2026",
+    },
+];
+
 const technologies = [
+    "Docker", "Redis", "HTML/CSS",
     "Next.js", "TypeScript", "React", "Tailwind CSS",
-    "Node.js", "MongoDB", "JavaScript", "C++", "Electron", "Socket.IO",
+    "Bun", "Node.js", "MongoDB", "JavaScript", "C/C++", "Electron", "Socket.IO",
 ];
 
 const disciplines = [
@@ -83,7 +99,7 @@ const ContactIcon = ({ contact, index }: { contact: typeof contacts[0]; index: n
             data-m={index < Math.floor(contacts.length / 2) ? "bounce-left" : index > Math.floor(contacts.length / 2) ? "bounce-right" : "bounce-down"}
             data-m-duration="0.75"
             href={contact.link}
-            target="_new"
+            target="_blank"
         >
             {Icon}
         </a>
@@ -147,6 +163,20 @@ const Landing = () => {
                         I'm a developer from Seattle building games and web apps. I love working across the full stack and have found that same passion extend across to the world of game development. I try to stick close to my roots with network programming and engine architecture but enjoy anything that I can see people enjoy!
                     </p>
                     <div className="flex flex-col gap-6">
+                        <div>
+                            <h3 className="text-sm font-bold text-white/40 mb-3 tracking-widest uppercase">Experience</h3>
+                            <div className="flex flex-col gap-3">
+                                {experience.map((e) => (
+                                    <div key={e.role} className="border border-white/10 p-4">
+                                        <p className="text-white font-semibold text-base">{e.role}</p>
+                                        <a href={e.link} target="_blank" className="text-accent/80 hover:text-accent transition-all duration-200 text-sm mt-0.5 block">
+                                            {e.subtitle}
+                                        </a>
+                                        <p className="text-white/40 text-xs mt-1 tracking-wider">{e.dates}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                         <div>
                             <h3 className="text-sm font-bold text-white/40 mb-3 tracking-widest uppercase">Education</h3>
                             <div className="border border-white/10 p-4">

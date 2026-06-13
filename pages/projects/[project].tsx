@@ -51,9 +51,16 @@ const ProjectPage = () => {
 	const req = useRouter();
 
 	useEffect(() => {
+		if (!req.isReady) return;
 		const found = projects.find(p => p.link === req.query.project) || null;
 		setProject(found);
 	}, [req]);
+
+	useEffect(() => {
+		const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setLightBoxImage(null); };
+		window.addEventListener("keydown", onKey);
+		return () => window.removeEventListener("keydown", onKey);
+	}, []);
 
 	return (
 		<>
@@ -69,27 +76,25 @@ const ProjectPage = () => {
 			)}
 
 			<div className="bg-background min-h-screen text-white">
-				{project !== null ? (
+				{!req.isReady ? (
+					<div className="min-h-screen" />
+				) : project !== null ? (
 					<>
 						{project.detail !== null ? (
 							<>
 								<section className="py-16 mt-16 px-4 max-w-4xl mx-auto">
+									<a href="/#projects" className="inline-flex items-center gap-1 text-white/40 hover:text-white/70 text-sm transition duration-200 mb-6 block">
+										← Projects
+									</a>
 									<div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
-										<h1 data-m="bounce-left" className="text-4xl font-extrabold text-white border-l-4 border-accent pl-4 flex flex-wrap items-center gap-3">
-											{project.name}
-											{!project.active && (
-												<span className="text-sm font-semibold bg-accent text-primary py-1 px-2">Inactive</span>
-											)}
-										</h1>
-										<div data-m="bounce-right" className="flex flex-col sm:flex-row gap-2 lg:justify-end lg:min-w-48">
-											{project.links.map((link) => (
-												<Button
-													key={link.text}
-													type={link.external ? "icon" : "outline"}
-													link={link.url}
-													target={link.external ? "blank" : "new"}
-												>{link.text}</Button>
-											))}
+										<div className="flex items-center gap-4">
+											<img src={project.logo} alt={project.name + " logo"} className="h-12 object-contain" />
+											<h1 data-m="bounce-left" className="text-4xl font-extrabold text-white border-l-4 border-accent pl-4 flex flex-wrap items-center gap-3">
+												{project.name}
+												{!project.active && (
+													<span className="text-sm font-semibold bg-accent text-primary py-1 px-2">Inactive</span>
+												)}
+											</h1>
 										</div>
 									</div>
 								</section>

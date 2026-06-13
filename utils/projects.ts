@@ -146,24 +146,20 @@ export const projects: Project[] = [
         },
     },
     {
-        name: "Wheel Saint: Hellride",
+        name: "Kregs Toolbox",
         description: "A roguelike race through purgatory",
-        logo: "/images/projects/wheel-saint-hellride/logo.png",
-        link: "wheel-saint-hellride",
+        logo: "/images/projects/kregs-toolbox/logo.png",
+        link: "kregs-toolbox",
         active: true,
         featured: false,
-        tech: ["electron", "js", "html", "css"],
-        links: [
-            { text: "Steam Page", url: "https://store.steampowered.com/app/2745150/Wheel_Saint_Hellride/", external: true },
-        ],
+        tech: ["CPP"],
+        links: [],
         detail: {
-            images: [
-                { url: "/images/projects/wheel-saint-hellride/splash_art.png", alt: "Steam splash art for Wheel Saint: Hellride" },
-                { url: "/images/projects/wheel-saint-hellride/logo.png", alt: "The Wheel Saint: Hellride logo" },
-            ],
-            tech: [{ name: "All", short: ["electron", "js", "html", "css"] }],
+            trailer: "https://www.youtube.com/embed/5XQm3lwc3t8",
+            images: [],
+            tech: [{ name: "All", short: ["CPP"] }],
             paragraphs: [
-                "Wheel Saint: Hellride is a rogue-like race through purgatory to rescue lost souls! Drive your car through neverending waves of demons, find lost souls and upgrade your ride!"
+                ""
             ],
         },
     },
@@ -234,6 +230,28 @@ export const projects: Project[] = [
         },
     },
     {
+        name: "Wheel Saint: Hellride",
+        description: "A roguelike race through purgatory",
+        logo: "/images/projects/wheel-saint-hellride/logo.png",
+        link: "wheel-saint-hellride",
+        active: true,
+        featured: false,
+        tech: ["electron", "js", "html", "css"],
+        links: [
+            { text: "Steam Page", url: "https://store.steampowered.com/app/2745150/Wheel_Saint_Hellride/", external: true },
+        ],
+        detail: {
+            images: [
+                { url: "/images/projects/wheel-saint-hellride/splash_art.png", alt: "Steam splash art for Wheel Saint: Hellride" },
+                { url: "/images/projects/wheel-saint-hellride/logo.png", alt: "The Wheel Saint: Hellride logo" },
+            ],
+            tech: [{ name: "All", short: ["electron", "js", "html", "css"] }],
+            paragraphs: [
+                "Wheel Saint: Hellride is a rogue-like race through purgatory to rescue lost souls! Drive your car through neverending waves of demons, find lost souls and upgrade your ride!"
+            ],
+        },
+    },
+    {
         name: "Better StudentVue",
         description: "A project defined by \"Why isn't this already a feature?\"",
         logo: "/logo.png",
@@ -249,29 +267,6 @@ export const projects: Project[] = [
             tech: [{ name: "All", short: ["next", "tailwind", "ts"] }],
             paragraphs: [
                 "All I wanted to do was see how doing an assignment would affect my grade, but imagine my surprise when my school's gradebook didn't have that feature! The horror... What was I going to do, well I definitely wasn't going to do my finance homework, the best use of my time would be to make my own version of the gradebook that gives me the features I've always wanted.",
-            ],
-        },
-    },
-    {
-        name: "Games",
-        description: "Recreating games to relearn vanilla JS",
-        logo: "/images/projects/games/logo.png",
-        link: "games",
-        active: true,
-        featured: false,
-        tech: ["html", "css", "js"],
-        links: [
-            { text: "Visit Site", url: "https://games.gabekrahulik.dev", external: true },
-        ],
-        detail: {
-            images: [
-                { url: "/images/projects/games/screenshot1.png", alt: "Tetris" },
-                { url: "/images/projects/games/logo.png", alt: "Games logo" },
-            ],
-            tech: [{ name: "All", short: ["html", "css", "js"] }],
-            paragraphs: [
-                "This is the project I've had the most fun with so far, it started as a school project where I had to build Minesweeper, and then I kept making other games.",
-                "Most of the games are buggy or unfinished, but that's because this is less of an attempt at an accurate recreation and more just to make sure my vanilla JS skills are still intact after using so many frameworks"
             ],
         },
     },
@@ -299,6 +294,29 @@ export const projects: Project[] = [
             ],
             paragraphs: [
                 "The Pit Wall started as a way for Twitch chat to watch the stats of a driver in real time, but after people had seen it I had a few requests to open it up to others, so I created the desktop client which made it super simple for anybody to pick up the Pit Wall and start using it."
+            ],
+        },
+    },
+    {
+        name: "Games",
+        description: "Recreating games to relearn vanilla JS",
+        logo: "/images/projects/games/logo.png",
+        link: "games",
+        active: true,
+        featured: false,
+        tech: ["html", "css", "js"],
+        links: [
+            { text: "Visit Site", url: "https://games.gabekrahulik.dev", external: true },
+        ],
+        detail: {
+            images: [
+                { url: "/images/projects/games/screenshot1.png", alt: "Tetris" },
+                { url: "/images/projects/games/logo.png", alt: "Games logo" },
+            ],
+            tech: [{ name: "All", short: ["html", "css", "js"] }],
+            paragraphs: [
+                "This is the project I've had the most fun with so far, it started as a school project where I had to build Minesweeper, and then I kept making other games.",
+                "Most of the games are buggy or unfinished, but that's because this is less of an attempt at an accurate recreation and more just to make sure my vanilla JS skills are still intact after using so many frameworks"
             ],
         },
     },
