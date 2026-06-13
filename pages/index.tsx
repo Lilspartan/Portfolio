@@ -71,9 +71,12 @@ const Landing = () => {
 						{/* <img data-m="reveal-down" data-m-duration="0.5" data-m-delay="1.5" src = "/logo.png" className = "w-24 rounded-lg mx-auto mt-2" /> */}
 						<span data-m="reveal-right" data-m-duration="1.5" data-m-delay="1.5" className="text-2xl block text-white p-4 text-center">a{age === "18" ? "n" : ""} <span className = "text-accent font-bold">{ age }</span> year old developer from <span className = "text-accent font-bold">Seattle</span></span>
 
-						<div className="p-4 mt-2 flex flex-row justify-center" data-m="bounce-up" data-m-delay="2.5" data-m-duration="1">
+						<div className="p-4 mt-2 flex flex-row justify-center gap-2" data-m="bounce-up" data-m-delay="2.5" data-m-duration="1">
 							<div className = "w-full lg:w-1/2">
 								<Button link="/projects" type="outline" glow>View my Projects</Button>
+							</div>
+							<div className = "w-full lg:w-1/4">
+								<Button link="/Resume.pdf" type="outline" target="blank">Resume</Button>
 							</div>
 						</div>
 

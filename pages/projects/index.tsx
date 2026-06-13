@@ -71,6 +71,7 @@ const Landing = () => {
                                                     
                                                     <div className = "flex flex-col justify-center py-8">
                                                         <h1 className = "text-4xl font-extrabold">{ p.name }</h1>
+                                                        {!p.active && <span className = "text-xs font-semibold bg-accent text-primary py-1 px-2 rounded-lg w-fit mx-auto mt-2">Inactive</span>}
                                                         <span className = "text-lg my-8">{ p.description }</span>
                                                     </div>
                                                 </div>

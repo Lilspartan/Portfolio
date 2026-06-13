@@ -14,7 +14,17 @@ export default class MyDocument extends Document {
             content="Gabe Kahulik's Portfolio"
           />
           <meta name="author" content="Gabe Krahulik" />
-          <mets name="keywords" content="web development,gabir motors,pa league,gabe krahulik,portfolio,full stack,back end, front end" />
+          <meta name="keywords" content="web development,gabir motors,pa league,gabe krahulik,portfolio,full stack,back end, front end" />
+
+          <meta property="og:title" content="Gabe Krahulik | Web Developer" />
+          <meta property="og:description" content="Game and web developer from Seattle. Check out my projects." />
+          <meta property="og:type" content="website" />
+          <meta property="og:image" content="https://gabekrahulik.dev/logo.png" />
+
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:title" content="Gabe Krahulik | Web Developer" />
+          <meta name="twitter:description" content="Game and web developer from Seattle. Check out my projects." />
+          <meta name="twitter:image" content="https://gabekrahulik.dev/logo.png" />
 
           <title>Gabe Krahulik | Web Developer</title>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
