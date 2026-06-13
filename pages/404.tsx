@@ -51,7 +51,7 @@ const NotFound = () => {
         <div className = "bg-background min-h-screen flex flex-col justify-between">
 
             <section id="hero" className = "relative grid place-items-center text-center px-4 pt-16 mt-32">
-                <div data-m="drop" data-m-delay="0.5">
+                <div>
                     <span className = "text-3xl text-white p-4 block text-center">
                         <h1 className = "gradient-name font-bold text-6xl">404</h1>
                         <h2 className = "text-4xl">That page does not exist</h2>
@@ -62,7 +62,7 @@ const NotFound = () => {
                 </div>
             </section>
 
-            <section data-m="drop" id="contact" className = "py-24 px-4 text-center">
+            <section id="contact" className = "py-24 px-4 text-center">
                 <h2 className = "text-3xl font-extrabold text-white mb-2">Get in Touch</h2>
                 <p className = "text-white/40 mb-4">Open to new opportunities and collaborations.</p>
                 <div className = "text-white flex flex-row flex-wrap justify-center gap-1 lg:gap-4">
