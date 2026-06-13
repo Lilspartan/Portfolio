@@ -1,6 +1,32 @@
 import { Button, Card, IconButton } from '../../components';
 
 import { projects, charity } from '../../utils/projects';
+import { ShortTech } from '../../utils/interfaces';
+import { DiCss3, DiHtml5, DiMongodb } from 'react-icons/di';
+import { SiJavascript, SiTailwindcss, SiTypescript, SiElectron, SiSocketdotio, SiReact, SiNodedotjs, SiUikit } from 'react-icons/si';
+import { TbBrandNextjs, TbBrandFramerMotion, TbBrandCpp } from 'react-icons/tb';
+
+const SmallTechIcon = ({ tech }: { tech: ShortTech }) => {
+    const cls = "text-base opacity-60";
+    switch (tech) {
+        case "C":            return <span className={cls}>C</span>;
+        case "css":          return <DiCss3 className={cls} />;
+        case "html":         return <DiHtml5 className={cls} />;
+        case "react":        return <SiReact className={cls} />;
+        case "uikit":        return <SiUikit className={cls} />;
+        case "CPP":          return <TbBrandCpp className={cls} />;
+        case "mongo":        return <DiMongodb className={cls} />;
+        case "js":           return <SiJavascript className={cls} />;
+        case "ts":           return <SiTypescript className={cls} />;
+        case "node":         return <SiNodedotjs className={cls} />;
+        case "next":         return <TbBrandNextjs className={cls} />;
+        case "electron":     return <SiElectron className={cls} />;
+        case "tailwind":     return <SiTailwindcss className={cls} />;
+        case "socketio":     return <SiSocketdotio className={cls} />;
+        case "framer-motion":return <TbBrandFramerMotion className={cls} />;
+        default:             return null;
+    }
+}
 
 const animationGap = 0.2;
 
@@ -34,6 +60,13 @@ const Landing = () => {
                                             <h1 className = "text-5xl font-extrabold">{ project.name }</h1>
                                             {!project.active && <span className = "text-xs font-semibold bg-accent text-primary py-1 px-2 w-fit mt-2">Inactive</span>}
                                             <span className = "text-xl my-8">{ project.description }</span>
+                                            {project.infoPage?.technologies?.[0]?.short && (
+                                                <div className="flex flex-row gap-2 mt-1">
+                                                    {project.infoPage.technologies[0].short.slice(0, 5).map((tech, i) => (
+                                                        <SmallTechIcon key={i} tech={tech} />
+                                                    ))}
+                                                </div>
+                                            )}
                                         </div>
                                         <div className = "flex flex-col justify-center gap-2 lg:w-1/4">
                                             {
@@ -73,6 +106,13 @@ const Landing = () => {
                                                         <h1 className = "text-4xl font-extrabold">{ p.name }</h1>
                                                         {!p.active && <span className = "text-xs font-semibold bg-accent text-primary py-1 px-2 w-fit mx-auto mt-2">Inactive</span>}
                                                         <span className = "text-lg my-8">{ p.description }</span>
+                                                        {p.infoPage?.technologies?.[0]?.short && (
+                                                            <div className="flex flex-row gap-2 justify-center mb-2">
+                                                                {p.infoPage.technologies[0].short.slice(0, 4).map((tech, i) => (
+                                                                    <SmallTechIcon key={i} tech={tech} />
+                                                                ))}
+                                                            </div>
+                                                        )}
                                                     </div>
                                                 </div>
                                                 <div className = "flex flex-col justify-center">

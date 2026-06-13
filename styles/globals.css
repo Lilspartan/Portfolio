@@ -23,6 +23,21 @@ html {
   /* letter-spacing: 0.01ch; */
 }
 
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-name {
+  background: linear-gradient(90deg, #c084fc, #e879f9, #a855f7, #c084fc);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 4s ease infinite;
+}
+
 .text-glow {
   animation: text-glow 2s ease-in-out infinite alternate;
 }
@@ -93,6 +108,20 @@ html {
   position: relative;
   overflow: hidden;
   transition: all 0.2s linear 0s, text-indent 0.2s;
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  pointer-events: none;
+}
+
+.button:hover::after {
+  transform: translateX(100%);
 }
 
 .button.icon:before {

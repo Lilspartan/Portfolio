@@ -7,6 +7,8 @@ import { useState } from 'react';
 
 import classNames from 'classnames';
 
+const OPEN_TO_WORK = true;
+
 const contacts = [
 	{ name: "gmail", link: "mailto:gabe@gabekrahulik.dev" },
 	{ name: "linkedin", link: "https://www.linkedin.com/in/gabe-krahulik/" },
@@ -67,7 +69,15 @@ const Landing = () => {
 			<div className="grid place-items-center h-screen text-center">
 				<div data-m="drop" data-m-delay="0.5">
 					<Card>
-						<span data-m="reveal-right" data-m-duration="1" data-m-delay="1" className="text-3xl text-white p-4 block text-center">My Name is <span className="text-accent opacity-90 font-bold">Gabe Krahulik</span></span>
+						{OPEN_TO_WORK && (
+							<div className="flex justify-end mb-2">
+								<span className="flex items-center gap-1.5 text-xs text-green-400 font-semibold">
+									<span className="w-2 h-2 bg-green-400 rounded-full animate-pulse inline-block" />
+									Open to work
+								</span>
+							</div>
+						)}
+						<span data-m="reveal-right" data-m-duration="1" data-m-delay="1" className="text-3xl text-white p-4 block text-center">My Name is <span className="gradient-name font-bold">Gabe Krahulik</span></span>
 						{/* <img data-m="reveal-down" data-m-duration="0.5" data-m-delay="1.5" src = "/logo.png" className = "w-24 rounded-lg mx-auto mt-2" /> */}
 						<span data-m="reveal-right" data-m-duration="1.5" data-m-delay="1.5" className="text-2xl block text-white p-4 text-center">a{age === "18" ? "n" : ""} <span className = "text-accent font-bold">{ age }</span> year old developer from <span className = "text-accent font-bold">Seattle</span></span>
 
