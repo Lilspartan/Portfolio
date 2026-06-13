@@ -4,11 +4,21 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
 
+html {
+  background:
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, #7238a0, #000000);
+  background-size: 60px 60px, 60px 60px, 100% 100%;
+  background-attachment: fixed;
+  min-height: 100%;
+}
+
 * {
   /* color: white; */
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;  
+  scroll-behavior: smooth;
   /* font-family: 'Oxygen', sans-serif; */
   /* letter-spacing: 0.01ch; */
 }
@@ -23,19 +33,19 @@
 
 @keyframes text-glow {
   from {
-    text-shadow: 1px 0px 5px #6CD4FFaa;
+    text-shadow: 1px 0px 5px #c084fcaa;
   }
   to {
-    text-shadow: 1px 0px 15px #6CD4FFaa;
+    text-shadow: 1px 0px 15px #c084fcaa;
   }
 }
 
 @keyframes glow {
   from {
-    box-shadow: 1px 0px 10px #6CD4FFaa;
+    box-shadow: 1px 0px 10px #c084fcaa;
   }
   to {
-    box-shadow: 1px 0px 20px #6CD4FFaa;
+    box-shadow: 1px 0px 20px #c084fcaa;
   }
 }
 
@@ -47,7 +57,7 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  @apply bg-background;
+  background: #000000;
 }
 
 /* Handle */
@@ -110,62 +120,62 @@
 	text-indent: 0px;
 }
 
-.social.github {
-  display: block;
+.social {
   position: relative;
-  overflow: hidden;
-  transition: all 0.2s linear 0s, text-indent 0.2s;
+  transition: filter 0.3s ease;
 }
 
-.social:before {
-  position: relative;
-  font-size: 18px;
-  font-weight: bolder;
+.social svg {
+  transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.social.linkedin:hover { filter: drop-shadow(0 0 12px #0077B5); }
+.social.twitter:hover  { filter: drop-shadow(0 0 12px #1DA1F2); }
+.social.bluesky:hover  { filter: drop-shadow(0 0 12px #1185fe); }
+.social.discord:hover  { filter: drop-shadow(0 0 12px #5865F2); }
+.social.github:hover   { filter: drop-shadow(0 0 12px #9d73d1); }
+.social.replit:hover   { filter: drop-shadow(0 0 12px #F8640A); }
+.social.gmail:hover    { filter: drop-shadow(0 0 12px #DB4437); }
+.social.kofi:hover     { filter: drop-shadow(0 0 12px #13C3FF); }
+
+.social::before {
   position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   opacity: 0;
-  width: 100%;
-  height: 20%;
-  z-index: -10;
-  text-align: center;
-  transition: all 0.2s linear 0s;
-  color: inherit;
-  @apply text-primary;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+  pointer-events: none;
+  margin-top: 4px;
 }
 
-.social:hover:before {
-  z-index: -1;
+.social:hover::before {
   opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
-.social.linkedin:before { content: "Linkedin"; }
-.social.twitter:before { content: "Twitter"; }
-.social.bluesky:before { content: "Bluesky"; }
-.social.discord:before { content: "Discord"; }
-.social.github:before { content: "Github"; }
-.social.replit:before { content: "Replit"; }
-.social.gmail:before { content: "Email"; }
-.social.kofi:before { content: "Ko-fi"; }
-
-.social.linkedin:hover:before { @apply text-linkedin; }
-.social.twitter:hover:before { @apply text-twitter; }
-.social.bluesky:hover:before { @apply text-bluesky; }
-.social.discord:hover:before { @apply text-discord; }
-.social.github:hover:before { @apply text-github; }
-.social.replit:hover:before { @apply text-replit; }
-.social.gmail:hover:before { @apply text-gmail; }
-.social.kofi:hover:before { @apply text-kofi; }
+.social.linkedin::before { content: "LinkedIn"; color: #0077B5; }
+.social.twitter::before  { content: "Twitter";  color: #1DA1F2; }
+.social.bluesky::before  { content: "Bluesky";  color: #1185fe; }
+.social.discord::before  { content: "Discord";  color: #5865F2; }
+.social.github::before   { content: "GitHub";   color: #9d73d1; }
+.social.replit::before   { content: "Replit";   color: #F8640A; }
+.social.gmail::before    { content: "Email";    color: #DB4437; }
+.social.kofi::before     { content: "Ko-fi";    color: #13C3FF; }
 
 .linkedin { @apply group-hover:text-linkedin; }
-.twitter { @apply group-hover:text-twitter; }
-.bluesky { @apply group-hover:text-bluesky; }
-.discord { @apply group-hover:text-discord; }
-.github { @apply group-hover:text-github; }
-.replit { @apply group-hover:text-replit; }
-.gmail { @apply group-hover:text-gmail; }
-.kofi { @apply group-hover:text-kofi; }
+.twitter  { @apply group-hover:text-twitter; }
+.bluesky  { @apply group-hover:text-bluesky; }
+.discord  { @apply group-hover:text-discord; }
+.github   { @apply group-hover:text-github; }
+.replit   { @apply group-hover:text-replit; }
+.gmail    { @apply group-hover:text-gmail; }
+.kofi     { @apply group-hover:text-kofi; }
 
 /*
   Animation styles from https://movement.samalander.dev/

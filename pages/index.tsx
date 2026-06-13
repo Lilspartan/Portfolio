@@ -26,8 +26,8 @@ const ContactIcon = ({ contact, index }) => {
 		"lg:mt-8",
 		"text-4xl",
 		contact.name,
-		"group-hover:-translate-y-1",
-		"group-hover:scale-110",
+		"group-hover:-translate-y-3",
+		"group-hover:scale-125",
 	]);
 
 	let Icon = <></>;

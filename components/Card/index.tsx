@@ -14,12 +14,11 @@ export const Card = (props: Props) => {
     return (
 		<div className={`my-auto slide-top-small ${props.full && "h-full"}`}>
 			<div className={`
-						bg-primary 
-						p-8 
-						rounded-lg 
-						shadow-2xl 
-						m-4 
-						transition 
+						bg-primary
+						p-8
+						shadow-2xl
+						m-4
+						transition
 						duration-300
 						${props.full && "h-full"}
 						`}>

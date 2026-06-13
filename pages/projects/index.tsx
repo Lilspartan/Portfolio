@@ -32,11 +32,11 @@ const Landing = () => {
                                         <img src = {project.logo} alt={project.name + " logo"} className = {"lg:w-1/4 max-h-40 object-contain my-auto rounded-lg lg:object-left"} />
                                         <div className = "flex flex-col justify-center lg:w-1/2">
                                             <h1 className = "text-5xl font-extrabold">{ project.name }</h1>
+                                            {!project.active && <span className = "text-xs font-semibold bg-accent text-primary py-1 px-2 w-fit mt-2">Inactive</span>}
                                             <span className = "text-xl my-8">{ project.description }</span>
                                         </div>
                                         <div className = "flex flex-col justify-center gap-2 lg:w-1/4">
-                                            <span className = "italic opacity-70">{!project.active && "(No Longer Maintained)"}</span>
-                                            { 
+                                            {
                                                 project.new_links && project.new_links.map((link) => (
                                                     <Button 
                                                         type = { link.external ? "icon" : "outline" }
@@ -71,7 +71,7 @@ const Landing = () => {
                                                     
                                                     <div className = "flex flex-col justify-center py-8">
                                                         <h1 className = "text-4xl font-extrabold">{ p.name }</h1>
-                                                        {!p.active && <span className = "text-xs font-semibold bg-accent text-primary py-1 px-2 rounded-lg w-fit mx-auto mt-2">Inactive</span>}
+                                                        {!p.active && <span className = "text-xs font-semibold bg-accent text-primary py-1 px-2 w-fit mx-auto mt-2">Inactive</span>}
                                                         <span className = "text-lg my-8">{ p.description }</span>
                                                     </div>
                                                 </div>

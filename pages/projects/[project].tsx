@@ -102,7 +102,7 @@ const WarTools = () => {
 											<div id = "heading" className = "flex flex-col lg:flex-row">
 												<h1 data-m = "bounce-left" className = "font-bold text-5xl text-left my-4 w-full lg:w-1/2 flex">
 													{ project.name }
-													{ !project.active && <span className = "text-lg my-auto mx-4 bg-accent text-primary inline py-1 px-2 rounded-lg">Inactive Project</span> }	
+													{ !project.active && <span className = "text-lg my-auto mx-4 bg-accent text-primary inline py-1 px-2">Inactive Project</span> }	
 												</h1>
 
 												<div data-m = "bounce-right" className = "flex flex-col lg:flex-row justify-center w-full lg:w-1/2 my-auto lg:gap-4">
