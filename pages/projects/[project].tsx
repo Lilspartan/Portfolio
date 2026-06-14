@@ -187,7 +187,7 @@ const ProjectPage = ({ project, relatedWriteups }: Props) => {
 						{/* Related writeups */}
 						{relatedWriteups.length > 0 && (
 							<section className="px-4 max-w-4xl mx-auto mb-8">
-								<h2 className="text-2xl font-extrabold text-white mb-4 border-l-4 border-accent pl-4">Writing</h2>
+								<h2 className="text-2xl font-extrabold text-white mb-4 border-l-4 border-accent pl-4">Related Writeups</h2>
 								<div className="flex flex-col gap-3">
 									{relatedWriteups.map(w => (
 										<a key={w.slug} href={`/writing/${w.slug}`} className="block group">
@@ -198,7 +198,7 @@ const ProjectPage = ({ project, relatedWriteups }: Props) => {
 														<p className="text-white/50 text-sm mt-0.5">{w.description}</p>
 													</div>
 													<span className="text-white/30 text-xs shrink-0">
-														{new Date(w.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+														{new Date(w.date + 'T12:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
 													</span>
 												</div>
 											</Card>
