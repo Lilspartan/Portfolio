@@ -75,10 +75,10 @@ Blocks are the draggable pieces. Every block is a horizontal strip of content. I
 ![The mockup for the structure of a block](block_anatomy.png)
 
 Each block has:
-- **Category** — which group it belongs to (sets its color and sidebar location)
-- **Placement rules** — whether it can go in CONDITION or ACTION (WHEN or THEN), and whether it's an outer or inner block
-- **Content** — an ordered list of text and input pieces that make up its visual label, each content can also contain an inner block instead
-- **A unique ID** — used to track and move it when dragging
+- **Category** - which group it belongs to (sets its color and sidebar location)
+- **Placement rules** - whether it can go in CONDITION or ACTION (WHEN or THEN), and whether it's an outer or inner block
+- **Content** - an ordered list of text and input pieces that make up its visual label, each content can also contain an inner block instead
+- **A unique ID** - used to track and move it when dragging
 
 Blocks are defined entirely in JSON files under `res/Scripting/blocks/`. Adding a new block means adding an entry to the right category file.
 
@@ -159,7 +159,7 @@ An input slot can also accept an **inner block** as its value instead of a typed
 
 The DND system has three parts: `Draggable`, `Droppable`, and `DNDManager`.
 
-<!-- DIAGRAM: DND flow — mouse down on Draggable → DNDManager tracks it → mouse up over Droppable → drop callback fires -->
+<!-- DIAGRAM: DND flow - mouse down on Draggable → DNDManager tracks it → mouse up over Droppable → drop callback fires -->
 
 **Draggable** is attached to every block. It tracks:
 - The block's last known bounding box (so it knows where it started)
@@ -192,6 +192,6 @@ The DND system has three parts: `Draggable`, `Droppable`, and `DNDManager`.
 
 The editor saves each script as two files:
 - A `.json` file storing the block tree (which blocks, in which order, with what input values)
-- A `.prose` file — the compiled text output that the runtime reads
+- A `.prose` file - the compiled text output that the runtime reads
 
 Saving happens automatically on every block drop and explicitly when you hit the Back button. The Back button also triggers a recompile of the `.prose` file and returns you to the properties panel. the JSON save format mirrors the block tree exactly, so loading is just reconstructing blocks from their category+id template and re-filling the saved input values.

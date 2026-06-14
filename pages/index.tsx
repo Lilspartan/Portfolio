@@ -23,13 +23,13 @@ const contacts = [
 
 const experience = [
     {
-        role: "Teaching Assistant — GAM200",
+        role: "Teaching Assistant - GAM200",
         link: "https://www.digipen.edu",
         subtitle: "Sophomore Game Project, DigiPen Institute of Technology",
         dates: "Fall 2025 – Spring 2026",
     },
     {
-        role: "Teaching Assistant — CS260",
+        role: "Teaching Assistant - CS260",
         link: "https://www.digipen.edu",
         subtitle: "Computer Networks I, DigiPen Institute of Technology",
         dates: "Summer 2026",

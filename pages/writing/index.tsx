@@ -11,11 +11,9 @@ const WritingPage = ({ writeups }: Props) => {
     return (
         <div className="bg-background min-h-screen">
             <section className="py-24 px-4 max-w-4xl mx-auto">
-                <h2 className="text-4xl font-extrabold text-white mb-8 border-l-4 border-accent pl-4">Writing</h2>
+                <h2 className="text-4xl font-extrabold text-white mb-8 border-l-4 border-accent pl-4">Writeups</h2>
                 {writeups.length === 0 ? (
-                    <Card>
-                        <p className="text-white/60">No writeups yet — check back soon.</p>
-                    </Card>
+                    <></>
                 ) : (
                     <div className="flex flex-col gap-4">
                         {writeups.map(w => {
