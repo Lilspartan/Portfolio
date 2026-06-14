@@ -60,7 +60,7 @@ All widgets inherit from `IMenuChild`, a base class that has position, size, spa
 
 ![ImGUI editor for the main menu](imgui.png)
 
-Every visual widget renders using **nine-slice textures** - a technique that divides a texture into a 3×3 grid so corners stay fixed while the center and edges stretch. This means one button texture works at any size without distortion.
+Every visual widget renders using **nine-slice textures**, a technique that divides a texture into a 3×3 grid so corners stay fixed while the center and edges stretch. This means one button texture works at any size without distortion.
 
 ![A very rough nine slice explanation](nineslice.png)
 

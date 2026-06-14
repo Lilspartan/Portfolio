@@ -159,8 +159,6 @@ An input slot can also accept an **inner block** as its value instead of a typed
 
 The DND system has three parts: `Draggable`, `Droppable`, and `DNDManager`.
 
-<!-- DIAGRAM: DND flow - mouse down on Draggable → DNDManager tracks it → mouse up over Droppable → drop callback fires -->
-
 **Draggable** is attached to every block. It tracks:
 - The block's last known bounding box (so it knows where it started)
 - A click offset (so the block doesn't snap to your cursor's top-left)
@@ -192,6 +190,6 @@ The DND system has three parts: `Draggable`, `Droppable`, and `DNDManager`.
 
 The editor saves each script as two files:
 - A `.json` file storing the block tree (which blocks, in which order, with what input values)
-- A `.prose` file - the compiled text output that the runtime reads
+- A `.prose` file, the compiled text output that the runtime reads
 
 Saving happens automatically on every block drop and explicitly when you hit the Back button. The Back button also triggers a recompile of the `.prose` file and returns you to the properties panel. the JSON save format mirrors the block tree exactly, so loading is just reconstructing blocks from their category+id template and re-filling the saved input values.

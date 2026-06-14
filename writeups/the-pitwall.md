@@ -79,7 +79,7 @@ socket.emit("standings", JSON.stringify({
     sessionRacers,     // all drivers with live telemetry
     driverData,        // the streamer's own fuel/tire/lap detail
     options: {
-        channel,       // Twitch channel name - used as the room key
+        channel,       // Twitch channel name used as the room key
         fuelIsPublic,  // whether viewers can see the streamer's fuel data
         password,      // optional channel password, used to protect some pages
     }
