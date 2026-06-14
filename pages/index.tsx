@@ -7,6 +7,7 @@ import { TbBrandNextjs, TbBrandCpp, TbBrandFramerMotion } from 'react-icons/tb';
 import { DiCss3, DiHtml5, DiMongodb } from 'react-icons/di';
 import { useState } from 'react';
 import classNames from 'classnames';
+import ScrollReveal from '../components/ScrollReveal';
 import { projects, charity } from '../utils/projects';
 import { ShortTech } from '../utils/interfaces';
 import { getAllWriteups, WriteupMeta } from '../utils/writeups';
@@ -164,7 +165,10 @@ const Landing = ({ recentWriteups }: Props) => {
             </section>
 
             <section id="about" className="py-24 px-4 max-w-4xl mx-auto">
-                <h2 className="text-4xl font-extrabold text-white mb-8 border-l-4 border-accent pl-4">About Me</h2>
+                <ScrollReveal animation="reveal-right" duration="0.6">
+                    <h2 className="text-4xl font-extrabold text-white mb-8 border-l-4 border-accent pl-4">About Me</h2>
+                </ScrollReveal>
+                <ScrollReveal animation="bounce-up" duration="0.7" delay="0.1">
                 <Card>
                     <p className="text-white/80 text-lg leading-relaxed mb-8">
                         I'm a developer from Seattle building games and web apps. I love working across the full stack and have found that same passion extend across to the world of game development. I try to stick close to my roots with network programming and engine architecture but enjoy making anything that I can see people have fun with!
@@ -216,13 +220,16 @@ const Landing = ({ recentWriteups }: Props) => {
                         </div>
                     </div>
                 </Card>
+                </ScrollReveal>
             </section>
 
             <section id="projects" className="py-16 px-4 max-w-7xl mx-auto">
-                <h2 className="text-4xl font-extrabold text-white mb-8 border-l-4 border-accent pl-4">My Projects</h2>
+                <ScrollReveal animation="reveal-right" duration="0.6">
+                    <h2 className="text-4xl font-extrabold text-white mb-8 border-l-4 border-accent pl-4">My Projects</h2>
+                </ScrollReveal>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {projects.map((project, i) => (
-                        <div key={i} className={project.featured ? 'sm:col-span-2' : ''}>
+                        <ScrollReveal key={i} animation="bounce-up" duration="0.6" delay={String(Math.round((i % 4) * 0.1 * 10) / 10)} className={project.featured ? 'sm:col-span-2' : ''}>
                             <Card full>
                                 <div className="flex flex-col h-full justify-between gap-4">
                                     <div>
@@ -272,14 +279,16 @@ const Landing = ({ recentWriteups }: Props) => {
                                     })()}
                                 </div>
                             </Card>
-                        </div>
+                        </ScrollReveal>
                     ))}
                 </div>
 
                 {recentWriteups.length > 0 && (
                     <section id="writing" className="py-16 px-4 max-w-4xl mx-auto">
                         <div className="flex items-center justify-between mb-8">
+                            <ScrollReveal animation="reveal-right" duration="0.6">
                             <h2 className="text-3xl font-extrabold text-white border-l-4 border-accent pl-4">Recent Writeups</h2>
+                            </ScrollReveal>
                             <a href="/writing" className="text-accent/70 hover:text-accent text-sm transition duration-200">All writeups →</a>
                         </div>
                         <div className="flex flex-col gap-4">
@@ -287,6 +296,7 @@ const Landing = ({ recentWriteups }: Props) => {
                                 const w = recentWriteups[0];
                                 const project = projects.find(p => p.link === w.project);
                                 return (
+                                    <ScrollReveal animation="bounce-up" duration="0.6">
                                     <a href={`/writing/${w.slug}`} className="block group">
                                         <Card full>
                                             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
@@ -306,14 +316,16 @@ const Landing = ({ recentWriteups }: Props) => {
                                             </div>
                                         </Card>
                                     </a>
+                                    </ScrollReveal>
                                 );
                             })()}
                             {recentWriteups.length > 1 && (
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    {recentWriteups.slice(1, 3).map(w => {
+                                    {recentWriteups.slice(1, 3).map((w, i) => {
                                         const project = projects.find(p => p.link === w.project);
                                         return (
-                                            <a key={w.slug} href={`/writing/${w.slug}`} className="block group">
+                                            <ScrollReveal key={w.slug} animation="bounce-up" duration="0.6" delay={String(i * 0.1)}>
+                                            <a href={`/writing/${w.slug}`} className="block group">
                                                 <Card full>
                                                     <div className="flex flex-col h-full justify-between gap-3">
                                                         <div>
@@ -332,6 +344,7 @@ const Landing = ({ recentWriteups }: Props) => {
                                                     </div>
                                                 </Card>
                                             </a>
+                                            </ScrollReveal>
                                         );
                                     })}
                                 </div>
@@ -340,10 +353,13 @@ const Landing = ({ recentWriteups }: Props) => {
                     </section>
                 )}
 
-                <h2 className="text-3xl font-extrabold text-white mt-20 mb-8 border-l-4 border-accent pl-4">Charity Work</h2>
+                <ScrollReveal animation="reveal-right" duration="0.6">
+                    <h2 className="text-3xl font-extrabold text-white mt-20 mb-8 border-l-4 border-accent pl-4">Charity Work</h2>
+                </ScrollReveal>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {charity.map((event: any, i: number) => (
-                        <Card key={i} full>
+                        <ScrollReveal key={i} animation="bounce-up" duration="0.6" delay={String(Math.round((i % 3) * 0.1 * 10) / 10)}>
+                        <Card full>
                             {new Date(event.startDate) > new Date() || event.raised === 0 ? (
                                 <div className="flex flex-col justify-between h-full">
                                     <div>
@@ -381,13 +397,16 @@ const Landing = ({ recentWriteups }: Props) => {
                                 </div>
                             )}
                         </Card>
+                        </ScrollReveal>
                     ))}
                 </div>
             </section>
 
             <section id="contact" className="py-24 px-4 text-center">
+                <ScrollReveal animation="bounce-up" duration="0.6">
                 <h2 className="text-3xl font-extrabold text-white mb-2">Get in Touch</h2>
                 <p className="text-white/40 mb-4">Open to new opportunities and collaborations.</p>
+                </ScrollReveal>
                 <div className="text-white flex flex-row flex-wrap justify-center gap-1 lg:gap-4">
                     {contacts.map((contact, i) => (
                         <ContactIcon key={contact.name + "-footer"} contact={contact} index={i} />
