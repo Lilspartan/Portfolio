@@ -40,6 +40,7 @@ const Nav = () => (
         <div className="flex items-center gap-6 text-sm font-semibold">
             <a href="/#about"    className="text-white/60 hover:text-accent transition duration-200">About</a>
             <a href="/#projects" className="text-white/60 hover:text-accent transition duration-200">Projects</a>
+            <a href="/writing"   className="text-white/60 hover:text-accent transition duration-200">Writing</a>
             <a href="/#contact"  className="text-white/60 hover:text-accent transition duration-200">Contact</a>
             <a href="/resume.pdf" target="_blank" className="border border-accent/50 text-accent px-3 py-1 text-xs font-bold hover:bg-accent hover:text-primary transition duration-200">
                 Resume

@@ -160,7 +160,7 @@ const Landing = () => {
                 <h2 className="text-4xl font-extrabold text-white mb-8 border-l-4 border-accent pl-4">About Me</h2>
                 <Card>
                     <p className="text-white/80 text-lg leading-relaxed mb-8">
-                        I'm a developer from Seattle building games and web apps. I love working across the full stack and have found that same passion extend across to the world of game development. I try to stick close to my roots with network programming and engine architecture but enjoy anything that I can see people enjoy!
+                        I'm a developer from Seattle building games and web apps. I love working across the full stack and have found that same passion extend across to the world of game development. I try to stick close to my roots with network programming and engine architecture but enjoy making anything that I can see people have fun with!
                     </p>
                     <div className="flex flex-col gap-6">
                         <div>
