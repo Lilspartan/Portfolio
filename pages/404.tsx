@@ -50,7 +50,7 @@ const ContactIcon = ({ contact, index }: { contact: typeof contacts[0]; index: n
 const NotFound = () => {
     return (
         <div className = "bg-background min-h-screen flex flex-col justify-between">
-            <SEO title="404 — Gabe Krahulik" description="Page not found." />
+            <SEO title="404 - Gabe Krahulik" description="Page not found." />
 
             <section id="hero" className = "relative grid place-items-center text-center px-4 pt-16 mt-32">
                 <div>

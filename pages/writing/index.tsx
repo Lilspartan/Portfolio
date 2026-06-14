@@ -13,7 +13,7 @@ const WritingPage = ({ writeups }: Props) => {
     return (
         <div className="bg-background min-h-screen">
             <SEO
-                title="Writeups — Gabe Krahulik"
+                title="Writeups - Gabe Krahulik"
                 description="Dev writeups and project postmortems from Gabe Krahulik."
                 url="writing"
             />

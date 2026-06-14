@@ -62,7 +62,7 @@ const ProjectPage = ({ project, relatedWriteups }: Props) => {
 	return (
 		<>
 			<SEO
-				title={`${project.name} — Gabe Krahulik`}
+				title={`${project.name} - Gabe Krahulik`}
 				description={project.description}
 				url={`projects/${project.link}`}
 				ogImage={ogUrl}

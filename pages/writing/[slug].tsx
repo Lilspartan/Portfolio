@@ -28,7 +28,7 @@ const WriteupPage = ({ writeup }: Props) => {
     return (
         <div className="bg-background min-h-screen text-white">
             <SEO
-                title={`${writeup.title} — Gabe Krahulik`}
+                title={`${writeup.title} - Gabe Krahulik`}
                 description={writeup.description}
                 url={`writing/${writeup.slug}`}
                 ogImage={ogUrl}
