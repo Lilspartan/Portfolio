@@ -177,10 +177,13 @@ export const projects: Project[] = [
         ],
         detail: {
             trailer: "https://www.youtube.com/embed/5XQm3lwc3t8",
-            images: [],
+            images: [
+                { url: "/images/writings/prose-scripting/example.png", alt: "Block scripting editor" },
+            ],
             tech: [{ name: "All", short: ["CPP"] }],
             paragraphs: [
-                ""
+                "Kregs Toolbox is a beginner-friendly game creation tool built for my GAM300/350 classes at DigiPen. A team of 8 CS majors built a custom C++ engine from scratch with a Vulkan renderer, a custom audio system, and Jolt physics, then used it to ship a game inspired by tools like Kodu Game Lab, Project Spark, and Dreams.",
+                "As the UI/UX programmer, in addition to all the game menus and interactions, I designed and built the visual scripting editor: a drag-and-drop block system backed by a custom scripting language called Prose. Blocks are defined in JSON, nested into sentences with WHEN/THEN logic, and auto-compiled to Prose scripts that the engine runs at runtime. The goal was to make game logic approachable for complete beginners without hiding what's actually happening under the hood.",
             ],
         },
     },
