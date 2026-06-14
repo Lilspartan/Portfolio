@@ -11,6 +11,7 @@ html {
     linear-gradient(to bottom, #7238a0, #000000);
   background-size: 60px 60px, 60px 60px, 100% 100%;
   background-attachment: fixed;
+  background-color: #000000;
   min-height: 100%;
 }
 

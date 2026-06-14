@@ -8,6 +8,9 @@ export interface Project {
     tech: ShortTech[];
     links: ProjectLink[];
     detail: ProjectDetail | null;
+    resumeRole?: string;
+    resumeDates?: string;
+    resumeBullets?: string[];
 }
 
 export interface ProjectLink {

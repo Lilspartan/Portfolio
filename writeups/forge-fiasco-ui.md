@@ -82,7 +82,7 @@ The algorithm runs in `IMenuChild::CalculateTransform()`:
 6. Store 4 corner positions as the bounding box, used for rendering and hit testing
 7. Recurse into children
 
-All coordinates are **normalized screen space** (0–1), so the layout is automatically resolution-independent.
+All coordinates are **normalized screen space** (0-1), so the layout is automatically resolution-independent.
 
 Elements can opt out of auto layout with `transformOverridden = true`, which lets them be manually positioned - useful for overlays and HUD elements that need to sit at an exact spot regardless of other content.
 

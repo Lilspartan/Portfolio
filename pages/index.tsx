@@ -31,7 +31,7 @@ const experience = [
         role: "Teaching Assistant - GAM200/250",
         link: "https://www.digipen.edu",
         subtitle: "Sophomore Game Project, DigiPen Institute of Technology",
-        dates: "Fall 2025 – Spring 2026",
+        dates: "Fall 2025 - Spring 2026",
     },
     {
         role: "Teaching Assistant - CS260",
@@ -153,7 +153,7 @@ const Landing = ({ recentWriteups }: Props) => {
                                 <Button link="/#projects" type="outline" glow>View my Projects</Button>
                             </div>
                             <div className="w-full lg:w-1/4">
-                                <Button link="/resume.pdf" type="outline" target="blank">Resume</Button>
+                                <Button link="/resume" type="outline">Resume</Button>
                             </div>
                         </div>
                         <div className="text-white flex flex-row flex-wrap lg:flex-nowrap justify-center gap-1 lg:gap-4 mx-2 lg:mx-8">
@@ -200,7 +200,7 @@ const Landing = ({ recentWriteups }: Props) => {
                                 <a href="https://www.digipen.edu/" target="_blank" className="text-accent/80 hover:text-accent transition-all duration-200 text-sm mt-0.5 block">
                                     DigiPen Institute of Technology
                                 </a>
-                                <p className="text-white/40 text-xs mt-1 tracking-wider">2023 – 2027</p>
+                                <p className="text-white/40 text-xs mt-1 tracking-wider">2023 - 2027</p>
                             </div>
                         </div>
                         <div>
@@ -395,7 +395,7 @@ const Landing = ({ recentWriteups }: Props) => {
                                         <span className="text-sm text-white/40 mt-2">
                                             {event.startDate === event.endDate
                                                 ? new Date(event.startDate).toLocaleDateString('en-us', { year: "numeric", month: "long", day: "numeric" })
-                                                : `${new Date(event.startDate).toLocaleDateString('en-us', { year: "numeric", month: "long", day: "numeric" })} – ${new Date(event.endDate).toLocaleDateString('en-us', { year: "numeric", month: "long", day: "numeric" })}`
+                                                : `${new Date(event.startDate).toLocaleDateString('en-us', { year: "numeric", month: "long", day: "numeric" })} - ${new Date(event.endDate).toLocaleDateString('en-us', { year: "numeric", month: "long", day: "numeric" })}`
                                             }
                                         </span>
                                     </div>

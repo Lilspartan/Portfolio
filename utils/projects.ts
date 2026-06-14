@@ -103,6 +103,13 @@ export const projects: Project[] = [
         featured: false,
         tech: ["CPP"],
         links: [],
+        resumeRole: "Developer",
+        resumeDates: "Jan 2024 - Apr 2024",
+        resumeBullets: [
+            "Assisted game development by working on core game systems in C++.",
+            "Created systems for user interfaces and player interaction.",
+            "Learned effective strategies for working in small teams under a class deadline.",
+        ],
         detail: {
             trailer: "https://www.youtube.com/embed/-70nSf9X30Q",
             images: [
@@ -129,6 +136,13 @@ export const projects: Project[] = [
         featured: true,
         tech: ["CPP"],
         links: [],
+        resumeRole: "Developer & Buildmaster",
+        resumeDates: "Sep 2024 - Apr 2025",
+        resumeBullets: [
+            "Created the initial core engine prototype used as the foundation for the full game.",
+            "Worked on user-facing systems including game UI, tutorials, and in-engine editor tools.",
+            "Focused on backend systems like serialization, messaging, and analytics with an emphasis on developer experience.",
+        ],
         detail: {
             trailer: "https://www.youtube.com/embed/DMdii-rpamE",
             images: [
@@ -147,13 +161,20 @@ export const projects: Project[] = [
     },
     {
         name: "Kregs Toolbox",
-        description: "A roguelike race through purgatory",
+        description: "A beginner friendly game creation tool built in a custom C++ engine",
         logo: "/images/projects/kregs-toolbox/logo.png",
         link: "kregs-toolbox",
         active: true,
         featured: false,
         tech: ["CPP"],
         links: [],
+        resumeRole: "UI/UX Developer",
+        resumeDates: "Sep 2025 - Apr 2026",
+        resumeBullets: [
+            "Designed and built a drag-and-drop visual scripting editor using the Clay UI library in a custom C++ engine.",
+            "Implemented a Scratch-like block system with JSON-defined blocks, nested input slots, and auto-compilation to a custom scripting language (Prose).",
+            "Designed and implemented a larger UI system for the project",
+        ],
         detail: {
             trailer: "https://www.youtube.com/embed/5XQm3lwc3t8",
             images: [],
@@ -171,6 +192,13 @@ export const projects: Project[] = [
         active: true,
         featured: true,
         tech: ["next", "tailwind", "ts", "framer-motion"],
+        resumeRole: "Lead Developer",
+        resumeDates: "2021 - Present",
+        resumeBullets: [
+            "Built and maintained the official site for a simracing community with hundreds of active members.",
+            "Developed community tools including a race calendar, spec mapping utility, and driver stats pages.",
+            "Architected the full-stack site using Next.js, TypeScript, and Tailwind CSS.",
+        ],
         links: [
             { text: "Visit Site", url: "https://gabirmotors.com", external: true },
             { text: "View Source", url: "https://github.com/Lilspartan/Gabir-Rebuild", external: true },
@@ -194,6 +222,12 @@ export const projects: Project[] = [
         active: false,
         featured: false,
         tech: ["next", "tailwind", "mongo", "ts"],
+        resumeRole: "Sole Developer",
+        resumeDates: "Aug 2022 - May 2023",
+        resumeBullets: [
+            "Built a mobile-friendly army list and campaign tracker for Warhammer 40K.",
+            "Orchestrated multiple subsystems including authentication, MongoDB data management, and cross-device sync.",
+        ],
         links: [
             // { text: "Visit Site", url: "https://wartools.xyz", external: true },
         ],
@@ -237,6 +271,8 @@ export const projects: Project[] = [
         active: true,
         featured: false,
         tech: ["electron", "js", "html", "css"],
+        resumeRole: "Developer",
+        resumeDates: "2023",
         links: [
             { text: "Steam Page", url: "https://store.steampowered.com/app/2745150/Wheel_Saint_Hellride/", external: true },
         ],
@@ -278,6 +314,13 @@ export const projects: Project[] = [
         active: false,
         featured: true,
         tech: ["next", "tailwind", "ts", "socketio", "electron", "react"],
+        resumeRole: "Lead Developer",
+        resumeDates: "Jun 2022 - Jul 2023",
+        resumeBullets: [
+            "Created a real-time telemetry dashboard for sim-racing streamers and their Twitch chat.",
+            "Managed high-traffic, real-time data using WebSockets and Socket.IO.",
+            "Built a companion Electron desktop app for easy broadcaster setup and data capture.",
+        ],
         links: [
             { text: "Visit Site", url: "https://pitwall.gabirmotors.com", external: true },
             { text: "View Source", url: "https://github.com/Lilspartan/GabirLiveStandings", external: true },
