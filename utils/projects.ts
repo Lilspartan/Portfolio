@@ -1,4 +1,4 @@
-import { Project, Tool, Image, ShortTech } from './interfaces';
+import { Project, Tool, ShortTech } from './interfaces';
 
 export const Tools: {[ key in ShortTech ]?: Tool} = {
     "node": {
@@ -93,418 +93,232 @@ export const Tools: {[ key in ShortTech ]?: Tool} = {
     },
 }
 
-export const projects:(Project | {size: "half", projects: Project[]})[] = [
+export const projects: Project[] = [
+    {
+        name: "Quantum Flux",
+        description: "Race against the clock to prevent a nuclear disaster",
+        logo: "/images/projects/quantum-flux/logo.png",
+        link: "quantum-flux",
+        active: true,
+        featured: false,
+        tech: ["CPP"],
+        links: [],
+        detail: {
+            trailer: "https://www.youtube.com/embed/-70nSf9X30Q",
+            images: [
+                { url: "/images/projects/quantum-flux/logo.png", alt: "The Quantum Flux logo" },
+                { url: "/images/projects/quantum-flux/Screenshot_01.png", alt: "A screenshot of Quantum Flux" },
+                { url: "/images/projects/quantum-flux/Screenshot_02.png", alt: "A screenshot of Quantum Flux" },
+                { url: "/images/projects/quantum-flux/Screenshot_03.png", alt: "A screenshot of Quantum Flux" },
+                { url: "/images/projects/quantum-flux/Screenshot_04.png", alt: "A screenshot of Quantum Flux" },
+                { url: "/images/projects/quantum-flux/Screenshot_05.png", alt: "A screenshot of Quantum Flux" },
+            ],
+            tech: [{ name: "All", short: ["CPP"] }],
+            paragraphs: [
+                "It's your first day on the job at a nuclear power plant, as disaster strikes it's up to you to save the world.",
+                "Quantum Flux was a game I made in a team for my GAM150 class at DigiPen, I focused mostly on engine and gameplay systems, but also did some work on actual gameplay elements."
+            ],
+        },
+    },
     {
         name: "Forge Fiasco",
         description: "A co-op party game centered around managing a blacksmith",
         logo: "/images/projects/forge-fiasco/logo.png",
-        logoSize: "w-1/4",
-        size: "full",
         link: "forge-fiasco",
-        trailer: "https://www.youtube.com/embed/DMdii-rpamE",
         active: true,
-        new_links: [
-
-        ],
-        infoPage: {
+        featured: true,
+        tech: ["CPP"],
+        links: [],
+        detail: {
+            trailer: "https://www.youtube.com/embed/DMdii-rpamE",
             images: [
-                {
-                    url: "/images/projects/forge-fiasco/logo.png",
-                    alt: "The Forge Fiasco logo"
-                },
-                {
-                    url: "/images/projects/forge-fiasco/screenshot_1.jpg",
-                    alt: "A screenshot of Forge Fiasco gamplay"
-                },
-                {
-                    url: "/images/projects/forge-fiasco/screenshot_2.jpg",
-                    alt: "A screenshot of the lobby menu of Forge Fiasco"
-                },
-                {
-                    url: "/images/projects/forge-fiasco/screenshot_3.jpg",
-                    alt: "A screenshot of Forge Fiasco gamplay"
-                },
-                {
-                    url: "/images/projects/forge-fiasco/Recursion Games Alt Dark.png",
-                    alt: "The Recursion Games team logo"
-                }
+                { url: "/images/projects/forge-fiasco/logo.png", alt: "The Forge Fiasco logo" },
+                { url: "/images/projects/forge-fiasco/screenshot_1.jpg", alt: "A screenshot of Forge Fiasco gameplay" },
+                { url: "/images/projects/forge-fiasco/screenshot_2.jpg", alt: "A screenshot of the lobby menu of Forge Fiasco" },
+                { url: "/images/projects/forge-fiasco/screenshot_3.jpg", alt: "A screenshot of Forge Fiasco gameplay" },
+                { url: "/images/projects/forge-fiasco/Recursion Games Alt Dark.png", alt: "The Recursion Games team logo" },
             ],
-            technologies: [
-                {
-                    name: "All",
-                    short: [
-                        "CPP"
-                    ],
-                }
-            ],
-            description: [
+            tech: [{ name: "All", short: ["CPP"] }],
+            paragraphs: [
                 "Forge Fiasco is a co-op party game centered around being a blacksmith and managing your own forge. The overall objective of the game is to survive the onslaught of customers while keeping your reputation high, since if your reputation falls below the threshold your forge will be closed. You can tackle the challenge alone or have 3 other friends join you on your journey as you battle against time and customer satisfaction. The main idea for this game is to be a fun and chaotic party game where casual and competitive gamers can unite to try and be the top forge managers.",
                 "Forge Fiasco was a game I worked on in a team of 5 for my GAM200/250 classes at DigiPen. Over the two semesters, we had to create a custom engine through to an MVP, then use that engine to create our game."
-            ]
-        }
+            ],
+        },
     },
     {
-        size: "half",
-        projects: [
-            {
-                name: "Wheel Saint: Hellride",
-                description: "A roguelike race through purgatory",
-                logo: "/images/projects/wheel-saint-hellride/logo.png",
-                logoSize: "w-44",
-                size: "full",
-                type: "game",
-                link: "wheel-saint-hellride",
-                active: true,
-                new_links: [
-                    {
-                        text: "Steam Page",
-                        url: "https://store.steampowered.com/app/2745150/Wheel_Saint_Hellride/",
-                        external: true,
-                        type: "block"
-                    },
-                ],
-                infoPage: {
-                    images: [
-                        {
-                            "url": "/images/projects/wheel-saint-hellride/logo.png",
-                            "alt": "The Wheel Saint: Hellride logo"
-                        },
-                        {
-                            url: "/images/projects/wheel-saint-hellride/splash_art.png",
-                            alt: "Steam splash art for Wheel Saint: Hellride"
-                        },
-                    ],
-                    technologies: [
-                        {
-                            name: "All",
-                            short: [
-                                "electron", "js", "html", "css"
-                            ]
-                        }
-                    ],
-                    description: [
-                        "Wheel Saint: Hellride is a rogue-like race through purgatory to rescue lost souls! Drive your car through neverending waves of demons, find lost souls and upgrade your ride!"
-                    ],
-                }
-            },
-            {
-                name: "Quantum Flux",
-                description: "Race against the clock to prevent a nuclear disaster",
-                logo: "/images/projects/quantum-flux/logo.png",
-                logoSize: "w-44",
-                size: "full",
-                type: "game",
-                link: "quantum-flux",
-                active: true,
-                trailer: "https://www.youtube.com/embed/-70nSf9X30Q",
-                new_links: [
-                    
-                ],
-                infoPage: {
-                    images: [
-                        {
-                            url: "/images/projects/quantum-flux/logo.png",
-                            alt: "The Quantum Flux logo"
-                        },
-                        {
-                            url: "/images/projects/quantum-flux/Screenshot_01.png",
-                            alt: "A screenshot of Quantum Flux"
-                        },
-                        {
-                            url: "/images/projects/quantum-flux/Screenshot_02.png",
-                            alt: "A screenshot of Quantum Flux"
-                        },
-                        {
-                            url: "/images/projects/quantum-flux/Screenshot_03.png",
-                            alt: "A screenshot of Quantum Flux"
-                        },
-                        {
-                            url: "/images/projects/quantum-flux/Screenshot_04.png",
-                            alt: "A screenshot of Quantum Flux"
-                        },
-                        {
-                            url: "/images/projects/quantum-flux/Screenshot_05.png",
-                            alt: "A screenshot of Quantum Flux"
-                        },
-                    ],
-                    technologies: [
-                        {
-                            name: "All",
-                            short: [
-                                "CPP"
-                            ]
-                        }
-                    ],
-                    description: [
-                        "It's your first day on the job at a nuclear power plant, as disaster strikes it's up to you to save the world.",
-                        "Quantum Flux was a game I made in a team for my GAM150 class at DigiPen, I focused mostly on engine and gameplay systems, but also did some work on actual gameplay elements."
-                    ],
-                }
-            },
-            {
-                name: "Gabir Motors",
-                description: "The world's premiere, pretend motorsports company",
-                logo: "https://gabirmotors.com/i/assets/teams/GM/main.png",
-                logoSize: "w-72",
-                size: "full",
-                link: "gabirmotors",
-                active: true,
-                new_links: [
-                    {
-                        text: "Visit Site",
-                        url: "https://gabirmotors.com",
-                        external: true,
-                        type: "block"
-                    },
-                    {
-                        text: "View Source",
-                        url: "https://github.com/Lilspartan/Gabir-Rebuild",
-                        external: true,
-                        type: "group"
-                    }
-                ],
-                infoPage: {
-                    images: [
-                        {
-                            url: "/images/projects/beta-gabir/screenshot-1.png",
-                            alt: "The Gabir Motors landing page"
-                        },
-                        {
-                            url: "https://gabirmotors.com/i/assets/teams/GM/main.png",
-                            alt: "The Gabir Motors logo"
-                        }
-                    ],
-                    technologies: [
-                        {
-                            name: "Website",
-                            short: [
-                                "next", "tailwind", "ts", "framer-motion"
-                            ],
-                        }
-                    ],
-                    description: [
-                        "Gabir Motorsports is the world's premiere, pretend motorsports company. Sponsor of the Penny Arcade Racing League, the Gabir Motors website is home to tools for members of the league (like the calendar) and anybody who plays iRacing (the Spec mapping tool)."
-                    ]
-                }
-            },
+        name: "Kregs Toolbox",
+        description: "A roguelike race through purgatory",
+        logo: "/images/projects/kregs-toolbox/logo.png",
+        link: "kregs-toolbox",
+        active: true,
+        featured: false,
+        tech: ["CPP"],
+        links: [],
+        detail: {
+            trailer: "https://www.youtube.com/embed/5XQm3lwc3t8",
+            images: [],
+            tech: [{ name: "All", short: ["CPP"] }],
+            paragraphs: [
+                ""
+            ],
+        },
+    },
+    {
+        name: "Gabir Motors",
+        description: "The world's premiere, pretend motorsports company",
+        logo: "https://gabirmotors.com/i/assets/teams/GM/main.png",
+        link: "gabirmotors",
+        active: true,
+        featured: true,
+        tech: ["next", "tailwind", "ts", "framer-motion"],
+        links: [
+            { text: "Visit Site", url: "https://gabirmotors.com", external: true },
+            { text: "View Source", url: "https://github.com/Lilspartan/Gabir-Rebuild", external: true },
         ],
+        detail: {
+            images: [
+                { url: "/images/projects/beta-gabir/screenshot-1.png", alt: "The Gabir Motors landing page" },
+                { url: "https://gabirmotors.com/i/assets/teams/GM/main.png", alt: "The Gabir Motors logo" },
+            ],
+            tech: [{ name: "Website", short: ["next", "tailwind", "ts", "framer-motion"] }],
+            paragraphs: [
+                "Gabir Motorsports is the world's premiere, pretend motorsports company. Sponsor of the Penny Arcade Racing League, the Gabir Motors website is home to tools for members of the league (like the calendar) and anybody who plays iRacing (the Spec mapping tool)."
+            ],
+        },
     },
     {
         name: "War Tools",
         description: "An unofficial companion for Warhammer 40k",
         logo: "/images/projects/wartools/logo.png",
-        logoSize: "w-1/4",
-        size: "full",
         link: "wartools",
-        active: true,
-        new_links: [
-            {
-                text: "Visit Site",
-                url: "https://wartools.xyz",
-                external: true,
-                type: "block"
-            }
+        active: false,
+        featured: false,
+        tech: ["next", "tailwind", "mongo", "ts"],
+        links: [
+            // { text: "Visit Site", url: "https://wartools.xyz", external: true },
         ],
-        infoPage: {
+        detail: {
             images: [
-                {
-                    url: "/images/projects/wartools/screenshot1.png",
-                    alt: "A screenshot of the roster viewer tool on War Tools"
-                },
-                {
-                    url: "/images/projects/wartools/screenshot2.png",
-                    alt: "A screenshot of the dataslate tool on War Tools"
-                },
-                {
-                    url: "/images/projects/wartools/screenshot3.png",
-                    alt: "A screenshot of the roster list"
-                },
-                {
-                    url: "https://wartools.xyz/images/header.jpg",
-                    alt: "The War Tools logo"
-                }
+                { url: "/images/projects/wartools/logo.png", alt: "The War Tools logo" },
+                { url: "/images/projects/wartools/screenshot1.png", alt: "A screenshot of the roster viewer tool on War Tools" },
+                { url: "/images/projects/wartools/screenshot2.png", alt: "A screenshot of the dataslate tool on War Tools" },
+                { url: "/images/projects/wartools/screenshot3.png", alt: "A screenshot of the roster list" },
             ],
-            technologies: [
-                {
-                    name: "All",
-                    short: [
-                        "next", "tailwind", "mongo", "ts"
-                    ],
-                }
-            ],
-            description: [
+            tech: [{ name: "All", short: ["next", "tailwind", "mongo", "ts"] }],
+            paragraphs: [
                 "War Tools was born out of a need for a companion app for Warhammer 40k, I realized that all the existing options either didn't have what I wanted or weren't designed to work on phone screens, so I decided to do it myself.",
                 "War Tools started as just a way to view army lists but quickly evolved into also supporting custom campaign kill teams and I added an account system to sync everything across multiple devices. It went from a summer project to something I'm actively working on to this day."
-            ]
-        }
+            ],
+        },
+    },
+    {
+        name: "My Portfolio",
+        description: "Where you're at right now",
+        logo: "/logo.png",
+        link: "portfolio",
+        active: true,
+        featured: false,
+        tech: ["next", "tailwind", "ts"],
+        links: [
+            { text: "Visit Site", url: "/", external: false },
+            { text: "View Source", url: "https://github.com/Lilspartan/Portfolio", external: true },
+        ],
+        detail: {
+            images: [],
+            tech: [{ name: "All", short: ["next", "tailwind", "ts"] }],
+            paragraphs: null,
+        },
+    },
+    {
+        name: "Wheel Saint: Hellride",
+        description: "A roguelike race through purgatory",
+        logo: "/images/projects/wheel-saint-hellride/logo.png",
+        link: "wheel-saint-hellride",
+        active: true,
+        featured: false,
+        tech: ["electron", "js", "html", "css"],
+        links: [
+            { text: "Steam Page", url: "https://store.steampowered.com/app/2745150/Wheel_Saint_Hellride/", external: true },
+        ],
+        detail: {
+            images: [
+                { url: "/images/projects/wheel-saint-hellride/splash_art.png", alt: "Steam splash art for Wheel Saint: Hellride" },
+                { url: "/images/projects/wheel-saint-hellride/logo.png", alt: "The Wheel Saint: Hellride logo" },
+            ],
+            tech: [{ name: "All", short: ["electron", "js", "html", "css"] }],
+            paragraphs: [
+                "Wheel Saint: Hellride is a rogue-like race through purgatory to rescue lost souls! Drive your car through neverending waves of demons, find lost souls and upgrade your ride!"
+            ],
+        },
+    },
+    {
+        name: "Better StudentVue",
+        description: "A project defined by \"Why isn't this already a feature?\"",
+        logo: "/logo.png",
+        link: "betterstudentvue",
+        active: false,
+        featured: false,
+        tech: ["next", "tailwind", "ts"],
+        links: [],
+        detail: {
+            images: [
+                { url: "/images/projects/betterstudentvue/screenshot1.png", alt: "A screenshot of the home page of Better StudentVue" },
+            ],
+            tech: [{ name: "All", short: ["next", "tailwind", "ts"] }],
+            paragraphs: [
+                "All I wanted to do was see how doing an assignment would affect my grade, but imagine my surprise when my school's gradebook didn't have that feature! The horror... What was I going to do, well I definitely wasn't going to do my finance homework, the best use of my time would be to make my own version of the gradebook that gives me the features I've always wanted.",
+            ],
+        },
     },
     {
         name: "The Pitwall",
         description: "Give your Twitch chat the tools they need to be your pit crew",
         logo: "https://gabirmotors.com/i/assets/other/pit_wall.png",
-        logoSize: "h-20",
-        size: "full",
         link: "pitwall",
         active: false,
-        new_links: [
-            {
-                text: "Visit Site",
-                url: "https://pitwall.gabirmotors.com",
-                external: true,
-                type: "block"
-            },
-            {
-                text: "View Source",
-                url: "https://github.com/Lilspartan/GabirLiveStandings",
-                external: true,
-                type: "group"
-            }
+        featured: true,
+        tech: ["next", "tailwind", "ts", "socketio", "electron", "react"],
+        links: [
+            { text: "Visit Site", url: "https://pitwall.gabirmotors.com", external: true },
+            { text: "View Source", url: "https://github.com/Lilspartan/GabirLiveStandings", external: true },
         ],
-        infoPage: {
+        detail: {
             images: [
-                {
-                    url: "/images/projects/pitwall/screenshot1.png",
-                    alt: "A screenshot of the Pit Wall desktop app"
-                }, 
-                {
-                    url: "/images/projects/pitwall/screenshot2.png",
-                    alt: "A screenshot of what the Pit Wall looks like during a race"
-                },
-                {
-                    url: "https://gabirmotors.com/i/assets/other/pit_wall.png",
-                    alt: "The Pit Wall logo"
-                }
+                { url: "/images/projects/pitwall/screenshot2.png", alt: "A screenshot of what the Pit Wall looks like during a race" },
+                { url: "/images/projects/pitwall/screenshot1.png", alt: "A screenshot of the Pit Wall desktop app" },
+                { url: "https://gabirmotors.com/i/assets/other/pit_wall.png", alt: "The Pit Wall logo" },
             ],
-            technologies: [
-                {
-                    name: "Website",
-                    short: [
-                        "next", "tailwind", "ts", "socketio"
-                    ],
-                },
-                {
-                    name: "Desktop Client",
-                    short: [
-                        "electron", "react", "socketio", "ts", "tailwind"
-                    ]
-                }
+            tech: [
+                { name: "Website", short: ["next", "tailwind", "ts", "socketio"] },
+                { name: "Desktop Client", short: ["electron", "react", "socketio", "ts", "tailwind"] },
             ],
-            description: [
+            paragraphs: [
                 "The Pit Wall started as a way for Twitch chat to watch the stats of a driver in real time, but after people had seen it I had a few requests to open it up to others, so I created the desktop client which made it super simple for anybody to pick up the Pit Wall and start using it."
-            ]
-        }
+            ],
+        },
     },
     {
-        size: "half",
-        projects: [
-            {
-                name: "My Portfolio",
-                description: "Where you're at right now",
-                logo: "/logo.png",
-                logoSize: "w-44",
-                size: "full",
-                link: "portfolio",
-                active: true,
-                new_links: [
-                    {
-                        text: "Visit Site",
-                        url: "/",
-                        external: false,
-                        type: "block"
-                    },
-                    {
-                        text: "View Source",
-                        url: "https://github.com/Lilspartan/Portfolio",
-                        external: true,
-                        type: "group"
-                    }
-                ],
-                infoPage: {
-                    images: [
-                        
-                    ],
-                    technologies: [
-                        {
-                            name: "All",
-                            short: [
-                                "next", "tailwind", "ts"
-                            ]
-                        }
-                    ],
-                    description: null,
-                },
-            },
-            {
-                name: "Better StudentVue",
-                description: "A project defined by \"Why isn't this already a feature?\"",
-                logo: "/logo.png",
-                logoSize: "w-1/4",
-                size: "full",
-                link: "betterstudentvue",
-                active: false,
-                new_links: [],
-                infoPage: {
-                    images: [
-                        {
-                            url: "/images/projects/betterstudentvue/screenshot1.png",
-                            alt: "A screenshot of the home page of Better StudentVue"
-                        },
-                    ],
-                    technologies: [
-                        {
-                            name: "All",
-                            short: [
-                                "next", "tailwind", "ts"
-                            ]
-                        }
-                    ],
-                    description: [
-                        "All I wanted to do was see how doing an assignment would affect my grade, but imagine my surprise when my school's gradebook didn't have that feature! The horror... What was I going to do, well I definitely wasn't going to do my finance homework, the best use of my time would be to make my own version of the gradebook that gives me the features I've always wanted.",
-                    ]
-                }
-            },
-            {
-                name: "Games",
-                description: "Recreating games to relearn vanilla JS",
-                logo: "/images/projects/games/logo.png",
-                logoSize: "w-44",
-                size: "full",
-                link: "games",
-                active: true,
-                new_links: [
-                    {
-                        text: "Visit Site",
-                        url: "https://games.gabekrahulik.dev",
-                        external: true,
-                        type: "block"
-                    }
-                ],
-                infoPage: {
-                    images: [
-                        {
-                            url: "/images/projects/games/screenshot1.png",
-                            alt: "Tetris"
-                        },
-                        {
-                            url: "/images/projects/games/logo.png",
-                            alt: "Games logo"
-                        }
-                    ],
-                    technologies: [
-                        {
-                            name: "All",
-                            short: [
-                                "html", "css", "js"
-                            ]
-                        }
-                    ],
-                    description: [
-                        "This is the project I've had the most fun with so far, it started as a school project where I had to build Minesweeper, and then I kept making other games.",
-                        "Most of the games are buggy or unfinished, but that's because this is less of an attempt at an accurate recreation and more just to make sure my vanilla JS skills are still intact after using so many frameworks"
-                    ],
-                },
-            }
-        ]
+        name: "Games",
+        description: "Recreating games to relearn vanilla JS",
+        logo: "/images/projects/games/logo.png",
+        link: "games",
+        active: true,
+        featured: false,
+        tech: ["html", "css", "js"],
+        links: [
+            { text: "Visit Site", url: "https://games.gabekrahulik.dev", external: true },
+        ],
+        detail: {
+            images: [
+                { url: "/images/projects/games/screenshot1.png", alt: "Tetris" },
+                { url: "/images/projects/games/logo.png", alt: "Games logo" },
+            ],
+            tech: [{ name: "All", short: ["html", "css", "js"] }],
+            paragraphs: [
+                "This is the project I've had the most fun with so far, it started as a school project where I had to build Minesweeper, and then I kept making other games.",
+                "Most of the games are buggy or unfinished, but that's because this is less of an attempt at an accurate recreation and more just to make sure my vanilla JS skills are still intact after using so many frameworks"
+            ],
+        },
     },
 ]
 
@@ -537,18 +351,9 @@ export const charity: CharityEvent[] = [
         raised: 3384.15,
         role: "Organizer",
         links: [
-            {
-                text: "Tiltify Campaign",
-                url: "https://tiltify.com/+pa-league/pa-league-gives-back-2023"
-            },
-            {
-                text: "iRacing Events Calendar",
-                url: "https://www.iracing.com/special-events/#"
-            },
-            {
-                text: "Child's Play",
-                url: "https://www.childsplaycharity.org/"
-            },
+            { text: "Tiltify Campaign", url: "https://tiltify.com/+pa-league/pa-league-gives-back-2023" },
+            { text: "iRacing Events Calendar", url: "https://www.iracing.com/special-events/#" },
+            { text: "Child's Play", url: "https://www.childsplaycharity.org/" },
         ]
     },
     {
@@ -559,18 +364,9 @@ export const charity: CharityEvent[] = [
         raised: 10500,
         role: "Volunteer",
         links: [
-            {
-                text: "Draw4Charity",
-                url: "https://draw4charity.org/"
-            },
-            {
-                text: "World Builders",
-                url: "https://worldbuilders.org/"
-            },
-            {
-                text: "Tiltify Campaign",
-                url: "https://tiltify.com/@draw4charity/draw4charity-february-2023"
-            }
+            { text: "Draw4Charity", url: "https://draw4charity.org/" },
+            { text: "World Builders", url: "https://worldbuilders.org/" },
+            { text: "Tiltify Campaign", url: "https://tiltify.com/@draw4charity/draw4charity-february-2023" },
         ]
     },
     {
@@ -581,18 +377,9 @@ export const charity: CharityEvent[] = [
         raised: 16115.06,
         role: "Volunteer",
         links: [
-            {
-                text: "Draw4Charity",
-                url: "https://draw4charity.org/"
-            },
-            {
-                text: "Child's Play",
-                url: "https://www.childsplaycharity.org/"
-            },
-            {
-                text: "Tiltify Campaign",
-                url: "https://tiltify.com/@draw4charity/draw4charity-july-15th-17th-2022"
-            }
+            { text: "Draw4Charity", url: "https://draw4charity.org/" },
+            { text: "Child's Play", url: "https://www.childsplaycharity.org/" },
+            { text: "Tiltify Campaign", url: "https://tiltify.com/@draw4charity/draw4charity-july-15th-17th-2022" },
         ]
     },
     {
@@ -603,14 +390,8 @@ export const charity: CharityEvent[] = [
         raised: 4382.48,
         role: "Organizer",
         links: [
-            {
-                text: "Tiltify Campaign",
-                url: "https://tiltify.com/+pa-league/pa-league-gives-back"
-            },
-            {
-                text: "Event (Twitch VOD)",
-                url: "https://www.twitch.tv/videos/1437596675"
-            }
+            { text: "Tiltify Campaign", url: "https://tiltify.com/+pa-league/pa-league-gives-back" },
+            { text: "Event (Twitch VOD)", url: "https://www.twitch.tv/videos/1437596675" },
         ]
     },
     {
@@ -621,18 +402,9 @@ export const charity: CharityEvent[] = [
         raised: 12500.69,
         role: "Volunteer",
         links: [
-            {
-                text: "Draw4Charity",
-                url: "https://draw4charity.org/"
-            },
-            {
-                text: "Child's Play",
-                url: "https://www.childsplaycharity.org/"
-            },
-            {
-                text: "Tiltify Campaign",
-                url: "https://tiltify.com/@draw4charity/draw4charity-july-15th-17th-2022"
-            }
+            { text: "Draw4Charity", url: "https://draw4charity.org/" },
+            { text: "Child's Play", url: "https://www.childsplaycharity.org/" },
+            { text: "Tiltify Campaign", url: "https://tiltify.com/@draw4charity/draw4charity-july-15th-17th-2022" },
         ]
     },
     {
@@ -643,14 +415,8 @@ export const charity: CharityEvent[] = [
         raised: 2510,
         role: "Organizer",
         links: [
-            {
-                text: "Tiltify Campaign",
-                url: "https://tiltify.com/@cwgabriel/12-hours-of-sebring-for-the-kids"
-            },
-            {
-                text: "Event (Twitch VOD)",
-                url: "https://www.twitch.tv/videos/965530125"
-            }
+            { text: "Tiltify Campaign", url: "https://tiltify.com/@cwgabriel/12-hours-of-sebring-for-the-kids" },
+            { text: "Event (Twitch VOD)", url: "https://www.twitch.tv/videos/965530125" },
         ]
     }
 ]

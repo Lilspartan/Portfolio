@@ -7,10 +7,10 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				primary: "#273043",
+				primary: "#1c1c28",
         		danger: "#FB2343",
-				accent: "#6CD4FF",
-				background: "#171C27",
+				accent: "#c084fc",
+				background: "transparent",
 				twitter: "#1DA1F2",
 				github: "#6e5494",
 				gmail: "#DB4437",
@@ -25,5 +25,5 @@ module.exports = {
 	variants: {
 		extend: {},
 	},
-	plugins: [],
+	plugins: [require('@tailwindcss/typography')],
 }
