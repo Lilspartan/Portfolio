@@ -1,19 +1,83 @@
-/* Syntax highlighting for prose and other languages via Prism */
+/*
+  Syntax highlighting theme
+  Palette inspired by Catppuccin Mocha
+*/
 
-/* JSON */
-.token.property         { color: #9cdcfe; }
-.token.null.keyword     { color: #569cd6; }
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata             { color: #585878; font-style: italic; }
 
+.token.string,
+.token.attr-value,
+.token.char              { color: #a6e3a1; }
 
-.token.comment          { color: #7a7a40; font-style: italic; }
-.token.string           { color: #ff8040; font-style: italic; }
-.token.decorator        { color: #00ffff; }
-.token.event            { color: #ffff00; }
-.token.keyword          { color: #ff0080; font-weight: bold; }
-.token.logical          { color: #ff80ff; font-weight: bold; }
-.token.builtin-keyword  { color: #00ff00; }
-.token.function         { color: #00c462; font-weight: bold; }
-.token.constant         { color: #ff80c0; }
-.token.builtin          { color: #c0c0c0; }
-.token.number           { color: #ff8000; }
-.token.operator         { color: #4da6ff; }
+.token.number            { color: #f9e2af; }
+
+.token.boolean           { color: #f38ba8; }
+
+.token.keyword,
+.token.tag               { color: #c084fc; font-weight: bold; }
+
+.token.operator,
+.token.punctuation       { color: #89dceb; }
+
+.token.function,
+.token.function-variable { color: #89b4fa; }
+
+.token.class-name,
+.token.builtin           { color: #cba6f7; }
+
+.token.property          { color: #89b4fa; }
+
+.token.constant,
+.token.symbol,
+.token.deleted           { color: #f38ba8; }
+
+.token.regex,
+.token.important         { color: #fab387; }
+
+.token.inserted          { color: #a6e3a1; }
+
+.token.attr-name         { color: #f9e2af; }
+
+/* C / C++ */
+.token.macro.property    { color: #fab387; }
+.token.directive-hash    { color: #f38ba8; }
+.token.directive.keyword { color: #c084fc; }
+.token.expression        { color: #cdd6f4; }
+
+/* ── Prose language tokens ────────────────────────────────────────────── */
+
+/* control flow: when, then, if, else, repeat, events */
+.token.keyword           { color: #c084fc; font-weight: bold; }
+
+/* logical: and, or, not, xor */
+.token.logical           { color: #d4a4fd; font-weight: bold; }
+
+/* structure: return, sentence */
+.token.builtin-keyword   { color: #a6e3a1; }
+
+/* event triggers: on_tick, on_start, on_touch … */
+.token.event             { color: #f9e2af; }
+
+/* built-in functions: print, tell, goto */
+.token.function          { color: #89b4fa; font-weight: bold; }
+
+/* literals and type names: true, false, nil, NUMBER … */
+.token.constant          { color: #f38ba8; }
+
+/* built-in identifiers: self, wbset, wbget, dt */
+.token.builtin           { color: #cba6f7; }
+
+/* @ prefix decorator */
+.token.decorator         { color: #fab387; }
+
+/* strings */
+.token.string            { color: #a6e3a1; font-style: italic; }
+
+/* numbers */
+.token.number            { color: #f9e2af; }
+
+/* operators and punctuation */
+.token.operator          { color: #89dceb; }

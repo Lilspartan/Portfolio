@@ -6,9 +6,12 @@ import Prism from 'prismjs';
 import 'prismjs/components/prism-json';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-c';
+import 'prismjs/components/prism-cpp';
 import './prose-grammar';
 
 const WRITEUPS_DIR = path.join(process.cwd(), 'writeups');
+
 
 export interface WriteupMeta {
     slug: string;

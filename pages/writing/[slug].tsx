@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Button, Card } from '../../components';
 import Lightbox from '../../components/Lightbox';
 import { getAllWriteups, getWriteupBySlug, Writeup } from '../../utils/writeups';
+import { formatWriteupDate } from '../../utils/dates';
 import { projects } from '../../utils/projects';
 
 interface Props {
@@ -35,7 +36,7 @@ const WriteupPage = ({ writeup }: Props) => {
                         </a>
                     )}
                     <span className="text-white/30 text-xs">
-                        {new Date(writeup.date + 'T12:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                        {formatWriteupDate(writeup.date)}
                     </span>
                 </div>
 

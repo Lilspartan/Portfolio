@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next';
 import { Card } from '../../components';
 import { getAllWriteups, WriteupMeta } from '../../utils/writeups';
+import { formatWriteupDate } from '../../utils/dates';
 import { projects } from '../../utils/projects';
 
 interface Props {
@@ -35,7 +36,7 @@ const WritingPage = ({ writeups }: Props) => {
                                                     </span>
                                                 )}
                                                 <span className="text-white/30 text-xs">
-                                                    {new Date(w.date + 'T12:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                                                    {formatWriteupDate(w.date)}
                                                 </span>
                                             </div>
                                         </div>

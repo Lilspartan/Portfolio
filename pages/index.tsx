@@ -1,3 +1,4 @@
+import { GetStaticProps } from 'next';
 import { Button, Card } from '../components';
 import { AiFillGithub, AiOutlineTwitter, AiFillLinkedin } from 'react-icons/ai';
 import { SiTailwindcss, SiGmail, SiKofi, SiReplit, SiDiscord, SiBluesky,
@@ -8,6 +9,8 @@ import { useState } from 'react';
 import classNames from 'classnames';
 import { projects, charity } from '../utils/projects';
 import { ShortTech } from '../utils/interfaces';
+import { getAllWriteups, WriteupMeta } from '../utils/writeups';
+import { formatWriteupDate } from '../utils/dates';
 
 const OPEN_TO_WORK = false;
 
@@ -23,7 +26,7 @@ const contacts = [
 
 const experience = [
     {
-        role: "Teaching Assistant - GAM200",
+        role: "Teaching Assistant - GAM200/250",
         link: "https://www.digipen.edu",
         subtitle: "Sophomore Game Project, DigiPen Institute of Technology",
         dates: "Fall 2025 – Spring 2026",
@@ -112,7 +115,11 @@ function calculateAge(date: number) {
     return Math.abs(ageDate.getUTCFullYear() - 1970);
 }
 
-const Landing = () => {
+interface Props {
+    recentWriteups: WriteupMeta[];
+}
+
+const Landing = ({ recentWriteups }: Props) => {
     const [age] = useState(calculateAge(1094760000000).toString());
 
     return (
@@ -269,6 +276,70 @@ const Landing = () => {
                     ))}
                 </div>
 
+                {recentWriteups.length > 0 && (
+                    <section id="writing" className="py-16 px-4 max-w-4xl mx-auto">
+                        <div className="flex items-center justify-between mb-8">
+                            <h2 className="text-3xl font-extrabold text-white border-l-4 border-accent pl-4">Recent Writeups</h2>
+                            <a href="/writing" className="text-accent/70 hover:text-accent text-sm transition duration-200">All writeups →</a>
+                        </div>
+                        <div className="flex flex-col gap-4">
+                            {recentWriteups[0] && (() => {
+                                const w = recentWriteups[0];
+                                const project = projects.find(p => p.link === w.project);
+                                return (
+                                    <a href={`/writing/${w.slug}`} className="block group">
+                                        <Card full>
+                                            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                                                <div className="flex-1 min-w-0">
+                                                    <div className="flex flex-wrap items-center gap-2 mb-1">
+                                                        {project && (
+                                                            <span className="border border-accent/30 text-accent/80 px-2 py-0.5 text-xs font-semibold tracking-wider uppercase">
+                                                                {project.name}
+                                                            </span>
+                                                        )}
+                                                        <span className="text-white/30 text-xs">{formatWriteupDate(w.date)}</span>
+                                                    </div>
+                                                    <p className="text-white font-bold text-lg group-hover:text-accent transition duration-200">{w.title}</p>
+                                                    <p className="text-white/50 text-sm mt-1">{w.description}</p>
+                                                </div>
+                                                <span className="text-white/30 group-hover:text-accent transition duration-200 text-lg shrink-0">→</span>
+                                            </div>
+                                        </Card>
+                                    </a>
+                                );
+                            })()}
+                            {recentWriteups.length > 1 && (
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    {recentWriteups.slice(1, 3).map(w => {
+                                        const project = projects.find(p => p.link === w.project);
+                                        return (
+                                            <a key={w.slug} href={`/writing/${w.slug}`} className="block group">
+                                                <Card full>
+                                                    <div className="flex flex-col h-full justify-between gap-3">
+                                                        <div>
+                                                            <div className="flex flex-wrap items-center gap-2 mb-1">
+                                                                {project && (
+                                                                    <span className="border border-accent/30 text-accent/80 px-2 py-0.5 text-xs font-semibold tracking-wider uppercase">
+                                                                        {project.name}
+                                                                    </span>
+                                                                )}
+                                                                <span className="text-white/30 text-xs">{formatWriteupDate(w.date)}</span>
+                                                            </div>
+                                                            <p className="text-white font-bold group-hover:text-accent transition duration-200">{w.title}</p>
+                                                            <p className="text-white/50 text-sm mt-1">{w.description}</p>
+                                                        </div>
+                                                        <span className="text-white/30 group-hover:text-accent transition duration-200 text-sm">Read more →</span>
+                                                    </div>
+                                                </Card>
+                                            </a>
+                                        );
+                                    })}
+                                </div>
+                            )}
+                        </div>
+                    </section>
+                )}
+
                 <h2 className="text-3xl font-extrabold text-white mt-20 mb-8 border-l-4 border-accent pl-4">Charity Work</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {charity.map((event: any, i: number) => (
@@ -329,6 +400,11 @@ const Landing = () => {
 
         </div>
     );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+    const recentWriteups = getAllWriteups().slice(0, 3);
+    return { props: { recentWriteups } };
 };
 
 export default Landing;

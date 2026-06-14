@@ -4,6 +4,7 @@ import Lightbox from '../../components/Lightbox';
 import { Project, Image, ShortTech } from '../../utils/interfaces';
 import { projects, Tools } from '../../utils/projects';
 import { getWriteupsByProject, WriteupMeta } from '../../utils/writeups';
+import { formatWriteupDate } from '../../utils/dates';
 import { useState } from 'react';
 import { DiCss3, DiHtml5, DiMongodb } from 'react-icons/di';
 import { SiJavascript, SiTailwindcss, SiTypescript, SiElectron, SiSocketdotio, SiReact, SiNodedotjs, SiUikit } from 'react-icons/si';
@@ -198,7 +199,7 @@ const ProjectPage = ({ project, relatedWriteups }: Props) => {
 														<p className="text-white/50 text-sm mt-0.5">{w.description}</p>
 													</div>
 													<span className="text-white/30 text-xs shrink-0">
-														{new Date(w.date + 'T12:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+														{formatWriteupDate(w.date)}
 													</span>
 												</div>
 											</Card>
