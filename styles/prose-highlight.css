@@ -1,0 +1,19 @@
+/* Syntax highlighting for prose and other languages via Prism */
+
+/* JSON */
+.token.property         { color: #9cdcfe; }
+.token.null.keyword     { color: #569cd6; }
+
+
+.token.comment          { color: #7a7a40; font-style: italic; }
+.token.string           { color: #ff8040; font-style: italic; }
+.token.decorator        { color: #00ffff; }
+.token.event            { color: #ffff00; }
+.token.keyword          { color: #ff0080; font-weight: bold; }
+.token.logical          { color: #ff80ff; font-weight: bold; }
+.token.builtin-keyword  { color: #00ff00; }
+.token.function         { color: #00c462; font-weight: bold; }
+.token.constant         { color: #ff80c0; }
+.token.builtin          { color: #c0c0c0; }
+.token.number           { color: #ff8000; }
+.token.operator         { color: #4da6ff; }

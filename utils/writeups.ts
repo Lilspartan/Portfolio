@@ -2,6 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { marked } from 'marked';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-json';
+import './prose-grammar';
 
 const WRITEUPS_DIR = path.join(process.cwd(), 'writeups');
 
@@ -47,10 +50,22 @@ export function getWriteupBySlug(slug: string): Writeup | null {
     const { data, content } = matter(raw);
 
     const renderer = new marked.Renderer();
+
     const imageBase = `/images/writings/${slug}/`;
     renderer.image = ({ href, title, text }) => {
         const src = /^(https?:\/\/|\/)/.test(href) ? href : imageBase + href;
         return `<img src="${src}" alt="${text}"${title ? ` title="${title}"` : ''} />`;
+    };
+
+    renderer.code = ({ text, lang }) => {
+        const grammar = lang && Prism.languages[lang];
+        if (grammar) {
+            const highlighted = Prism.highlight(text, grammar, lang);
+            return `<pre class="language-${lang}"><code class="language-${lang}">${highlighted}</code></pre>`;
+        }
+        const escaped = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        const cls = lang ? ` class="language-${lang}"` : '';
+        return `<pre><code${cls}>${escaped}</code></pre>`;
     };
 
     return {
