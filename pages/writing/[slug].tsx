@@ -2,6 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { useState } from 'react';
 import { Button, Card } from '../../components';
 import Lightbox from '../../components/Lightbox';
+import SEO from '../../components/SEO';
 import { getAllWriteups, getWriteupBySlug, Writeup } from '../../utils/writeups';
 import { formatWriteupDate } from '../../utils/dates';
 import { projects } from '../../utils/projects';
@@ -22,8 +23,16 @@ const WriteupPage = ({ writeup }: Props) => {
         }
     };
 
+    const ogUrl = `/api/og?title=${encodeURIComponent(writeup.title)}&description=${encodeURIComponent(writeup.description)}${project ? `&label=${encodeURIComponent(project.name)}&type=writeup` : ''}`;
+
     return (
         <div className="bg-background min-h-screen text-white">
+            <SEO
+                title={`${writeup.title} — Gabe Krahulik`}
+                description={writeup.description}
+                url={`writing/${writeup.slug}`}
+                ogImage={ogUrl}
+            />
             <section className="py-16 mt-16 px-4 max-w-3xl mx-auto">
                 <a href="/writing" className="inline-flex items-center gap-1 text-white/40 hover:text-white/70 text-sm transition duration-200 mb-6 block">
                     ← Writeups

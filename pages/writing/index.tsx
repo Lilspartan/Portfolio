@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next';
 import { Card } from '../../components';
+import SEO from '../../components/SEO';
 import { getAllWriteups, WriteupMeta } from '../../utils/writeups';
 import { formatWriteupDate } from '../../utils/dates';
 import { projects } from '../../utils/projects';
@@ -11,6 +12,11 @@ interface Props {
 const WritingPage = ({ writeups }: Props) => {
     return (
         <div className="bg-background min-h-screen">
+            <SEO
+                title="Writeups — Gabe Krahulik"
+                description="Dev writeups and project postmortems from Gabe Krahulik."
+                url="writing"
+            />
             <section className="py-24 px-4 max-w-4xl mx-auto">
                 <h2 className="text-4xl font-extrabold text-white mb-8 border-l-4 border-accent pl-4">Writeups</h2>
                 {writeups.length === 0 ? (

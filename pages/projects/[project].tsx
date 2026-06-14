@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { Button, Card } from '../../components';
 import Lightbox from '../../components/Lightbox';
+import SEO from '../../components/SEO';
 import { Project, Image, ShortTech } from '../../utils/interfaces';
 import { projects, Tools } from '../../utils/projects';
 import { getWriteupsByProject, WriteupMeta } from '../../utils/writeups';
@@ -56,8 +57,16 @@ interface Props {
 const ProjectPage = ({ project, relatedWriteups }: Props) => {
 	const [lightBoxImage, setLightBoxImage] = useState<Image | null>(null);
 
+	const ogUrl = `/api/og?title=${encodeURIComponent(project.name)}&description=${encodeURIComponent(project.description)}&type=project`;
+
 	return (
 		<>
+			<SEO
+				title={`${project.name} — Gabe Krahulik`}
+				description={project.description}
+				url={`projects/${project.link}`}
+				ogImage={ogUrl}
+			/>
 			{lightBoxImage && (
 				<Lightbox
 					src={lightBoxImage.url}

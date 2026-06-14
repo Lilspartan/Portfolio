@@ -8,6 +8,7 @@ import { DiCss3, DiHtml5, DiMongodb } from 'react-icons/di';
 import { useState } from 'react';
 import classNames from 'classnames';
 import ScrollReveal from '../components/ScrollReveal';
+import SEO from '../components/SEO';
 import { projects, charity } from '../utils/projects';
 import { ShortTech } from '../utils/interfaces';
 import { getAllWriteups, WriteupMeta } from '../utils/writeups';
@@ -125,6 +126,10 @@ const Landing = ({ recentWriteups }: Props) => {
 
     return (
         <div className="bg-background">
+            <SEO
+                title="Gabe Krahulik | Developer"
+                description="Game and web developer from Seattle building full-stack apps and game engines."
+            />
 
             <section id="hero" className="relative min-h-screen grid place-items-center text-center px-4 pt-16">
                 <div data-m="drop" data-m-delay="0.5">
