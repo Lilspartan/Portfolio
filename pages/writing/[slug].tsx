@@ -64,7 +64,7 @@ const WriteupPage = ({ writeup }: Props) => {
                             <div className="flex items-center gap-4">
                                 <img src={project.logo} alt={project.name + ' logo'} className="h-10 object-contain shrink-0" />
                                 <div className="flex-1 min-w-0">
-                                    <p className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-0.5">Project</p>
+                                    <p className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-0.5">Related Project</p>
                                     <p className="text-white font-bold group-hover:text-accent transition duration-200">{project.name}</p>
                                     <p className="text-white/50 text-sm mt-0.5 truncate">{project.description}</p>
                                 </div>
