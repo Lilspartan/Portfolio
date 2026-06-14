@@ -4,6 +4,8 @@ import matter from 'gray-matter';
 import { marked } from 'marked';
 import Prism from 'prismjs';
 import 'prismjs/components/prism-json';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-typescript';
 import './prose-grammar';
 
 const WRITEUPS_DIR = path.join(process.cwd(), 'writeups');
@@ -32,7 +34,7 @@ export function getAllWriteups(): WriteupMeta[] {
                 slug,
                 title: data.title,
                 project: data.project,
-                date: String(data.date),
+                date: data.date instanceof Date ? data.date.toISOString().split('T')[0] : String(data.date),
                 description: data.description,
             };
         })
@@ -72,7 +74,7 @@ export function getWriteupBySlug(slug: string): Writeup | null {
         slug,
         title: data.title,
         project: data.project,
-        date: String(data.date),
+        date: data.date instanceof Date ? data.date.toISOString().split('T')[0] : String(data.date),
         description: data.description,
         html: marked(content, { renderer }) as string,
     };

@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useState } from 'react';
-import { Button } from '../../components';
+import { Button, Card } from '../../components';
 import Lightbox from '../../components/Lightbox';
 import { getAllWriteups, getWriteupBySlug, Writeup } from '../../utils/writeups';
 import { projects } from '../../utils/projects';
@@ -25,7 +25,7 @@ const WriteupPage = ({ writeup }: Props) => {
         <div className="bg-background min-h-screen text-white">
             <section className="py-16 mt-16 px-4 max-w-3xl mx-auto">
                 <a href="/writing" className="inline-flex items-center gap-1 text-white/40 hover:text-white/70 text-sm transition duration-200 mb-6 block">
-                    ← Writing
+                    ← Writeups
                 </a>
 
                 <div className="flex flex-wrap items-center gap-3 mb-2">
@@ -35,7 +35,7 @@ const WriteupPage = ({ writeup }: Props) => {
                         </a>
                     )}
                     <span className="text-white/30 text-xs">
-                        {new Date(writeup.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                        {new Date(writeup.date + 'T12:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
                     </span>
                 </div>
 
@@ -57,8 +57,24 @@ const WriteupPage = ({ writeup }: Props) => {
                     />
                 )}
 
-                <div className="mt-16 w-48">
-                    <Button link="/writing">← Back to Writing</Button>
+                {project && (
+                    <a href={`/projects/${project.link}`} className="mt-16 block group">
+                        <Card>
+                            <div className="flex items-center gap-4">
+                                <img src={project.logo} alt={project.name + ' logo'} className="h-10 object-contain shrink-0" />
+                                <div className="flex-1 min-w-0">
+                                    <p className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-0.5">Project</p>
+                                    <p className="text-white font-bold group-hover:text-accent transition duration-200">{project.name}</p>
+                                    <p className="text-white/50 text-sm mt-0.5 truncate">{project.description}</p>
+                                </div>
+                                <span className="text-white/30 group-hover:text-accent transition duration-200 text-lg shrink-0">→</span>
+                            </div>
+                        </Card>
+                    </a>
+                )}
+
+                <div className="mt-6 w-48">
+                    <Button link="/writing">← Back to Writeups</Button>
                 </div>
             </section>
         </div>

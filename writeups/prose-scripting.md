@@ -154,3 +154,44 @@ Dropdown inputs populate their options from the project registry at runtime, so 
 An input slot can also accept an **inner block** as its value instead of a typed input. The slot becomes a drop zone and the nested block's output is used in its place.
 
 ---
+
+## Drag and Drop
+
+The DND system has three parts: `Draggable`, `Droppable`, and `DNDManager`.
+
+<!-- DIAGRAM: DND flow — mouse down on Draggable → DNDManager tracks it → mouse up over Droppable → drop callback fires -->
+
+**Draggable** is attached to every block. It tracks:
+- The block's last known bounding box (so it knows where it started)
+- A click offset (so the block doesn't snap to your cursor's top-left)
+- A z-index (bumped on pick-up so the dragged block renders above everything)
+- An opaque data payload (`std::any`) carrying the block's ID and whether it came from the sidebar
+
+**Droppable** is attached to every drop zone. It tracks:
+- Which `Draggable` was released over it (cleared each frame after handling)
+- Whether something is currently hovering over it (for visual feedback)
+
+**DNDManager** is the coordinator. There is one per editor. It:
+- Holds a pointer to the currently-dragged block
+- Wraps the entire editor's draw call so it can render the floating drag preview on top of everything
+- Is registered as a global singleton so any droppable can report back to it
+
+### What happens on drop
+
+1. The `Droppable` fires with a pointer to the released `Draggable`
+2. The sentence checks the draggable's data payload
+3. **Sidebar block** → a new block is constructed from the template JSON and inserted at the drop index
+4. **Canvas block** → the block is located by UID anywhere in the loaded sentences (including nested), moved out of its current position, and inserted at the new index
+5. The script is auto-saved to JSON after every drop
+
+<!-- SCREENSHOT: block mid-drag floating above the canvas -->
+
+---
+
+## Save and Load
+
+The editor saves each script as two files:
+- A `.json` file storing the block tree (which blocks, in which order, with what input values)
+- A `.prose` file — the compiled text output that the runtime reads
+
+Saving happens automatically on every block drop and explicitly when you hit the Back button. The Back button also triggers a recompile of the `.prose` file and returns you to the properties panel. the JSON save format mirrors the block tree exactly, so loading is just reconstructing blocks from their category+id template and re-filling the saved input values.

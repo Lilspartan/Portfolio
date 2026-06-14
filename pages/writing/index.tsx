@@ -37,7 +37,7 @@ const WritingPage = ({ writeups }: Props) => {
                                                     </span>
                                                 )}
                                                 <span className="text-white/30 text-xs">
-                                                    {new Date(w.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                                                    {new Date(w.date + 'T12:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
                                                 </span>
                                             </div>
                                         </div>
