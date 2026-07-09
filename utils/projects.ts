@@ -133,7 +133,7 @@ export const projects: Project[] = [
         logo: "/images/projects/forge-fiasco/logo.png",
         link: "forge-fiasco",
         active: true,
-        featured: true,
+        featured: false,
         tech: ["CPP"],
         links: [],
         resumeRole: "Developer & Buildmaster",
@@ -158,6 +158,29 @@ export const projects: Project[] = [
                 "Forge Fiasco was a game I worked on in a team of 5 for my GAM200/250 classes at DigiPen. Over the two semesters, we had to create a custom engine through to an MVP, then use that engine to create our game."
             ],
         },
+    },
+    {
+        name: "Sandstone (Docs Website)",
+        description: "A Minecraft Datapack library in Typescript",
+        logo: "/images/projects/sandstone/logo.png",
+        link: "sandstone",
+        active: true,
+        featured: true,
+        tech: ["html", "react", "css", "js"],
+        links: [
+            { text: "Visit the Docs", url: "https://sandstone.dev", external: true },
+            { text: "View Source", url: "https://github.com/sandstone-mc/sandstone-documentation", external: true },
+        ],
+        detail: {
+            images: [
+                { url: "/images/projects/sandstone/screenshot_after.png", alt: "The redesigned Sandstone landing page" },
+                { url: "/images/projects/sandstone/screenshot_after_full.png", alt: "The full redesigned Sandstone landing page" }
+            ],
+            tech: [{ name: "All", short: ["html", "react", "css", "js"] }],
+            paragraphs:[
+                ""
+            ]
+        }
     },
     {
         name: "Kregs Toolbox",
