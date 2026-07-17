@@ -161,7 +161,7 @@ export const projects: Project[] = [
     },
     {
         name: "Sandstone (Docs Website)",
-        description: "A Minecraft Datapack library in Typescript",
+        description: "Landing page redesign for the Sandstone Minecraft datapack library",
         logo: "/images/projects/sandstone/logo.png",
         link: "sandstone",
         active: true,
@@ -177,8 +177,9 @@ export const projects: Project[] = [
                 { url: "/images/projects/sandstone/screenshot_after_full.png", alt: "The full redesigned Sandstone landing page" }
             ],
             tech: [{ name: "All", short: ["html", "react", "css", "js"] }],
-            paragraphs:[
-                ""
+            paragraphs: [
+                "Sandstone is a TypeScript library that assists Minecraft datapack development. Instead of writing raw .mcfunction files and JSON resources by hand, you write TypeScript and get full IDE autocompletion for every command, predicate, loot table, and advancement in the game. Built-in abstractions like if/else, loops, and boolean logic compile down to optimized vanilla commands, and the NPM ecosystem means common patterns like raycasting can be published and shared across projects.",
+                "I redesigned the Sandstone documentation website, the public face of the project at sandstone.dev. The existing site was functional but not much visually. The goal was to give it a landing page that matched the ambition of the library itself. I rebuilt the hero section and overall page structure using React and custom CSS within the Docusaurus framework, focusing on clear hierarchy, better feature presentation, and a visual identity that matched the Minecraft ecosystem while still feeling unique.",
             ]
         }
     },
@@ -314,25 +315,6 @@ export const projects: Project[] = [
         },
     },
     {
-        name: "Better StudentVue",
-        description: "A project defined by \"Why isn't this already a feature?\"",
-        logo: "/logo.png",
-        link: "betterstudentvue",
-        active: false,
-        featured: false,
-        tech: ["next", "tailwind", "ts"],
-        links: [],
-        detail: {
-            images: [
-                { url: "/images/projects/betterstudentvue/screenshot1.png", alt: "A screenshot of the home page of Better StudentVue" },
-            ],
-            tech: [{ name: "All", short: ["next", "tailwind", "ts"] }],
-            paragraphs: [
-                "All I wanted to do was see how doing an assignment would affect my grade, but imagine my surprise when my school's gradebook didn't have that feature! The horror... What was I going to do, well I definitely wasn't going to do my finance homework, the best use of my time would be to make my own version of the gradebook that gives me the features I've always wanted.",
-            ],
-        },
-    },
-    {
         name: "The Pitwall",
         description: "Give your Twitch chat the tools they need to be your pit crew",
         logo: "https://gabirmotors.com/i/assets/other/pit_wall.png",
@@ -363,6 +345,25 @@ export const projects: Project[] = [
             ],
             paragraphs: [
                 "The Pit Wall started as a way for Twitch chat to watch the stats of a driver in real time, but after people had seen it I had a few requests to open it up to others, so I created the desktop client which made it super simple for anybody to pick up the Pit Wall and start using it."
+            ],
+        },
+    },
+    {
+        name: "Better StudentVue",
+        description: "A project defined by \"Why isn't this already a feature?\"",
+        logo: "/logo.png",
+        link: "betterstudentvue",
+        active: false,
+        featured: false,
+        tech: ["next", "tailwind", "ts"],
+        links: [],
+        detail: {
+            images: [
+                { url: "/images/projects/betterstudentvue/screenshot1.png", alt: "A screenshot of the home page of Better StudentVue" },
+            ],
+            tech: [{ name: "All", short: ["next", "tailwind", "ts"] }],
+            paragraphs: [
+                "All I wanted to do was see how doing an assignment would affect my grade, but imagine my surprise when my school's gradebook didn't have that feature! The horror... What was I going to do, well I definitely wasn't going to do my finance homework, the best use of my time would be to make my own version of the gradebook that gives me the features I've always wanted.",
             ],
         },
     },

@@ -51,7 +51,6 @@ sentence Sentence3:
 	}
 	then:
 	{
-		on_start;
 		tell(self, "die");
 	}
 }
