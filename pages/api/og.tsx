@@ -1,8 +1,10 @@
-import { ImageResponse } from '@vercel/og';
-import type { NextApiRequest, NextApiResponse } from 'next';
+import { ImageResponse } from 'next/og';
+import type { NextRequest } from 'next/server';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    const { searchParams } = new URL(req.url!, 'http://localhost');
+export const runtime = 'edge';
+
+export default function handler(req: NextRequest) {
+    const { searchParams } = new URL(req.url);
     const title = searchParams.get('title') ?? 'Gabe Krahulik';
     const description = searchParams.get('description') ?? '';
     const label = searchParams.get('label') ?? '';
@@ -11,7 +13,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const titleSize = title.length > 50 ? '44px' : title.length > 30 ? '54px' : '64px';
     const shortDesc = description.length > 140 ? description.slice(0, 140) + '…' : description;
 
-    const imageResponse = new ImageResponse(
+    return new ImageResponse(
         (
             <div
                 style={{
@@ -132,9 +134,4 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         ),
         { width: 1200, height: 630 }
     );
-
-    const buffer = Buffer.from(await imageResponse.arrayBuffer());
-    res.setHeader('Content-Type', 'image/png');
-    res.setHeader('Cache-Control', 'public, immutable, no-transform, max-age=31536000');
-    res.send(buffer);
 }

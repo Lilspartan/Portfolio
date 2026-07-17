@@ -1,6 +1,8 @@
+import Link from 'next/link';
+
 const Nav = () => (
     <nav className="nav-animate fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 backdrop-blur-md bg-black/40 border-b border-white/10">
-        <a href="/">
+        <Link href="/">
             <svg width="32" height="32" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <linearGradient id="navGrad" x1="-320" y1="0" x2="640" y2="0" gradientUnits="userSpaceOnUse">
@@ -36,15 +38,15 @@ const Nav = () => (
                     <path d="M160 75L310 75L310 150H160L160 75Z" fill="url(#navGrad)"/>
                 </g>
             </svg>
-        </a>
+        </Link>
         <div className="flex items-center gap-6 text-sm font-semibold">
-            <a href="/#about"    className="text-white/60 hover:text-accent transition duration-200">About</a>
-            <a href="/#projects" className="text-white/60 hover:text-accent transition duration-200">Projects</a>
-            <a href="/writing"   className="text-white/60 hover:text-accent transition duration-200">Writeups</a>
-            <a href="/#contact"  className="text-white/60 hover:text-accent transition duration-200">Contact</a>
-            <a href="/resume" className="border border-accent/50 text-accent px-3 py-1 text-xs font-bold hover:bg-accent hover:text-primary transition duration-200">
+            <Link href="/#about"    className="text-white/60 hover:text-accent transition duration-200">About</Link>
+            <Link href="/#projects" className="text-white/60 hover:text-accent transition duration-200">Projects</Link>
+            <Link href="/writing"   className="text-white/60 hover:text-accent transition duration-200">Writeups</Link>
+            <Link href="/#contact"  className="text-white/60 hover:text-accent transition duration-200">Contact</Link>
+            <Link href="/resume" className="border border-accent/50 text-accent px-3 py-1 text-xs font-bold hover:bg-accent hover:text-primary transition duration-200">
                 Resume
-            </a>
+            </Link>
         </div>
     </nav>
 );

@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Link from 'next/link';
 import { useState } from 'react';
 import { Button, Card } from '../../components';
 import Lightbox from '../../components/Lightbox';
@@ -34,9 +35,9 @@ const WriteupPage = ({ writeup }: Props) => {
                 ogImage={ogUrl}
             />
             <section className="py-16 mt-16 px-4 max-w-3xl mx-auto">
-                <a href="/writing" className="inline-flex items-center gap-1 text-white/40 hover:text-white/70 text-sm transition duration-200 mb-6 block">
+                <Link href="/writing" className="inline-flex items-center gap-1 text-white/40 hover:text-white/70 text-sm transition duration-200 mb-6">
                     ← Writeups
-                </a>
+                </Link>
 
                 <div className="flex flex-wrap items-center gap-3 mb-2">
                     {project && (

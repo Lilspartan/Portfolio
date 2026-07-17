@@ -1,4 +1,5 @@
 import { GetStaticProps } from 'next';
+import Link from 'next/link';
 import { Button, Card } from '../components';
 import { AiFillGithub, AiOutlineTwitter, AiFillLinkedin } from 'react-icons/ai';
 import { SiTailwindcss, SiGmail, SiKofi, SiReplit, SiDiscord, SiBluesky,
@@ -294,7 +295,7 @@ const Landing = ({ recentWriteups }: Props) => {
                             <ScrollReveal animation="reveal-right" duration="0.6">
                             <h2 className="text-3xl font-extrabold text-white border-l-4 border-accent pl-4">Recent Writeups</h2>
                             </ScrollReveal>
-                            <a href="/writing" className="text-accent/70 hover:text-accent text-sm transition duration-200">All writeups →</a>
+                            <Link href="/writing" className="text-accent/70 hover:text-accent text-sm transition duration-200">All writeups →</Link>
                         </div>
                         <div className="flex flex-col gap-4">
                             {recentWriteups[0] && (() => {

@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+import Link from 'next/link';
 import { Button, Card } from '../../components';
 import Lightbox from '../../components/Lightbox';
 import SEO from '../../components/SEO';
@@ -80,9 +81,9 @@ const ProjectPage = ({ project, relatedWriteups }: Props) => {
 					<>
 						{/* Hero */}
 						<section className="py-16 mt-16 px-4 max-w-4xl mx-auto">
-							<a href="/#projects" className="inline-flex items-center gap-1 text-white/40 hover:text-white/70 text-sm transition duration-200 mb-6 block">
+							<Link href="/#projects" className="inline-flex items-center gap-1 text-white/40 hover:text-white/70 text-sm transition duration-200 mb-6">
 								← Projects
-							</a>
+							</Link>
 							<div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
 								<div className="flex items-center gap-4">
 									<img src={project.logo} alt={project.name + " logo"} className="h-12 object-contain" />
