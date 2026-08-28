@@ -189,13 +189,16 @@ export const projects: Project[] = [
         logo: "/images/projects/summitguessr/logo.png",
         link: "summitguessr",
         active: true,
-        featured: false,
+        featured: true,
         tech: ["next", "tailwind", "ts"],
         links: [
             { text: "Visit Site", url: "https://summitguessr.lilspartan.link", external: true },
         ],
         detail: {
-            images: [],
+            images: [
+                { url: "/images/projects/summitguessr/screenshot-setup.png", alt: "The SummitGuessr game setup screen, with region, round, and timer options" },
+                { url: "/images/projects/summitguessr/screenshot-playing.png", alt: "A panorama shown during a round of SummitGuessr, with the round timer, score, and guess map visible" },
+            ],
             tech: [{ name: "All", short: ["next", "tailwind", "ts"] }],
             paragraphs: [
                 "Smithed Summit is an in-game Minecraft convention for datapackers, mapmakers, and other creators to show off what they'd made, all hosted on a hand-built island for two weeks.",
@@ -209,7 +212,7 @@ export const projects: Project[] = [
         logo: "https://gabirmotors.com/i/assets/teams/GM/main.png",
         link: "gabirmotors",
         active: true,
-        featured: true,
+        featured: false,
         tech: ["next", "tailwind", "ts", "framer-motion"],
         resumeRole: "Lead Developer",
         resumeDates: "2021 - Present",
@@ -239,7 +242,7 @@ export const projects: Project[] = [
         logo: "/images/projects/kregs-toolbox/logo.png",
         link: "kregs-toolbox",
         active: true,
-        featured: false,
+        featured: true,
         tech: ["CPP"],
         links: [],
         resumeRole: "UI/UX Developer",

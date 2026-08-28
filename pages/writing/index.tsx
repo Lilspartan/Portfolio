@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next';
-import { Card } from '../../components';
+import { Card, SectionHeading } from '../../components';
 import SEO from '../../components/SEO';
 import { getAllWriteups, WriteupMeta } from '../../utils/writeups';
 import { formatWriteupDate } from '../../utils/dates';
@@ -17,8 +17,10 @@ const WritingPage = ({ writeups }: Props) => {
                 description="Dev writeups and project postmortems from Gabe Krahulik."
                 url="writing"
             />
-            <section className="py-24 px-4 max-w-4xl mx-auto">
-                <h2 className="text-4xl font-extrabold text-white mb-8 border-l-4 border-accent pl-4">Writeups</h2>
+            <section className="py-24 px-4 sm:px-8 lg:px-16 max-w-4xl mx-auto">
+                <div className="mb-10">
+                    <SectionHeading eyebrow="Dev notes & postmortems">Writeups</SectionHeading>
+                </div>
                 {writeups.length === 0 ? (
                     <></>
                 ) : (

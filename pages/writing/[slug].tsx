@@ -34,7 +34,7 @@ const WriteupPage = ({ writeup }: Props) => {
                 url={`writing/${writeup.slug}`}
                 ogImage={ogUrl}
             />
-            <section className="py-16 mt-16 px-4 max-w-3xl mx-auto">
+            <section className="py-16 mt-16 px-4 sm:px-8 lg:px-16 max-w-3xl mx-auto">
                 <Link href="/writing" className="inline-flex items-center gap-1 text-white/40 hover:text-white/70 text-sm transition duration-200 mb-6">
                     ← Writeups
                 </Link>
@@ -50,7 +50,7 @@ const WriteupPage = ({ writeup }: Props) => {
                     </span>
                 </div>
 
-                <h1 className="text-4xl font-extrabold text-white border-l-4 border-accent pl-4 mb-10">
+                <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-10">
                     {writeup.title}
                 </h1>
 

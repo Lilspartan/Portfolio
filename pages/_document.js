@@ -6,13 +6,13 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
-          <meta name="theme-color" content="#171C27" />
+          <meta name="theme-color" content="#0f0f1a" />
           <meta name="author" content="Gabe Krahulik" />
           <meta name="keywords" content="web development,gabir motors,pa league,gabe krahulik,portfolio,full stack,back end,front end" />
           <link rel="icon" href="/logo.png" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-          <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
           <link rel="stylesheet" href="https://use.typekit.net/mzl0gsb.css" />
         </Head>

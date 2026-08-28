@@ -80,14 +80,14 @@ const ProjectPage = ({ project, relatedWriteups }: Props) => {
 				{project.detail !== null ? (
 					<>
 						{/* Hero */}
-						<section className="py-16 mt-16 px-4 max-w-4xl mx-auto">
+						<section className="py-16 mt-16 px-4 sm:px-8 lg:px-16 max-w-4xl mx-auto">
 							<Link href="/#projects" className="inline-flex items-center gap-1 text-white/40 hover:text-white/70 text-sm transition duration-200 mb-6">
 								← Projects
 							</Link>
 							<div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
 								<div className="flex items-center gap-4">
 									<img src={project.logo} alt={project.name + " logo"} className="h-12 object-contain" />
-									<h1 data-m="bounce-left" className="text-4xl font-extrabold text-white border-l-4 border-accent pl-4 flex flex-wrap items-center gap-3">
+									<h1 data-m="bounce-left" className="text-4xl sm:text-5xl font-extrabold text-white flex flex-wrap items-center gap-3">
 										{project.name}
 										{!project.active && (
 											<span className="text-sm font-semibold bg-accent text-primary py-1 px-2">Inactive</span>
@@ -99,7 +99,7 @@ const ProjectPage = ({ project, relatedWriteups }: Props) => {
 
 						{/* Gallery */}
 						{(project.detail.trailer || project.detail.images.length > 0) && (
-							<section className="px-4 max-w-4xl mx-auto mb-8">
+							<section className="px-4 sm:px-8 lg:px-16 max-w-4xl mx-auto mb-8">
 								{project.detail.trailer ? (
 									<>
 										<iframe
@@ -149,7 +149,7 @@ const ProjectPage = ({ project, relatedWriteups }: Props) => {
 						)}
 
 						{/* Content + Sidebar */}
-						<section className="px-4 max-w-4xl mx-auto mb-8">
+						<section className="px-4 sm:px-8 lg:px-16 max-w-4xl mx-auto mb-8">
 							<div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 								<div className="lg:col-span-2 flex flex-col gap-4">
 									{project.detail.paragraphs !== null && project.detail.paragraphs.map((p, i) => (
@@ -197,8 +197,8 @@ const ProjectPage = ({ project, relatedWriteups }: Props) => {
 
 						{/* Related writeups */}
 						{relatedWriteups.length > 0 && (
-							<section className="px-4 max-w-4xl mx-auto mb-8">
-								<h2 className="text-2xl font-extrabold text-white mb-4 border-l-4 border-accent pl-4">Related Writeups</h2>
+							<section className="px-4 sm:px-8 lg:px-16 max-w-4xl mx-auto mb-8">
+								<h2 className="text-2xl font-extrabold text-white mb-4">Related Writeups</h2>
 								<div className="flex flex-col gap-3">
 									{relatedWriteups.map(w => (
 										<a key={w.slug} href={`/writing/${w.slug}`} className="block group">
@@ -220,7 +220,7 @@ const ProjectPage = ({ project, relatedWriteups }: Props) => {
 						)}
 
 						{/* Footer */}
-						<section className="px-4 max-w-4xl mx-auto pb-16">
+						<section className="px-4 sm:px-8 lg:px-16 max-w-4xl mx-auto pb-16">
 							<div className="w-48">
 								<Button link="/#projects">← Back to Projects</Button>
 							</div>

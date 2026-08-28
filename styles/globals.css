@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
@@ -15,16 +15,11 @@
   --color-replit: #F8640A;
   --color-discord: #5865F2;
   --color-bluesky: #1185fe;
+  --color-modrinth: #00AF5C;
 }
 
 html {
-  background:
-    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, #7238a0, #000000);
-  background-size: 60px 60px, 60px 60px, 100% 100%;
-  background-attachment: fixed;
-  background-color: #000000;
+  background-color: #0f0f1a;
   min-height: 100%;
 }
 
@@ -33,7 +28,7 @@ html {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Commissioner', sans-serif;
     letter-spacing: -0.01em;
   }
 }
@@ -96,7 +91,7 @@ html {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: #0f0f1a;
 }
 
 /* Handle */
@@ -182,6 +177,7 @@ html {
 .social.replit:hover   { filter: drop-shadow(0 0 12px #F8640A); }
 .social.gmail:hover    { filter: drop-shadow(0 0 12px #DB4437); }
 .social.kofi:hover     { filter: drop-shadow(0 0 12px #13C3FF); }
+.social.modrinth:hover { filter: drop-shadow(0 0 12px #00AF5C); }
 
 .social::before {
   position: absolute;
@@ -212,6 +208,7 @@ html {
 .social.replit::before   { content: "Replit";   color: #F8640A; }
 .social.gmail::before    { content: "Email";    color: #DB4437; }
 .social.kofi::before     { content: "Ko-fi";    color: #13C3FF; }
+.social.modrinth::before { content: "Modrinth"; color: #00AF5C; }
 
 .linkedin { @apply group-hover:text-linkedin; }
 .twitter  { @apply group-hover:text-twitter; }
@@ -221,6 +218,7 @@ html {
 .replit   { @apply group-hover:text-replit; }
 .gmail    { @apply group-hover:text-gmail; }
 .kofi     { @apply group-hover:text-kofi; }
+.modrinth { @apply group-hover:text-modrinth; }
 
 /*
   Animation styles from https://movement.samalander.dev/

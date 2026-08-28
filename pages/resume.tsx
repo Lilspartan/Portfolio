@@ -78,7 +78,7 @@ const ResumePage = () => (
         </Head>
 
         {/* SCREEN LAYOUT (hidden when printing) */}
-        <div className="print:hidden max-w-4xl mx-auto px-6 py-10 pb-24">
+        <div className="print:hidden max-w-4xl mx-auto px-4 sm:px-8 lg:px-16 py-10 pb-24">
 
             <div className="flex justify-end mb-6">
                 <button
@@ -237,7 +237,7 @@ const ResumePage = () => (
         </div>
 
         {/* PRINT LAYOUT (only visible when printing) */}
-        <div className="hidden print:block" style={{ fontFamily: "'Space Grotesk', sans-serif", color: P.black, background: 'white' }}>
+        <div className="hidden print:block" style={{ fontFamily: "'Commissioner', sans-serif", color: P.black, background: 'white' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '185pt 1fr', columnGap: '22pt', alignItems: 'start' }}>
 
                 <aside style={{ borderRight: `1pt solid ${P.rule}`, paddingRight: '18pt' }}>
@@ -344,7 +344,7 @@ const ResumePage = () => (
 );
 
 const ScreenTitle = ({ children }: { children: React.ReactNode }) => (
-    <h2 className="text-xs font-bold text-white/40 tracking-widest uppercase border-l-4 border-accent pl-3 mb-4">
+    <h2 className="text-xs font-bold text-white/40 tracking-[0.25em] uppercase mb-4">
         {children}
     </h2>
 );

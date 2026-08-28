@@ -2,12 +2,14 @@
 import { Button, ButtonContainer, IconButton } from './Button';
 import Footer from './Footer';
 import { Card, CardHeading } from './Card';
+import SectionHeading from './SectionHeading';
 
 export {
   Button,
   ButtonContainer,
-  Card, 
+  Card,
   CardHeading,
   IconButton,
-  Footer
+  Footer,
+  SectionHeading
 }
