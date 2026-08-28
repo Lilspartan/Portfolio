@@ -55,7 +55,7 @@ const WriteupPage = ({ writeup }: Props) => {
                 </h1>
 
                 <div
-                    className="prose prose-invert prose-purple max-w-none prose-headings:font-extrabold prose-a:text-accent prose-code:text-accent/80 prose-pre:bg-primary prose-pre:border prose-pre:border-white/10 prose-img:cursor-zoom-in"
+                    className="prose prose-invert prose-purple max-w-none prose-headings:font-extrabold prose-a:text-accent prose-code:text-accent/80 prose-pre:bg-primary prose-pre:border prose-pre:border-white/10 prose-img:cursor-zoom-in prose-code:before:content-none prose-code:after:content-none"
                     dangerouslySetInnerHTML={{ __html: writeup.html }}
                     onClick={handleProseClick}
                 />

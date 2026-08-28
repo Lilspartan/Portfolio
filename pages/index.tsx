@@ -1,13 +1,11 @@
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import { Button, Card, SectionHeading } from '../components';
-import { AiFillGithub, AiOutlineTwitter, AiFillLinkedin } from 'react-icons/ai';
-import { SiTailwindcss, SiGmail, SiKofi, SiReplit, SiDiscord, SiBluesky,
-         SiJavascript, SiTypescript, SiElectron, SiSocketdotio, SiReact, SiNodedotjs, SiUikit, SiModrinth  } from 'react-icons/si';
+import { Button, Card, ContactIcons, SectionHeading } from '../components';
+import { SiTailwindcss, SiJavascript, SiTypescript, SiElectron, SiSocketdotio,
+         SiReact, SiNodedotjs, SiUikit } from 'react-icons/si';
 import { TbBrandNextjs, TbBrandCpp, TbBrandFramerMotion } from 'react-icons/tb';
 import { DiCss3, DiHtml5, DiMongodb } from 'react-icons/di';
 import { useState, useEffect } from 'react';
-import classNames from 'classnames';
 import ScrollReveal from '../components/ScrollReveal';
 import SEO from '../components/SEO';
 import { projects, charity } from '../utils/projects';
@@ -16,17 +14,6 @@ import { getAllWriteups, WriteupMeta } from '../utils/writeups';
 import { formatWriteupDate } from '../utils/dates';
 
 const OPEN_TO_WORK = false;
-
-const contacts = [
-    { name: "gmail",    link: "mailto:gabe@gabekrahulik.dev" },
-    { name: "linkedin", link: "https://www.linkedin.com/in/gabe-krahulik/" },
-    { name: "github",   link: "https://github.com/Lilspartan" },
-    { name: "bluesky",  link: "https://bsky.app/profile/gabekrahulik.dev" },
-    { name: "kofi",     link: "https://ko-fi.com/gabekrahulik" },
-    { name: "discord",  link: "https://discord.com/users/378319931005206530" },
-    { name: "twitter",  link: "https://twitter.com/gabekrahulik" },
-    { name: "modrinth", link: "https://modrinth.com/user/Lilspartan" },
-];
 
 const experience = [
     {
@@ -118,40 +105,6 @@ const CyclingWord = ({ words, interval = 2200 }: { words: string[]; interval?: n
     );
 };
 
-const ContactIcon = ({ contact, index }: { contact: typeof contacts[0]; index: number }) => {
-    const classes = classNames([
-        "mx-3", "transition", "duration-300", "mt-12", "lg:mt-8", "text-4xl",
-        contact.name, "group-hover:-translate-y-3", "group-hover:scale-125",
-    ]);
-
-    let Icon = <></>;
-    switch (contact.name) {
-        case "twitter":  Icon = <AiOutlineTwitter className={classes} />; break;
-        case "linkedin": Icon = <AiFillLinkedin className={classes} />;   break;
-        case "github":   Icon = <AiFillGithub className={classes} />;     break;
-        case "modrinth": Icon = <SiModrinth className={classes} />;       break;
-        case "bluesky":  Icon = <SiBluesky className={classes} />;        break;
-        case "discord":  Icon = <SiDiscord className={classes} />;        break;
-        case "replit":   Icon = <SiReplit className={classes} />;         break;
-        case "gmail":    Icon = <SiGmail className={classes} />;          break;
-        case "kofi":     Icon = <SiKofi className={classes} />;           break;
-    }
-
-    return (
-        <a
-            aria-label={`Link to my ${contact.name}`}
-            className={`group social ${contact.name}`}
-            data-m-delay={String((Math.abs(Math.ceil(index - (contacts.length / 2)))) * 0.25 + 0.75)}
-            data-m={index < Math.floor(contacts.length / 2) ? "bounce-left" : index > Math.floor(contacts.length / 2) ? "bounce-right" : "bounce-down"}
-            data-m-duration="0.75"
-            href={contact.link}
-            target="_blank"
-        >
-            {Icon}
-        </a>
-    );
-};
-
 function calculateAge(date: number) {
     const ageDifMs = Date.now() - date;
     const ageDate = new Date(ageDifMs);
@@ -192,10 +145,8 @@ const Landing = ({ recentWriteups }: Props) => {
                                 a {age} year old <CyclingWord words={titles} /> from Seattle
                             </p>
                         </div>
-                        <div data-m="bounce-up" data-m-delay="0.8" data-m-duration="1" className="text-white flex flex-row flex-wrap gap-1">
-                            {contacts.map((contact, i) => (
-                                <ContactIcon key={contact.name} contact={contact} index={i} />
-                            ))}
+                        <div data-m="bounce-up" data-m-delay="0.8" data-m-duration="1">
+                            <ContactIcons className="text-white flex flex-row flex-wrap gap-1" />
                         </div>
                     </div>
 
@@ -495,11 +446,7 @@ const Landing = ({ recentWriteups }: Props) => {
                 <SectionHeading eyebrow="Let's talk">Get in Touch</SectionHeading>
                 <p className="text-white/40 mt-4 mb-8 max-w-md">Open to new opportunities and collaborations.</p>
                 </ScrollReveal>
-                <div className="text-white flex flex-row flex-wrap gap-1 lg:gap-4">
-                    {contacts.map((contact, i) => (
-                        <ContactIcon key={contact.name + "-footer"} contact={contact} index={i} />
-                    ))}
-                </div>
+                <ContactIcons className="text-white flex flex-row flex-wrap gap-1 lg:gap-4" keyPrefix="footer-" />
                 <p className="mt-16 text-white/20 text-sm">
                     Made with <span className="text-accent">Next.js</span> and <span className="text-accent">Tailwind CSS</span>
                 </p>

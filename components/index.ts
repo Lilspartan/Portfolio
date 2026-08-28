@@ -3,12 +3,14 @@ import { Button, ButtonContainer, IconButton } from './Button';
 import Footer from './Footer';
 import { Card, CardHeading } from './Card';
 import SectionHeading from './SectionHeading';
+import ContactIcons from './ContactIcons';
 
 export {
   Button,
   ButtonContainer,
   Card,
   CardHeading,
+  ContactIcons,
   IconButton,
   Footer,
   SectionHeading
