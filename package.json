@@ -2,10 +2,10 @@
   "name": "portfolio",
   "version": "1.0.0",
   "scripts": {
-    "dev": "bunx --bun next dev",
-    "build": "bunx --bun next build",
-    "start": "bunx --bun next start",
-    "lint": "bunx --bun next lint"
+    "dev": "bunx next dev",
+    "build": "bunx next build",
+    "start": "bunx next start",
+    "lint": "bunx next lint"
   },
   "dependencies": {
     "@svgr/webpack": "^8.1.0",

@@ -184,30 +184,22 @@ export const projects: Project[] = [
         }
     },
     {
-        name: "Kregs Toolbox",
-        description: "A beginner friendly game creation tool built in a custom C++ engine",
-        logo: "/images/projects/kregs-toolbox/logo.png",
-        link: "kregs-toolbox",
+        name: "SummitGuessr",
+        description: "A GeoGuessr-style game built from panoramas of the Smithed Summit Minecraft server",
+        logo: "/images/projects/summitguessr/logo.png",
+        link: "summitguessr",
         active: true,
         featured: false,
-        tech: ["CPP"],
-        links: [],
-        resumeRole: "UI/UX Developer",
-        resumeDates: "Sep 2025 - Apr 2026",
-        resumeBullets: [
-            "Designed and built a drag-and-drop visual scripting editor using the Clay UI library in a custom C++ engine.",
-            "Implemented a Scratch-like block system with JSON-defined blocks, nested input slots, and auto-compilation to a custom scripting language (Prose).",
-            "Designed and implemented a larger UI system for the project",
+        tech: ["next", "tailwind", "ts"],
+        links: [
+            { text: "Visit Site", url: "https://summitguessr.lilspartan.link", external: true },
         ],
         detail: {
-            trailer: "https://www.youtube.com/embed/5XQm3lwc3t8",
-            images: [
-                { url: "/images/writings/prose-scripting/example.png", alt: "Block scripting editor" },
-            ],
-            tech: [{ name: "All", short: ["CPP"] }],
+            images: [],
+            tech: [{ name: "All", short: ["next", "tailwind", "ts"] }],
             paragraphs: [
-                "Kregs Toolbox is a beginner-friendly game creation tool built for my GAM300/350 classes at DigiPen. A team of 8 CS majors built a custom C++ engine from scratch with a Vulkan renderer, a custom audio system, and Jolt physics, then used it to ship a game inspired by tools like Kodu Game Lab, Project Spark, and Dreams.",
-                "As the UI/UX programmer, in addition to all the game menus and interactions, I designed and built the visual scripting editor: a drag-and-drop block system backed by a custom scripting language called Prose. Blocks are defined in JSON, nested into sentences with WHEN/THEN logic, and auto-compiled to Prose scripts that the engine runs at runtime. The goal was to make game logic approachable for complete beginners without hiding what's actually happening under the hood.",
+                "Smithed Summit is an in-game Minecraft convention for datapackers, mapmakers, and other creators to show off what they'd made, all hosted on a hand-built island for two weeks.",
+                "SummitGuessr is a GeoGuessr-style game built using panoramas taken around the Summit server, challenging players to guess where on the island each panorama was taken.",
             ],
         },
     },
@@ -238,6 +230,34 @@ export const projects: Project[] = [
             tech: [{ name: "Website", short: ["next", "tailwind", "ts", "framer-motion"] }],
             paragraphs: [
                 "Gabir Motorsports is the world's premiere, pretend motorsports company. Sponsor of the Penny Arcade Racing League, the Gabir Motors website is home to tools for members of the league (like the calendar) and anybody who plays iRacing (the Spec mapping tool)."
+            ],
+        },
+    },
+    {
+        name: "Kregs Toolbox",
+        description: "A beginner friendly game creation tool built in a custom C++ engine",
+        logo: "/images/projects/kregs-toolbox/logo.png",
+        link: "kregs-toolbox",
+        active: true,
+        featured: false,
+        tech: ["CPP"],
+        links: [],
+        resumeRole: "UI/UX Developer",
+        resumeDates: "Sep 2025 - Apr 2026",
+        resumeBullets: [
+            "Designed and built a drag-and-drop visual scripting editor using the Clay UI library in a custom C++ engine.",
+            "Implemented a Scratch-like block system with JSON-defined blocks, nested input slots, and auto-compilation to a custom scripting language (Prose).",
+            "Designed and implemented a larger UI system for the project",
+        ],
+        detail: {
+            trailer: "https://www.youtube.com/embed/5XQm3lwc3t8",
+            images: [
+                { url: "/images/writings/prose-scripting/example.png", alt: "Block scripting editor" },
+            ],
+            tech: [{ name: "All", short: ["CPP"] }],
+            paragraphs: [
+                "Kregs Toolbox is a beginner-friendly game creation tool built for my GAM300/350 classes at DigiPen. A team of 8 CS majors built a custom C++ engine from scratch with a Vulkan renderer, a custom audio system, and Jolt physics, then used it to ship a game inspired by tools like Kodu Game Lab, Project Spark, and Dreams.",
+                "As the UI/UX programmer, in addition to all the game menus and interactions, I designed and built the visual scripting editor: a drag-and-drop block system backed by a custom scripting language called Prose. Blocks are defined in JSON, nested into sentences with WHEN/THEN logic, and auto-compiled to Prose scripts that the engine runs at runtime. The goal was to make game logic approachable for complete beginners without hiding what's actually happening under the hood.",
             ],
         },
     },
@@ -320,7 +340,7 @@ export const projects: Project[] = [
         logo: "https://gabirmotors.com/i/assets/other/pit_wall.png",
         link: "pitwall",
         active: false,
-        featured: true,
+        featured: false,
         tech: ["next", "tailwind", "ts", "socketio", "electron", "react"],
         resumeRole: "Lead Developer",
         resumeDates: "Jun 2022 - Jul 2023",
