@@ -25,6 +25,18 @@ export const Tools: {[ key in ShortTech ]?: Tool} = {
         icon: null,
         link: "https://reactjs.org/",
     },
+    "react-native": {
+        name: "React Native",
+        description: null,
+        icon: null,
+        link: "https://reactnative.dev/",
+    },
+    "expo": {
+        name: "Expo",
+        description: null,
+        icon: null,
+        link: "https://expo.dev/",
+    },
     "uikit": {
         name: "UIKit",
         description: null,
@@ -108,7 +120,6 @@ export const projects: Project[] = [
         resumeBullets: [
             "Assisted game development by working on core game systems in C++.",
             "Created systems for user interfaces and player interaction.",
-            "Learned effective strategies for working in small teams under a class deadline.",
         ],
         detail: {
             trailer: "https://www.youtube.com/embed/-70nSf9X30Q",
@@ -319,6 +330,7 @@ export const projects: Project[] = [
         logo: "/images/projects/wheel-saint-hellride/logo.png",
         link: "wheel-saint-hellride",
         active: true,
+        unfinished: true,
         featured: false,
         tech: ["electron", "js", "html", "css"],
         resumeRole: "Developer",
@@ -334,6 +346,27 @@ export const projects: Project[] = [
             tech: [{ name: "All", short: ["electron", "js", "html", "css"] }],
             paragraphs: [
                 "Wheel Saint: Hellride is a rogue-like race through purgatory to rescue lost souls! Drive your car through neverending waves of demons, find lost souls and upgrade your ride!"
+            ],
+        },
+    },
+    {
+        name: "Eyrewood Adventures",
+        description: "A story-driven step tracking RPG for Android",
+        logo: "/images/projects/eyrewood-adventures/logo.png",
+        link: "eyrewood-adventures",
+        active: true,
+        unfinished: true,
+        featured: false,
+        tech: ["react-native", "expo", "ts"],
+        links: [],
+        detail: {
+            images: [
+                { url: "/images/projects/eyrewood-adventures/forest_art.webp", alt: "Concept art of the Eyrewood forest" },
+            ],
+            tech: [{ name: "All", short: ["react-native", "expo", "ts"] }],
+            paragraphs: [
+                "Eyrewood Adventures is a step-tracking RPG for Android that turns real-world walking into in-game progress. As you rack up steps, you explore zones with parallax-scrolling art, stumble into random Points of Interest, and collect clues that unlock creature Hunts you complete by walking a target step count.",
+                "I'm building it solo in React Native with Expo, using a background pedometer service to track steps even when the app isn't in the foreground. Zone, hunt, and POI content ships as versioned data bundles pulled from Supabase and cached on-device, and player progress persists locally so the game keeps working offline. It's still unfinished: the core walking and hunt loop works, but a lot of the surrounding game is still a placeholder.",
             ],
         },
     },
@@ -368,48 +401,6 @@ export const projects: Project[] = [
             ],
             paragraphs: [
                 "The Pit Wall started as a way for Twitch chat to watch the stats of a driver in real time, but after people had seen it I had a few requests to open it up to others, so I created the desktop client which made it super simple for anybody to pick up the Pit Wall and start using it."
-            ],
-        },
-    },
-    {
-        name: "Better StudentVue",
-        description: "A project defined by \"Why isn't this already a feature?\"",
-        logo: "/logo.png",
-        link: "betterstudentvue",
-        active: false,
-        featured: false,
-        tech: ["next", "tailwind", "ts"],
-        links: [],
-        detail: {
-            images: [
-                { url: "/images/projects/betterstudentvue/screenshot1.png", alt: "A screenshot of the home page of Better StudentVue" },
-            ],
-            tech: [{ name: "All", short: ["next", "tailwind", "ts"] }],
-            paragraphs: [
-                "All I wanted to do was see how doing an assignment would affect my grade, but imagine my surprise when my school's gradebook didn't have that feature! The horror... What was I going to do, well I definitely wasn't going to do my finance homework, the best use of my time would be to make my own version of the gradebook that gives me the features I've always wanted.",
-            ],
-        },
-    },
-    {
-        name: "Games",
-        description: "Recreating games to relearn vanilla JS",
-        logo: "/images/projects/games/logo.png",
-        link: "games",
-        active: true,
-        featured: false,
-        tech: ["html", "css", "js"],
-        links: [
-            { text: "Visit Site", url: "https://games.gabekrahulik.dev", external: true },
-        ],
-        detail: {
-            images: [
-                { url: "/images/projects/games/screenshot1.png", alt: "Tetris" },
-                { url: "/images/projects/games/logo.png", alt: "Games logo" },
-            ],
-            tech: [{ name: "All", short: ["html", "css", "js"] }],
-            paragraphs: [
-                "This is the project I've had the most fun with so far, it started as a school project where I had to build Minesweeper, and then I kept making other games.",
-                "Most of the games are buggy or unfinished, but that's because this is less of an attempt at an accurate recreation and more just to make sure my vanilla JS skills are still intact after using so many frameworks"
             ],
         },
     },

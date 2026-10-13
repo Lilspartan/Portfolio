@@ -90,7 +90,10 @@ const ProjectPage = ({ project, relatedWriteups }: Props) => {
 									<h1 data-m="bounce-left" className="text-4xl sm:text-5xl font-extrabold text-white flex flex-wrap items-center gap-3">
 										{project.name}
 										{!project.active && (
-											<span className="text-sm font-semibold bg-accent text-primary py-1 px-2">Inactive</span>
+											<span className="badge badge-lg badge-accent">Inactive</span>
+										)}
+										{project.unfinished && (
+											<span className="badge badge-lg badge-muted">Unfinished</span>
 										)}
 									</h1>
 								</div>

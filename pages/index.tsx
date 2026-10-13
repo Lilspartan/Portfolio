@@ -2,8 +2,8 @@ import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { Button, Card, ContactIcons, SectionHeading } from '../components';
 import { SiTailwindcss, SiJavascript, SiTypescript, SiElectron, SiSocketdotio,
-         SiReact, SiNodedotjs, SiUikit } from 'react-icons/si';
-import { TbBrandNextjs, TbBrandCpp, TbBrandFramerMotion } from 'react-icons/tb';
+         SiReact, SiNodedotjs, SiUikit, SiExpo } from 'react-icons/si';
+import { TbBrandNextjs, TbBrandCpp, TbBrandFramerMotion, TbBrandReactNative } from 'react-icons/tb';
 import { DiCss3, DiHtml5, DiMongodb } from 'react-icons/di';
 import { useState, useEffect } from 'react';
 import ScrollReveal from '../components/ScrollReveal';
@@ -64,6 +64,8 @@ const SmallTechIcon = ({ tech }: { tech: ShortTech }) => {
         case "css":           return <DiCss3 className={cls} />;
         case "html":          return <DiHtml5 className={cls} />;
         case "react":         return <SiReact className={cls} />;
+        case "react-native":  return <TbBrandReactNative className={cls} />;
+        case "expo":          return <SiExpo className={cls} />;
         case "uikit":         return <SiUikit className={cls} />;
         case "CPP":           return <TbBrandCpp className={cls} />;
         case "mongo":         return <DiMongodb className={cls} />;
@@ -177,7 +179,7 @@ const Landing = ({ recentWriteups }: Props) => {
 
             <section id="about" className="py-24 px-4 sm:px-8 lg:px-16 max-w-6xl mx-auto">
                 <div className="grid lg:grid-cols-[2fr_3fr] gap-10 lg:gap-16">
-                    <ScrollReveal animation="reveal-right" duration="0.6" className="block">
+                    <ScrollReveal animation="fade-in" duration="0.6" className="block">
                         <div className="lg:sticky lg:top-32">
                             <SectionHeading eyebrow="Who I am">About Me</SectionHeading>
                             <p className="text-white/80 text-lg leading-relaxed mt-6">
@@ -239,7 +241,7 @@ const Landing = ({ recentWriteups }: Props) => {
             </section>
 
             <section id="projects" className="py-16 px-4 sm:px-8 lg:px-16 max-w-7xl mx-auto">
-                <ScrollReveal animation="reveal-right" duration="0.6" className="block mb-8">
+                <ScrollReveal animation="fade-in" duration="0.6" className="block mb-8">
                     <SectionHeading eyebrow="What I've built">My Projects</SectionHeading>
                 </ScrollReveal>
                 <div className="flex flex-col gap-16 mb-16">
@@ -247,7 +249,7 @@ const Landing = ({ recentWriteups }: Props) => {
                         const heroImage = project.detail?.images?.[0]?.url ?? project.logo;
                         const hasMoreInfo = project.detail?.paragraphs !== null;
                         return (
-                            <ScrollReveal key={project.link} animation={i % 2 === 0 ? "reveal-right" : "reveal-left"} duration="0.6">
+                            <ScrollReveal key={project.link} animation="fade-in" duration="0.6">
                                 <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                                     <div className={`group relative aspect-video bg-primary overflow-hidden border border-white/10 ${i % 2 === 1 ? 'md:order-2' : ''}`}>
                                         <img src={heroImage} alt={project.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
@@ -256,8 +258,13 @@ const Landing = ({ recentWriteups }: Props) => {
                                         <img src={project.logo} alt={project.name + " logo"} className="h-14 object-contain mb-4" />
                                         <h3 className="text-3xl font-extrabold text-white mb-3">{project.name}</h3>
                                         {!project.active && (
-                                            <span className="text-xs font-semibold bg-accent text-primary py-0.5 px-2 inline-block mb-2">
+                                            <span className="badge badge-md badge-accent mb-2 mr-2">
                                                 Inactive
+                                            </span>
+                                        )}
+                                        {project.unfinished && (
+                                            <span className="badge badge-md badge-muted mb-2">
+                                                Unfinished
                                             </span>
                                         )}
                                         <p className="text-white/60 leading-relaxed mb-4">{project.description}</p>
@@ -308,8 +315,13 @@ const Landing = ({ recentWriteups }: Props) => {
                                         <div className="flex items-center gap-2 flex-wrap">
                                             <h4 className="text-white font-bold group-hover:text-accent transition duration-200">{project.name}</h4>
                                             {!project.active && (
-                                                <span className="text-[10px] font-semibold bg-accent text-primary py-0.5 px-1.5">
+                                                <span className="badge badge-sm badge-accent">
                                                     Inactive
+                                                </span>
+                                            )}
+                                            {project.unfinished && (
+                                                <span className="badge badge-sm badge-muted">
+                                                    Unfinished
                                                 </span>
                                             )}
                                         </div>
@@ -330,7 +342,7 @@ const Landing = ({ recentWriteups }: Props) => {
                 {recentWriteups.length > 0 && (
                     <section id="writing" className="py-16 px-4 sm:px-8 lg:px-16 max-w-4xl mx-auto">
                         <div className="flex items-end justify-between mb-8 gap-4">
-                            <ScrollReveal animation="reveal-right" duration="0.6" className="block">
+                            <ScrollReveal animation="fade-in" duration="0.6" className="block">
                                 <SectionHeading eyebrow="Latest thoughts">Recent Writeups</SectionHeading>
                             </ScrollReveal>
                             <Link href="/writing" className="text-accent/70 hover:text-accent text-sm transition duration-200 whitespace-nowrap mb-1">All writeups →</Link>
@@ -397,7 +409,7 @@ const Landing = ({ recentWriteups }: Props) => {
                     </section>
                 )}
 
-                <ScrollReveal animation="reveal-right" duration="0.6" className="block mt-20 mb-8">
+                <ScrollReveal animation="fade-in" duration="0.6" className="block mt-20 mb-8">
                     <SectionHeading eyebrow="Giving back">Charity Work</SectionHeading>
                 </ScrollReveal>
                 <div className="flex flex-col divide-y divide-white/5 border-t border-b border-white/5">

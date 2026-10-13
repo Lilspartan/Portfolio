@@ -44,7 +44,6 @@ function techName(short: ShortTech): string {
 }
 
 const resumeProjects = projects.filter(p => p.resumeBullets && p.link !== 'portfolio');
-const otherProjects  = projects.filter(p => !p.resumeBullets && p.active && p.link !== 'portfolio');
 const totalCharity   = charity.reduce((sum, e) => sum + (e.raised ?? 0), 0);
 
 // ─── shared inline-style tokens for the print layout ───────────────────────
@@ -179,6 +178,7 @@ const ResumePage = () => (
                                     <p className="text-white font-bold text-sm">
                                         {p.resumeRole}
                                         {!p.active && <span className="ml-2 text-xs font-normal text-accent/50">(Inactive)</span>}
+                                        {p.unfinished && <span className="ml-2 text-xs font-normal text-white/40">(Unfinished)</span>}
                                     </p>
                                     <p className="text-white/50 text-xs italic mt-0.5">
                                         {p.name}{p.resumeDates ? `, ${p.resumeDates}` : ''}
@@ -209,19 +209,6 @@ const ResumePage = () => (
                         </div>
                     ))}
                 </div>
-                {otherProjects.length > 0 && (
-                    <div className="border border-white/10 p-4 mt-4">
-                        <p className="text-white/30 text-xs tracking-widest uppercase mb-3">Other Projects</p>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            {otherProjects.map(p => (
-                                <div key={p.link}>
-                                    <span className="text-white text-sm font-semibold">{p.name}</span>
-                                    <p className="text-white/50 text-xs mt-0.5">{p.description}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                )}
             </section>
 
             <section>
@@ -315,6 +302,7 @@ const ResumePage = () => (
                                 <p style={{ fontWeight: 700, fontSize: '10.5pt', color: P.black }}>
                                     {p.resumeRole}
                                     {!p.active && <span style={{ fontWeight: 400, color: P.black, marginLeft: '4pt' }}>(Inactive)</span>}
+                                    {p.unfinished && <span style={{ fontWeight: 400, color: P.black, marginLeft: '4pt' }}>(Unfinished)</span>}
                                 </p>
                                 <p style={{ fontStyle: 'italic', fontSize: '10pt', color: P.black, marginBottom: '2pt' }}>
                                     {p.name}{p.resumeDates ? `, ${p.resumeDates}` : ''}

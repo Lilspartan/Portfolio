@@ -4,6 +4,7 @@ export interface Project {
     logo: string;
     link: string;
     active: boolean;
+    unfinished?: boolean;
     featured: boolean;
     tech: ShortTech[];
     links: ProjectLink[];
@@ -36,7 +37,7 @@ export interface Image {
     alt: string;
 }
 
-export type ShortTech = "next" | "react" | "node" | "html" | "js" | "css" | "tailwind" | "ts" | "mongo" | "socketio" | "electron" | "uikit" | "framer-motion" | "C" | "CPP";
+export type ShortTech = "next" | "react" | "react-native" | "expo" | "node" | "html" | "js" | "css" | "tailwind" | "ts" | "mongo" | "socketio" | "electron" | "uikit" | "framer-motion" | "C" | "CPP";
 
 export interface Tool {
     name: string;
