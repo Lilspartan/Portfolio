@@ -25,6 +25,18 @@ export const Tools: {[ key in ShortTech ]?: Tool} = {
         icon: null,
         link: "https://reactjs.org/",
     },
+    "react-native": {
+        name: "React Native",
+        description: null,
+        icon: null,
+        link: "https://reactnative.dev/",
+    },
+    "expo": {
+        name: "Expo",
+        description: null,
+        icon: null,
+        link: "https://expo.dev/",
+    },
     "uikit": {
         name: "UIKit",
         description: null,
@@ -108,7 +120,6 @@ export const projects: Project[] = [
         resumeBullets: [
             "Assisted game development by working on core game systems in C++.",
             "Created systems for user interfaces and player interaction.",
-            "Learned effective strategies for working in small teams under a class deadline.",
         ],
         detail: {
             trailer: "https://www.youtube.com/embed/-70nSf9X30Q",
@@ -323,6 +334,7 @@ export const projects: Project[] = [
         logo: "/images/projects/wheel-saint-hellride/logo.png",
         link: "wheel-saint-hellride",
         active: true,
+        unfinished: true,
         featured: false,
         tech: ["electron", "js", "html", "css"],
         resumeRole: "Developer",
@@ -338,6 +350,27 @@ export const projects: Project[] = [
             tech: [{ name: "All", short: ["electron", "js", "html", "css"] }],
             paragraphs: [
                 "Wheel Saint: Hellride is a rogue-like race through purgatory to rescue lost souls! Drive your car through neverending waves of demons, find lost souls and upgrade your ride!"
+            ],
+        },
+    },
+    {
+        name: "Eyrewood Adventures",
+        description: "A story-driven step tracking RPG for Android",
+        logo: "/images/projects/eyrewood-adventures/logo.png",
+        link: "eyrewood-adventures",
+        active: true,
+        unfinished: true,
+        featured: false,
+        tech: ["react-native", "expo", "ts"],
+        links: [],
+        detail: {
+            images: [
+                { url: "/images/projects/eyrewood-adventures/forest_art.webp", alt: "Concept art of the Eyrewood forest" },
+            ],
+            tech: [{ name: "All", short: ["react-native", "expo", "ts"] }],
+            paragraphs: [
+                "Eyrewood Adventures is a step-tracking RPG for Android that turns real-world walking into in-game progress. As you rack up steps, you explore zones with parallax-scrolling art, stumble into random Points of Interest, and collect clues that unlock creature Hunts you complete by walking a target step count.",
+                "I'm building it solo in React Native with Expo, using a background pedometer service to track steps even when the app isn't in the foreground. Zone, hunt, and POI content ships as versioned data bundles pulled from Supabase and cached on-device, and player progress persists locally so the game keeps working offline. It's still unfinished: the core walking and hunt loop works, but a lot of the surrounding game is still a placeholder.",
             ],
         },
     },
