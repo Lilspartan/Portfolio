@@ -19,10 +19,31 @@ export interface WriteupMeta {
     project: string;
     date: string;
     description: string;
+    cover: string | null;
+    readingMinutes: number;
 }
 
 export interface Writeup extends WriteupMeta {
     html: string;
+}
+
+function resolveImageSrc(slug: string, href: string): string {
+    return /^(https?:\/\/|\/)/.test(href) ? href : `/images/writings/${slug}/${href}`;
+}
+
+function buildMeta(slug: string, data: { [key: string]: any }, content: string): WriteupMeta {
+    // cover or the first image in the writeup
+    const coverHref: string | undefined = data.cover ?? content.match(/!\[[^\]]*\]\(([^)\s]+)/)?.[1];
+    const words = content.split(/\s+/).filter(Boolean).length;
+    return {
+        slug,
+        title: data.title,
+        project: data.project,
+        date: data.date instanceof Date ? data.date.toISOString().split('T')[0] : String(data.date),
+        description: data.description,
+        cover: coverHref ? resolveImageSrc(slug, coverHref) : null,
+        readingMinutes: Math.max(1, Math.round(words / 200)),
+    };
 }
 
 export function getAllWriteups(): WriteupMeta[] {
@@ -32,15 +53,11 @@ export function getAllWriteups(): WriteupMeta[] {
         .map(filename => {
             const slug = filename.replace(/\.md$/, '');
             const raw = fs.readFileSync(path.join(WRITEUPS_DIR, filename), 'utf-8');
-            const { data } = matter(raw);
-            return {
-                slug,
-                title: data.title,
-                project: data.project,
-                date: data.date instanceof Date ? data.date.toISOString().split('T')[0] : String(data.date),
-                description: data.description,
-            };
+            const { data, content } = matter(raw);
+            if (data.draft && process.env.NODE_ENV === 'production') return null;
+            return buildMeta(slug, data, content);
         })
+        .filter((w): w is WriteupMeta => w !== null)
         .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
@@ -56,9 +73,8 @@ export function getWriteupBySlug(slug: string): Writeup | null {
 
     const renderer = new marked.Renderer();
 
-    const imageBase = `/images/writings/${slug}/`;
     renderer.image = ({ href, title, text }) => {
-        const src = /^(https?:\/\/|\/)/.test(href) ? href : imageBase + href;
+        const src = resolveImageSrc(slug, href);
         return `<img src="${src}" alt="${text}"${title ? ` title="${title}"` : ''} />`;
     };
 
@@ -74,11 +90,7 @@ export function getWriteupBySlug(slug: string): Writeup | null {
     };
 
     return {
-        slug,
-        title: data.title,
-        project: data.project,
-        date: data.date instanceof Date ? data.date.toISOString().split('T')[0] : String(data.date),
-        description: data.description,
+        ...buildMeta(slug, data, content),
         html: marked(content, { renderer }) as string,
     };
 }

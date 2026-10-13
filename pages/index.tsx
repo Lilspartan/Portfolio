@@ -15,7 +15,7 @@ import { formatWriteupDate } from '../utils/dates';
 
 const OPEN_TO_WORK = false;
 
-const experience = [
+const experience: { role: string; link: string; subtitle: string; dates: string; description?: string }[] = [
     {
         role: "Teaching Assistant - GAM200/250",
         link: "https://www.digipen.edu",
@@ -30,15 +30,13 @@ const experience = [
     },
 ];
 
-const currentlyDoing = [
-    { role: "Pursuing a BS in Computer Science", subtitle: "DigiPen Institute of Technology" },
+const technologies = [
+    "C/C++", "TypeScript", "React", "Next.js", "Node.js", "Electron", "Socket.IO",
 ];
 
-const technologies = [
-    "Docker", "Redis", "HTML/CSS",
-    "Next.js", "TypeScript", "React", "Tailwind CSS",
-    "Bun", "Node.js", "MongoDB", "JavaScript", "C/C++", "Electron", "Socket.IO",
-];
+const featuredProjects = projects
+    .filter(p => p.featured !== false)
+    .sort((a, b) => (a.featured as number) - (b.featured as number));
 
 const disciplines = [
     "Full-Stack Development",
@@ -144,6 +142,9 @@ const Landing = ({ recentWriteups }: Props) => {
                             <p className="text-xl sm:text-2xl text-white/70 mt-6 max-w-2xl">
                                 a {age} year old <CyclingWord words={titles} /> from Seattle
                             </p>
+                            <p className="text-base sm:text-lg text-white/50 mt-3 max-w-xl">
+                                I build games, real-time systems, and web apps, and I'm happiest down in the networking and engine code.
+                            </p>
                         </div>
                         <div data-m="bounce-up" data-m-delay="0.8" data-m-duration="1">
                             <ContactIcons className="text-white flex flex-row flex-wrap gap-1" />
@@ -152,7 +153,7 @@ const Landing = ({ recentWriteups }: Props) => {
 
                     <div data-m="bounce-up" data-m-delay="1" data-m-duration="1" className="lg:mt-16 lg:ml-auto w-full lg:max-w-sm">
                         <span className="text-xs font-bold text-white/40 tracking-widest uppercase block mb-4">
-                            Currently: {currentlyDoing.map(a => a.role).join(' · ')}
+                            DigiPen · BS Computer Science · 2027
                         </span>
                         <div className="flex flex-col gap-3">
                             <Button
@@ -179,7 +180,7 @@ const Landing = ({ recentWriteups }: Props) => {
                 <div className="grid lg:grid-cols-[2fr_3fr] gap-10 lg:gap-16">
                     <ScrollReveal animation="reveal-right" duration="0.6" className="block">
                         <div className="lg:sticky lg:top-32">
-                            <SectionHeading eyebrow="Who I am">About Me</SectionHeading>
+                            <SectionHeading>About Me</SectionHeading>
                             <p className="text-white/80 text-lg leading-relaxed mt-6">
                                 I'm a developer from Seattle building games and web apps. I love working across the full stack and have found that same passion extend across to the world of game development. I try to stick close to my roots with network programming and engine architecture but enjoy making anything that I can see people have fun with!
                             </p>
@@ -198,6 +199,9 @@ const Landing = ({ recentWriteups }: Props) => {
                                                 {e.subtitle}
                                             </a>
                                             <p className="text-white/40 text-xs mt-1 tracking-wider">{e.dates}</p>
+                                            {e.description && (
+                                                <p className="text-white/60 text-sm mt-2 leading-relaxed">{e.description}</p>
+                                            )}
                                         </div>
                                     ))}
                                 </div>
@@ -240,11 +244,11 @@ const Landing = ({ recentWriteups }: Props) => {
 
             <section id="projects" className="py-16 px-4 sm:px-8 lg:px-16 max-w-7xl mx-auto">
                 <ScrollReveal animation="reveal-right" duration="0.6" className="block mb-8">
-                    <SectionHeading eyebrow="What I've built">My Projects</SectionHeading>
+                    <SectionHeading>My Projects</SectionHeading>
                 </ScrollReveal>
                 <div className="flex flex-col gap-16 mb-16">
-                    {projects.filter(p => p.featured).map((project, i) => {
-                        const heroImage = project.detail?.images?.[0]?.url ?? project.logo;
+                    {featuredProjects.map((project, i) => {
+                        const heroImage = project.detail?.images?.find(img => img.url !== project.logo)?.url ?? project.logo;
                         const hasMoreInfo = project.detail?.paragraphs !== null;
                         return (
                             <ScrollReveal key={project.link} animation={i % 2 === 0 ? "reveal-right" : "reveal-left"} duration="0.6">
@@ -289,8 +293,81 @@ const Landing = ({ recentWriteups }: Props) => {
                     })}
                 </div>
 
+                {recentWriteups.length > 0 && (
+                    <section id="writing" className="pb-16 max-w-6xl mx-auto">
+                        <div className="flex items-end justify-between mb-8 gap-4">
+                            <ScrollReveal animation="reveal-right" duration="0.6" className="block">
+                                <SectionHeading>Engineering Writeups</SectionHeading>
+                            </ScrollReveal>
+                            <Link href="/writing" className="text-accent/70 hover:text-accent text-sm transition duration-200 whitespace-nowrap mb-1">All writeups →</Link>
+                        </div>
+                        <div className="flex flex-col gap-4">
+                            {recentWriteups[0] && (() => {
+                                const w = recentWriteups[0];
+                                const project = projects.find(p => p.link === w.project);
+                                return (
+                                    <ScrollReveal animation="bounce-up" duration="0.6">
+                                    <a href={`/writing/${w.slug}`} className="block group">
+                                        <Card full>
+                                            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                                                <div className="flex-1 min-w-0">
+                                                    <div className="flex flex-wrap items-center gap-2 mb-1">
+                                                        {project && (
+                                                            <span className="border border-accent/30 text-accent/80 px-2 py-0.5 text-xs font-semibold tracking-wider uppercase">
+                                                                {project.name}
+                                                            </span>
+                                                        )}
+                                                        <span className="text-white/30 text-xs">{formatWriteupDate(w.date)}</span>
+                                                    </div>
+                                                    <p className="text-white font-bold text-lg group-hover:text-accent transition duration-200">{w.title}</p>
+                                                    <p className="text-white/50 text-sm mt-1">{w.description}</p>
+                                                </div>
+                                                <span className="text-white/30 group-hover:text-accent transition duration-200 text-lg shrink-0">→</span>
+                                            </div>
+                                        </Card>
+                                    </a>
+                                    </ScrollReveal>
+                                );
+                            })()}
+                            {recentWriteups.length > 1 && (
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                                    {recentWriteups.slice(1, 4).map((w, i) => {
+                                        const project = projects.find(p => p.link === w.project);
+                                        return (
+                                            <ScrollReveal key={w.slug} animation="bounce-up" duration="0.6" delay={String(i * 0.1)} className="h-full">
+                                            <a href={`/writing/${w.slug}`} className="block h-full group">
+                                                <Card full>
+                                                    <div className="flex flex-col h-full justify-between gap-3">
+                                                        <div>
+                                                            <div className="flex flex-wrap items-center gap-2 mb-1">
+                                                                {project && (
+                                                                    <span className="border border-accent/30 text-accent/80 px-2 py-0.5 text-xs font-semibold tracking-wider uppercase">
+                                                                        {project.name}
+                                                                    </span>
+                                                                )}
+                                                                <span className="text-white/30 text-xs">{formatWriteupDate(w.date)}</span>
+                                                            </div>
+                                                            <p className="text-white font-bold group-hover:text-accent transition duration-200">{w.title}</p>
+                                                            <p className="text-white/50 text-sm mt-1">{w.description}</p>
+                                                        </div>
+                                                        <span className="text-white/30 group-hover:text-accent transition duration-200 text-sm">Read more →</span>
+                                                    </div>
+                                                </Card>
+                                            </a>
+                                            </ScrollReveal>
+                                        );
+                                    })}
+                                </div>
+                            )}
+                        </div>
+                    </section>
+                )}
+
+                <ScrollReveal animation="reveal-right" duration="0.6" className="block mb-8">
+                    <SectionHeading>More Projects</SectionHeading>
+                </ScrollReveal>
                 <div className="flex flex-col divide-y divide-white/5 border-t border-b border-white/5">
-                    {projects.filter(p => !p.featured).map((project, i) => {
+                    {projects.filter(p => p.featured === false).map((project, i) => {
                         const hasMoreInfo = project.detail?.paragraphs !== null;
                         const primaryLink = project.links[0];
                         const href = hasMoreInfo ? `/projects/${project.link}` : (primaryLink?.url ?? "#");
@@ -327,78 +404,9 @@ const Landing = ({ recentWriteups }: Props) => {
                     })}
                 </div>
 
-                {recentWriteups.length > 0 && (
-                    <section id="writing" className="py-16 px-4 sm:px-8 lg:px-16 max-w-4xl mx-auto">
-                        <div className="flex items-end justify-between mb-8 gap-4">
-                            <ScrollReveal animation="reveal-right" duration="0.6" className="block">
-                                <SectionHeading eyebrow="Latest thoughts">Recent Writeups</SectionHeading>
-                            </ScrollReveal>
-                            <Link href="/writing" className="text-accent/70 hover:text-accent text-sm transition duration-200 whitespace-nowrap mb-1">All writeups →</Link>
-                        </div>
-                        <div className="flex flex-col gap-4">
-                            {recentWriteups[0] && (() => {
-                                const w = recentWriteups[0];
-                                const project = projects.find(p => p.link === w.project);
-                                return (
-                                    <ScrollReveal animation="bounce-up" duration="0.6">
-                                    <a href={`/writing/${w.slug}`} className="block group">
-                                        <Card full>
-                                            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                                                <div className="flex-1 min-w-0">
-                                                    <div className="flex flex-wrap items-center gap-2 mb-1">
-                                                        {project && (
-                                                            <span className="border border-accent/30 text-accent/80 px-2 py-0.5 text-xs font-semibold tracking-wider uppercase">
-                                                                {project.name}
-                                                            </span>
-                                                        )}
-                                                        <span className="text-white/30 text-xs">{formatWriteupDate(w.date)}</span>
-                                                    </div>
-                                                    <p className="text-white font-bold text-lg group-hover:text-accent transition duration-200">{w.title}</p>
-                                                    <p className="text-white/50 text-sm mt-1">{w.description}</p>
-                                                </div>
-                                                <span className="text-white/30 group-hover:text-accent transition duration-200 text-lg shrink-0">→</span>
-                                            </div>
-                                        </Card>
-                                    </a>
-                                    </ScrollReveal>
-                                );
-                            })()}
-                            {recentWriteups.length > 1 && (
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    {recentWriteups.slice(1, 3).map((w, i) => {
-                                        const project = projects.find(p => p.link === w.project);
-                                        return (
-                                            <ScrollReveal key={w.slug} animation="bounce-up" duration="0.6" delay={String(i * 0.1)}>
-                                            <a href={`/writing/${w.slug}`} className="block group">
-                                                <Card full>
-                                                    <div className="flex flex-col h-full justify-between gap-3">
-                                                        <div>
-                                                            <div className="flex flex-wrap items-center gap-2 mb-1">
-                                                                {project && (
-                                                                    <span className="border border-accent/30 text-accent/80 px-2 py-0.5 text-xs font-semibold tracking-wider uppercase">
-                                                                        {project.name}
-                                                                    </span>
-                                                                )}
-                                                                <span className="text-white/30 text-xs">{formatWriteupDate(w.date)}</span>
-                                                            </div>
-                                                            <p className="text-white font-bold group-hover:text-accent transition duration-200">{w.title}</p>
-                                                            <p className="text-white/50 text-sm mt-1">{w.description}</p>
-                                                        </div>
-                                                        <span className="text-white/30 group-hover:text-accent transition duration-200 text-sm">Read more →</span>
-                                                    </div>
-                                                </Card>
-                                            </a>
-                                            </ScrollReveal>
-                                        );
-                                    })}
-                                </div>
-                            )}
-                        </div>
-                    </section>
-                )}
 
                 <ScrollReveal animation="reveal-right" duration="0.6" className="block mt-20 mb-8">
-                    <SectionHeading eyebrow="Giving back">Charity Work</SectionHeading>
+                    <SectionHeading>Charity Work</SectionHeading>
                 </ScrollReveal>
                 <div className="flex flex-col divide-y divide-white/5 border-t border-b border-white/5">
                     {charity.map((event: any, i: number) => {
@@ -443,7 +451,7 @@ const Landing = ({ recentWriteups }: Props) => {
 
             <section id="contact" className="py-24 px-4 sm:px-8 lg:px-16 max-w-6xl mx-auto">
                 <ScrollReveal animation="bounce-up" duration="0.6" className="block">
-                <SectionHeading eyebrow="Let's talk">Get in Touch</SectionHeading>
+                <SectionHeading>Get in Touch</SectionHeading>
                 <p className="text-white/40 mt-4 mb-8 max-w-md">Open to new opportunities and collaborations.</p>
                 </ScrollReveal>
                 <ContactIcons className="text-white flex flex-row flex-wrap gap-1 lg:gap-4" keyPrefix="footer-" />
@@ -457,7 +465,7 @@ const Landing = ({ recentWriteups }: Props) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-    const recentWriteups = getAllWriteups().slice(0, 3);
+    const recentWriteups = getAllWriteups().slice(0, 4);
     return { props: { recentWriteups } };
 };
 

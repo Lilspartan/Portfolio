@@ -4,7 +4,7 @@ export interface Project {
     logo: string;
     link: string;
     active: boolean;
-    featured: boolean;
+    featured: number | false;
     tech: ShortTech[];
     links: ProjectLink[];
     detail: ProjectDetail | null;

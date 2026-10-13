@@ -39,7 +39,7 @@ const NotFound = () => {
             </section>
 
             <section className="py-24 px-4 text-center">
-                <SectionHeading eyebrow="Let's talk">Get in Touch</SectionHeading>
+                <SectionHeading>Get in Touch</SectionHeading>
                 <p className="text-white/40 mt-4 mb-8 max-w-md mx-auto">Open to new opportunities and collaborations.</p>
                 <ContactIcons className="text-white flex flex-row flex-wrap justify-center gap-1 lg:gap-4" keyPrefix="404-" />
                 <p className="mt-16 text-white/20 text-sm">

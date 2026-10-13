@@ -129,13 +129,15 @@ export const projects: Project[] = [
     },
     {
         name: "Forge Fiasco",
-        description: "A co-op party game centered around managing a blacksmith",
+        description: "A co-op blacksmithing party game built on a custom C++ engine, where I built the data-driven UI system from layout to controller navigation",
         logo: "/images/projects/forge-fiasco/logo.png",
         link: "forge-fiasco",
         active: true,
-        featured: false,
+        featured: 3,
         tech: ["CPP"],
-        links: [],
+        links: [
+            { text: "Read the Writeup", url: "/writing/forge-fiasco-ui", external: false },
+        ],
         resumeRole: "Developer & Buildmaster",
         resumeDates: "Sep 2024 - Apr 2025",
         resumeBullets: [
@@ -165,7 +167,7 @@ export const projects: Project[] = [
         logo: "/images/projects/sandstone/logo.png",
         link: "sandstone",
         active: true,
-        featured: true,
+        featured: false,
         tech: ["html", "react", "css", "js"],
         links: [
             { text: "Visit the Docs", url: "https://sandstone.dev", external: true },
@@ -189,7 +191,7 @@ export const projects: Project[] = [
         logo: "/images/projects/summitguessr/logo.png",
         link: "summitguessr",
         active: true,
-        featured: true,
+        featured: false,
         tech: ["next", "tailwind", "ts"],
         links: [
             { text: "Visit Site", url: "https://summitguessr.lilspartan.link", external: true },
@@ -238,13 +240,15 @@ export const projects: Project[] = [
     },
     {
         name: "Kregs Toolbox",
-        description: "A beginner friendly game creation tool built in a custom C++ engine",
+        description: "A beginner-friendly game creation tool built on a custom C++ engine. I built its Scratch-style editor, which compiles drag-and-drop blocks into our own scripting language",
         logo: "/images/projects/kregs-toolbox/logo.png",
         link: "kregs-toolbox",
         active: true,
-        featured: true,
+        featured: 1,
         tech: ["CPP"],
-        links: [],
+        links: [
+            { text: "Read the Writeup", url: "/writing/prose-scripting", external: false },
+        ],
         resumeRole: "UI/UX Developer",
         resumeDates: "Sep 2025 - Apr 2026",
         resumeBullets: [
@@ -339,11 +343,11 @@ export const projects: Project[] = [
     },
     {
         name: "The Pitwall",
-        description: "Give your Twitch chat the tools they need to be your pit crew",
+        description: "Live iRacing telemetry, read from the game by an Electron app and streamed over Socket.IO to online dashboards and OBS overlays",
         logo: "https://gabirmotors.com/i/assets/other/pit_wall.png",
         link: "pitwall",
         active: false,
-        featured: false,
+        featured: 2,
         tech: ["next", "tailwind", "ts", "socketio", "electron", "react"],
         resumeRole: "Lead Developer",
         resumeDates: "Jun 2022 - Jul 2023",
@@ -353,7 +357,7 @@ export const projects: Project[] = [
             "Built a companion Electron desktop app for easy broadcaster setup and data capture.",
         ],
         links: [
-            { text: "Visit Site", url: "https://pitwall.gabirmotors.com", external: true },
+            { text: "Read the Writeup", url: "/writing/the-pitwall", external: false },
             { text: "View Source", url: "https://github.com/Lilspartan/GabirLiveStandings", external: true },
         ],
         detail: {
@@ -368,48 +372,6 @@ export const projects: Project[] = [
             ],
             paragraphs: [
                 "The Pit Wall started as a way for Twitch chat to watch the stats of a driver in real time, but after people had seen it I had a few requests to open it up to others, so I created the desktop client which made it super simple for anybody to pick up the Pit Wall and start using it."
-            ],
-        },
-    },
-    {
-        name: "Better StudentVue",
-        description: "A project defined by \"Why isn't this already a feature?\"",
-        logo: "/logo.png",
-        link: "betterstudentvue",
-        active: false,
-        featured: false,
-        tech: ["next", "tailwind", "ts"],
-        links: [],
-        detail: {
-            images: [
-                { url: "/images/projects/betterstudentvue/screenshot1.png", alt: "A screenshot of the home page of Better StudentVue" },
-            ],
-            tech: [{ name: "All", short: ["next", "tailwind", "ts"] }],
-            paragraphs: [
-                "All I wanted to do was see how doing an assignment would affect my grade, but imagine my surprise when my school's gradebook didn't have that feature! The horror... What was I going to do, well I definitely wasn't going to do my finance homework, the best use of my time would be to make my own version of the gradebook that gives me the features I've always wanted.",
-            ],
-        },
-    },
-    {
-        name: "Games",
-        description: "Recreating games to relearn vanilla JS",
-        logo: "/images/projects/games/logo.png",
-        link: "games",
-        active: true,
-        featured: false,
-        tech: ["html", "css", "js"],
-        links: [
-            { text: "Visit Site", url: "https://games.gabekrahulik.dev", external: true },
-        ],
-        detail: {
-            images: [
-                { url: "/images/projects/games/screenshot1.png", alt: "Tetris" },
-                { url: "/images/projects/games/logo.png", alt: "Games logo" },
-            ],
-            tech: [{ name: "All", short: ["html", "css", "js"] }],
-            paragraphs: [
-                "This is the project I've had the most fun with so far, it started as a school project where I had to build Minesweeper, and then I kept making other games.",
-                "Most of the games are buggy or unfinished, but that's because this is less of an attempt at an accurate recreation and more just to make sure my vanilla JS skills are still intact after using so many frameworks"
             ],
         },
     },
